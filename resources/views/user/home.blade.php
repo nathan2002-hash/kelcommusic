@@ -144,7 +144,7 @@
                 <div class="show_content">
                     <div class="show_date"><a href="/ajcostar">14 January, 2021
                     </a></div>
-                    <div class="show_title"><a href="/ajcostar/">Aj Costar
+                    <div class="show_title"><a href="/ajcostar/">Aj Costa
                     </a></div>
                     <div class="show_info d-flex flex-row align-items-start justify-content-start">
                     </div>

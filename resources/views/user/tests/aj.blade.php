@@ -39,7 +39,7 @@
             <div class="row">
                 <div class="col">
                     <div class="home_content text-center">
-                        <div class="home_title"><h1>Energy - Aj Costar
+                        <div class="home_title"><h1>Energy - Aj Costa
                         </h1></div>
                         <div class="home_subtitle text-center">14 January, 2021</div>
                     </div>

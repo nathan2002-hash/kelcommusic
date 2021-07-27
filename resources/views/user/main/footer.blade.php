@@ -64,7 +64,7 @@
                                         </svg>
                                     </div>
                                     <div class="latest_title_content">
-                                        <div class="latest_title">Energy - AJ Costar
+                                        <div class="latest_title">Energy - AJ Costa
                                         </div>
                                     </div>
                                 </div>

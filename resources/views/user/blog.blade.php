@@ -94,7 +94,7 @@
 							</div>
 							<div class="blog_post_content">
 								<div class="blog_post_title"><a href="#">What we should know</a></div>
-								<div class="blog_post_author">By <a href="#">Aj Costar</a></div>
+								<div class="blog_post_author">By <a href="#">Aj Costa</a></div>
 								<div class="blog_post_text">
 									<p>Simplicity requires a two-step process. First, we must invest time and energy to discover what stirs us as human beings, what makes our hearts sing, and what brings us joy. Then, we must proceed to create the life that reflects the unique people we truly are. This is the heart and soul of simplicity</p>
 								</div>

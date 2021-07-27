@@ -177,7 +177,7 @@
                         </div>
                     </div>
                     <div class="episode_content">
-                        <div class="episode_name"><a href="/ajcostar">Energy - Aj Costar
+                        <div class="episode_name"><a href="/ajcostar">Energy - Aj Costa
                         </a></div>
                         <div class="episode_date"><a href="/ajcostar">14 January, 2021
                         </a></div>
