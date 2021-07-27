@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//tests
+Route::get('/umusepela', 'user\MusicController@umusepela');
+Route::get('/ajcostar', 'user\MusicController@aj');
+Route::get('/nogeh', 'user\MusicController@lj');
+Route::get('/bizmack', 'user\MusicController@bizmack');
+
 
 //user routes
 Route::get('/', 'user\HomeController@index');

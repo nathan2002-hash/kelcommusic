@@ -61,4 +61,52 @@ class MusicController extends Controller
         return response()->download('uploads/music/mp3/' . $id);
     }
 
+
+    public function umusepela()
+    {
+        $footer = Music::orderBy('created_at', 'desc')->paginate(3);
+        $galleries = Gallery::all();
+        $audios = Music::orderBy('created_at', 'desc')->paginate(3);
+        return view('user.tests.musepela', [
+         'audios' => $footer,
+         'galleries' => $galleries,
+         'musics' => $audios,
+        ]);
+    }
+
+    public function aj()
+    {
+        $footer = Music::orderBy('created_at', 'desc')->paginate(3);
+        $galleries = Gallery::all();
+        $audios = Music::orderBy('created_at', 'desc')->paginate(3);
+        return view('user.tests.aj', [
+         'audios' => $footer,
+         'galleries' => $galleries,
+         'musics' => $audios,
+        ]);
+    }
+
+    public function lj()
+    {
+        $footer = Music::orderBy('created_at', 'desc')->paginate(3);
+        $galleries = Gallery::all();
+        $audios = Music::orderBy('created_at', 'desc')->paginate(3);
+        return view('user.tests.lj', [
+         'audios' => $footer,
+         'galleries' => $galleries,
+         'musics' => $audios,
+        ]);
+    }
+
+    public function bizmack()
+    {
+        $footer = Music::orderBy('created_at', 'desc')->paginate(3);
+        $galleries = Gallery::all();
+        $audios = Music::orderBy('created_at', 'desc')->paginate(3);
+        return view('user.tests.bizmack', [
+         'audios' => $footer,
+         'galleries' => $galleries,
+         'musics' => $audios,
+        ]);
+    }
 }

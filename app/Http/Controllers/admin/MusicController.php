@@ -80,6 +80,10 @@ class MusicController extends Controller
         $music->day = $request->day;
         $music->month = $request->month;
         $music->year = $request->year;
+        if ($request->hasFile('music')) {
+            $extension = $request->file('music')->extension();
+            $music = Storage::disk('do_spaces')->put('upload', $request->file('music'), time().'.'. $extension);
+            }
         if ($request->file('music')) {
             $fileNameWithExt = $request->file('music')->getClientOriginalName();
             $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
@@ -163,15 +167,24 @@ class MusicController extends Controller
         $music->day = $request->day;
         $music->month = $request->month;
         $music->year = $request->year;
-        if ($request->file('music')) {
-            $fileNameWithExt = $request->file('music')->getClientOriginalName();
-            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-            $extension = $request->file('music')->getClientOriginalExtension();
-            $file = $request->file('music');
-            $fileNameToStore = $filename.'_'.time().'.'. $extension;
-            $file = Storage::disk('do_spaces')->put('uploads/music/mp3/', $fileNameToStore);
-            $music->music = $fileNameToStore;
+        // if ($request->file('music')) {
+        //     $fileNameWithExt = $request->file('music')->getClientOriginalName();
+        //     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+        //     $extension = $request->file('music')->getClientOriginalExtension();
+        //     $file = $request->file('music');
+        //     $fileNameToStore = $filename.'_'.time().'.'. $extension;
+        //     $file = Storage::disk('do_spaces')->put('uploads/music/mp3/', $fileNameToStore);
+        //     $music->music = $fileNameToStore;
+        // }
+
+        if ($request->hasFile('music')) {
+        $extension = $request->file('music')->extension();
+        $music = Storage::disk('do_spaces')->put('upload', $request->file('music'), time().'.'. $extension);
         }
+
+        return redirect()->back();
+
+
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
