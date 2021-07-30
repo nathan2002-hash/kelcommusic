@@ -3,7 +3,7 @@
 
 
 @section('title')
-    Aj coaster
+    {{ $music->title }}
 @endsection
 
 

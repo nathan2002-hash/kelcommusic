@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'cloud' => env('FILESYSTEM_CLOUD', 's3'),
+    'cloud' => env('FILESYSTEM_CLOUD', 'spaces'),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,13 +65,12 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
-        'do_spaces' => [
+        'spaces' => [
             'driver' => 's3',
             'key' => env('DO_SPACES_KEY'),
             'secret' => env('DO_SPACES_SECRET'),
             'region' => env('DO_SPACES_REGION'),
             'bucket' => env('DO_SPACES_BUCKET'),
-            'url' => env('DO_URL'),
             'endpoint' => env('DO_SPACES_ENDPOINT'),
         ],
 

@@ -68,6 +68,7 @@ class MusicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         $music = new Music();
@@ -80,18 +81,14 @@ class MusicController extends Controller
         $music->day = $request->day;
         $music->month = $request->month;
         $music->year = $request->year;
-        if ($request->hasFile('music')) {
-            $extension = $request->file('music')->extension();
-            $music = Storage::disk('do_spaces')->put('upload', $request->file('music'), time().'.'. $extension);
-            }
         if ($request->file('music')) {
             $fileNameWithExt = $request->file('music')->getClientOriginalName();
             $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('music')->getClientOriginalExtension();
             $file = $request->file('music');
             $fileNameToStore = $filename.'_'.time().'.'. $extension;
-            $file->move('uploads/music/mp3/', $fileNameToStore);
-            $music->music = $fileNameToStore;
+            $music->music = $request->music->store('/', 'spaces', $fileNameToStore);
+            Storage::setVisibility($music->music, 'public');
         }
         if ($request->hasFile('image')) {
             $file = $request->file('image');

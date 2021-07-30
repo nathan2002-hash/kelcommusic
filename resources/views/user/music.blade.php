@@ -147,7 +147,7 @@
                                         <div class="jp-type-single">
                                             <div class="player_controls">
                                                 <audio preload="auto" controls>
-                                                    <source src="{{ asset('uploads/music/mp3/' . $music->music) }}">
+                                                    <source src="{{ asset('storage') . '/' . $music->music) }}">
                                                 </audio>
                                             </div>
                                             <div class="jp-no-solution">
@@ -164,129 +164,6 @@
                     <?php
                 }
                 ?>
-                </div>
-                <div class="episode d-flex flex-row align-items-start justify-content-start s1">
-                    <div>
-                        <div class="episode_image">
-                            <img src="{{ asset('images/aj.jpg') }}" alt="">
-                            <div class="tags">
-                                <ul class="d-flex flex-row align-items-start justify-content-start">
-                                    <li><a href="/music/download">music</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="episode_content">
-                        <div class="episode_name"><a href="/ajcostar">Energy - Aj Costa
-                        </a></div>
-                        <div class="episode_date"><a href="/ajcostar">14 January, 2021
-                        </a></div>
-                        <div class="show_info d-flex flex-row align-items-start justify-content-start">
-                        </div>
-                        <!-- Player -->
-                        <div class="single_player_container">
-
-                            <div class="single_player d-flex flex-row align-items-center justify-content-start">
-                                <div id="jplayer_1" class="jp-jplayer"></div>
-                                <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
-                                    <div class="jp-type-single">
-                                        <div class="player_controls">
-                                            <audio preload="auto" controls>
-                                                <source src="{{ asset('files/Aj Coaster_Energy_[Prod By XB3ats].mp3') }}">
-                                            </audio>
-                                        </div>
-                                        <div class="jp-no-solution">
-                                            <span>Update Required</span>
-                                            To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="episode d-flex flex-row align-items-start justify-content-start s1">
-                    <div>
-                        <div class="episode_image">
-                            <img src="{{ asset('images/episode_1.jpg') }}" alt="">
-                            <div class="tags">
-                                <ul class="d-flex flex-row align-items-start justify-content-start">
-                                    <li><a href="/bizmack">music</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="episode_content">
-                        <div class="episode_name"><a href="/bizmack">Slazenga - Bizmack
-                        </a></div>
-                        <div class="episode_date"><a href="/bizmack">21 May, 2021
-                        </a></div>
-                        <div class="show_info d-flex flex-row align-items-start justify-content-start">
-                        </div>
-                        <!-- Player -->
-                        <div class="single_player_container">
-
-                            <div class="single_player d-flex flex-row align-items-center justify-content-start">
-                                <div id="jplayer_1" class="jp-jplayer"></div>
-                                <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
-                                    <div class="jp-type-single">
-                                        <div class="player_controls">
-                                            <audio preload="auto" controls>
-                                                <source src="{{ asset('files/Slazenga_Bizmack.mp3') }}">
-                                            </audio>
-                                        </div>
-                                        <div class="jp-no-solution">
-                                            <span>Update Required</span>
-                                            To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="episode d-flex flex-row align-items-start justify-content-start s1">
-                    <div>
-                        <div class="episode_image">
-                            <img src="{{ asset('images/kelcom.jpg') }}" alt="">
-                            <div class="tags">
-                                <ul class="d-flex flex-row align-items-start justify-content-start">
-                                    <li><a href="/bizmack">music</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="episode_content">
-                        <div class="episode_name"><a href="/nogeh">No Geh - Nichol Trahx ft Born Stanner
-                        </a></div>
-                        <div class="episode_date"><a href="/nogeh">04 December, 2020
-                        </a></div>
-                        <div class="show_info d-flex flex-row align-items-start justify-content-start">
-                        </div>
-                        <!-- Player -->
-                        <div class="single_player_container">
-
-                            <div class="single_player d-flex flex-row align-items-center justify-content-start">
-                                <div id="jplayer_1" class="jp-jplayer"></div>
-                                <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
-                                    <div class="jp-type-single">
-                                        <div class="player_controls">
-                                            <audio preload="auto" controls>
-                                                <source src="{{ asset('files/No Geh_-_ Nichol Traxh ft The Born Stunner & Twice.mp3') }}">
-                                            </audio>
-                                        </div>
-                                        <div class="jp-no-solution">
-                                            <span>Update Required</span>
-                                            To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
                 <br>
             </div>
