@@ -81,13 +81,23 @@ class MusicController extends Controller
         $music->day = $request->day;
         $music->month = $request->month;
         $music->year = $request->year;
+        $music->music = $request->music;
         if ($request->file('music')) {
             $fileNameWithExt = $request->file('music')->getClientOriginalName();
             $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('music')->getClientOriginalExtension();
             $file = $request->file('music');
             $fileNameToStore = $filename.'_'.time().'.'. $extension;
-            $music->music = $request->music->store('/', 'spaces', $fileNameToStore);
+            $file->store('/', 'spaces', $fileNameToStore);
+            $music->music = $fileNameToStore;
+        }
+        if ($request->file('music')) {
+            $fileNameWithExt = $request->file('music')->getClientOriginalName();
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('music')->getClientOriginalExtension();
+            $file = $request->file('music');
+            $fileNameToStore = $filename.'_'.time().'.'. $extension;
+            $music->music = $request->music->store('/uploads', 'spaces', $fileNameToStore);
             Storage::setVisibility($music->music, 'public');
         }
         if ($request->hasFile('image')) {

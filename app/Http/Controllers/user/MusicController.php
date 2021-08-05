@@ -8,25 +8,19 @@ use App\Http\Controllers\Controller;
 use App\Music;
 use App\Video;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MusicController extends Controller
 {
-    public function uploadForm()
-    {
-        $places = Music::all();
-
-        return view('upload_photo', [
-            'places' => $places
-        ]);
-    }
-
     public function index()
     {
+        $musics = Music::all();
         $songs = Music::orderBy('created_at', 'desc')->paginate(26);
         $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         $galleries = Gallery::all();
         return view('user.music', [
          'songs' => $songs,
+         'musics' => $musics,
          'audios' => $footer,
          'galleries' => $galleries
         ]);
@@ -69,4 +63,9 @@ class MusicController extends Controller
     {
         return response()->download('uploads/music/mp3/' . $id);
     }
+
+    public function downloadm(Music $music){
+        $music->download->increment();
+        return redirect('/music'. $music->filename);
+     }
 }

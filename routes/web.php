@@ -13,12 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //tests
-Route::get('/umusepela', 'user\MusicController@umusepela');
-Route::get('/ajcostar', 'user\MusicController@aj');
-Route::get('/nogeh', 'user\MusicController@lj');
-Route::get('/bizmack', 'user\MusicController@bizmack');
 
-
+Route::get('music/download', 'user\MusicController@downloadm')->name('music.download');
 //user routes
 Route::get('/', 'user\HomeController@index');
 Route::get('/music', 'user\MusicController@index');
