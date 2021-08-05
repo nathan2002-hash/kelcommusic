@@ -86,8 +86,8 @@
             <div class="col-xl-3 col-md-6">
                 <div class="show">
                     <div class="show_image">
-                        <a href="#">
-                            <img src="{{ asset('images/lj.jpg') }}" alt="https://unsplash.com/@h4rd3n">
+                        <a href="/download/music/{{ $video->file }}">
+                            <img src="{{ asset('images/blog_3.jpg') }}" alt="https://unsplash.com/@h4rd3n">
                             <div class="show_play_icon"><img src="{{ asset('images/play.svg') }}" alt="https://www.flaticon.com/authors/cole-bemis"></div>
                             <div class="show_title_2">Sting Blaze x Born Stanner x Young Nicho
                             </div>
