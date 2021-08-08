@@ -1,4 +1,4 @@
-@extends('layouts.user.video')
+@extends('kelcom.user.video')
 
 
 

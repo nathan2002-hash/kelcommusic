@@ -1,4 +1,4 @@
-@extends('layouts.user.about')
+@extends('kelcom.user.about')
 
 
 

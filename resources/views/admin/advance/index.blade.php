@@ -1,4 +1,4 @@
-@extends('layouts.admin.home')
+@extends('kelcom.admin.home')
 
 
 
@@ -11,12 +11,12 @@
 <div class="menu">
     <div class="menu_content d-flex flex-column align-items-end justify-content-start">
         <ul class="menu_nav_list text-right">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/music">Music</a></li>
-            <li><a href="/videos">Videos</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="/adminmusiccreate">Music</a></li>
+            <li><a href="/adminbiographycreate">Biography</a></li>
+            <li><a href="/adminadvancecreate">Advance</a></li>
+            <li><a href="/adminvideocreate">Video</a></li>
+            <li><a href="/admingallery">Gallery</a></li>
+            <li><a href="/adminartistcreate">Artist</a></li>
         </ul>
     </div>
 </div>
@@ -32,9 +32,12 @@
                     <div class="home_content">
                         <div class="tags">
                             <ul class="d-flex flex-row align-items-start justify-content-start">
-                                <li><a href="/blog">Blogs</a></li>
-                                <li><a href="/music">Music</a></li>
-                                <li><a href="/video">Videos</a></li>
+                            <li><a href="/adminmusic">Music</a></li>
+                            <li><a href="/adminartist">Artist</a></li>
+                            <li><a href="/adminvideo">Video</a></li>
+                            <li><a href="/adminbiography">Biography</a></li>
+                            <li><a href="/admingallery">Gallery</a></li>
+                            <li><a href="/adminadvance">Advance</a></li>
                             </ul>
                         </div>
                         <div class="home_subtitle">Check out the latest music and videos at Kelcom Music</div>
@@ -98,8 +101,8 @@
         <div class="row shows_2_row">
         <div class="row">
             <div class="col text-center">
-                <div class="button_fill shows_2_button"><a href="/admin/advance/{{ $advance->id }}/edit">Edit Biography</a></div>
-                <form action="{{ url('/admin/artist/'.$advance->id) }}" method="POST">
+                <div class="button_fill shows_2_button"><a href="/adminadvancedit{{ $advance->id }}">Edit Biography</a></div>
+                <form action="{{ url('/adminadvancedelete'.$advance->id) }}" method="POST">
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
                         <button type="submit" class="btn-btn">Delete</button>

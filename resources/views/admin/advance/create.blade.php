@@ -1,9 +1,9 @@
-@extends('layouts.admin.upload')
+@extends('kelcom.admin.upload')
 
 
 
 @section('title')
-    Add Biography
+    Add Advance
 @endsection
 
 
@@ -11,12 +11,12 @@
 <div class="menu">
     <div class="menu_content d-flex flex-column align-items-end justify-content-start">
         <ul class="menu_nav_list text-right">
-            <li><a href="/admin/music/create">Music</a></li>
-            <li><a href="/admin/biography/create">Biography</a></li>
-            <li><a href="/admin/advance/create">Advance</a></li>
-            <li><a href="/admin/video/create">Video</a></li>
-            <li><a href="/admin/gallery">Gallery</a></li>
-            <li><a href="/admin/artist/create">Artist</a></li>
+            <li><a href="/adminmusiccreate">Music</a></li>
+            <li><a href="/adminbiographycreate">Biography</a></li>
+            <li><a href="/adminadvancecreate">Advance</a></li>
+            <li><a href="/adminvideocreate">Video</a></li>
+            <li><a href="/admingallery">Gallery</a></li>
+            <li><a href="/adminartistcreate">Artist</a></li>
         </ul>
     </div>
 </div>
@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col">
                     <div class="home_content text-center">
-                        <div class="home_title"><h1>Add a biography at kelcom music</h1></div>
+                        <div class="home_title"><h1>Add a Advance at kelcom music</h1></div>
                         <div class="home_subtitle text-center">Today</div>
                     </div>
                 </div>
@@ -141,12 +141,12 @@
                     <div class="sidebar_list">
                         <div class="sidebar_title">Quick Links</div>
                         <ul>
-                            <li><a href="/admin/music">Music</a></li>
-                            <li><a href="/admin/artist">Artist</a></li>
-                            <li><a href="/admin/video">Video</a></li>
-                            <li><a href="/admin/biography">Biography</a></li>
-                            <li><a href="/admin/gallery">Gallery</a></li>
-                            <li><a href="/admin/advance">Advance</a></li>
+                            <li><a href="/adminmusic">Music</a></li>
+                            <li><a href="/adminartist">Artist</a></li>
+                            <li><a href="/adminvideo">Video</a></li>
+                            <li><a href="/adminbiography">Biography</a></li>
+                            <li><a href="/admingallery">Gallery</a></li>
+                            <li><a href="/adminadvance">Advance</a></li>
                         </ul>
                     </div>
                 </div>
@@ -157,7 +157,7 @@
                 <!-- Leave a Comment -->
                 <div class="comment_form_container">
                     <div class="section_title">Information</div>
-                    <form action="/admin/advance" method="POST" enctype="multipart/form-data" class="comment_form">
+                    <form action="/adminadvancestore" method="POST" enctype="multipart/form-data" class="comment_form">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
@@ -176,11 +176,8 @@
                             </div>
                         </div>
                         <div><textarea class="comment_input comment_textarea" name="info" placeholder="Information"></textarea></div>
-                        <div class="form-group m-2">
-                            <div class="custom-file">
-                              <input type="file" name="image" class="custom-file-input">
-                              <label class="custom-file-label">Choose Image...</label>
-                            </div>
+                        <div class="col-md-12">
+                            <input type="text" name="image" class="comment_input" placeholder="Image">
                         </div>
                         <button class="comment_button button_fill">Post</button>
                     </form>

@@ -1,4 +1,4 @@
-@extends('layouts.admin.mdownload')
+@extends('kelcom.admin.mdownload')
 
 
 
@@ -11,12 +11,12 @@
 <div class="menu">
     <div class="menu_content d-flex flex-column align-items-end justify-content-start">
         <ul class="menu_nav_list text-right">
-            <li><a href="/admin/music/create">Music</a></li>
-            <li><a href="/admin/biography/create">Biography</a></li>
-            <li><a href="/admin/advance/create">Advance</a></li>
-            <li><a href="/admin/video/create">Video</a></li>
-            <li><a href="/admin/gallery">Gallery</a></li>
-            <li><a href="/admin/artist/create">Artist</a></li>
+            <li><a href="/adminmusiccreate">Music</a></li>
+            <li><a href="/adminbiographycreate">Biography</a></li>
+            <li><a href="/adminadvancecreate">Advance</a></li>
+            <li><a href="/adminvideocreate">Video</a></li>
+            <li><a href="/admingallery">Gallery</a></li>
+            <li><a href="/adminartistcreate">Artist</a></li>
         </ul>
     </div>
 </div>

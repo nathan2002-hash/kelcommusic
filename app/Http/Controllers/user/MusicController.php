@@ -61,11 +61,6 @@ class MusicController extends Controller
 
     public function download($id)
     {
-        return response()->download('uploads/music/mp3/' . $id);
+        return Storage::disk('spaces')->download('/' . $id);
     }
-
-    public function downloadm(Music $music){
-        $music->download->increment();
-        return redirect('/music'. $music->filename);
-     }
 }

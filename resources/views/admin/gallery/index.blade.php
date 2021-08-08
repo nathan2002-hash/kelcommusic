@@ -1,4 +1,4 @@
-@extends('layouts.admin.mdownload')
+@extends('kelcom.admin.mdownload')
 
 
 
@@ -114,12 +114,12 @@
                     <div class="sidebar_list">
                         <div class="sidebar_title">Quick Links</div>
                         <ul>
-                            <li><a href="/admin/music">Music</a></li>
-                            <li><a href="/admin/artist">Artist</a></li>
-                            <li><a href="/admin/video">Video</a></li>
-                            <li><a href="/admin/biography">Biography</a></li>
-                            <li><a href="/admin/gallery">Gallery</a></li>
-                            <li><a href="/admin/advance">Advance</a></li>
+                            <li><a href="/adminmusic">Music</a></li>
+                            <li><a href="/adminartist">Artist</a></li>
+                            <li><a href="/adminvideo">Video</a></li>
+                            <li><a href="/adminbiography">Biography</a></li>
+                            <li><a href="/admingallery">Gallery</a></li>
+                            <li><a href="/adminadvance">Advance</a></li>
                         </ul>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                                 <div class="guest_image"><img src="{{ asset('uploads/gallery/' .$gallery->image) }}" alt="https://unsplash.com/@stairhopper"></div>
                                 <div class="guest_content text-center">
                                     <div class="guest_title">
-                                        <form action="{{ url('/admin/gallery/'.$gallery->id) }}" method="POST">
+                                        <form action="{{ url('/admingallerydelete'.$gallery->id) }}" method="POST">
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
                                                 <button type="submit" class="btn-btn">Delete</button>

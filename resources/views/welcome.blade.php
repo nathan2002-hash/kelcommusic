@@ -1,100 +1,202 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.user.mdownload')
 
-        <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+@section('title')
+    {{ $music->title }}
+@endsection
 
-            .full-height {
-                height: 100vh;
-            }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+@section('content')
+<div class="menu">
+    <div class="menu_content d-flex flex-column align-items-end justify-content-start">
+        <ul class="menu_nav_list text-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/music">Music</a></li>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <div class="menu_extra d-flex flex-column align-items-end justify-content-start">
+            <div class="social">
+                <ul class="d-flex flex-row align-items-start justify-content-start">
+                    <li><a href="https://web.facebook.com/kelcomcommunity"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/kelcom-music/?viewAsMember=true"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCpeko27SGsN82OLUOZ7OUtw"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
-            .position-ref {
-                position: relative;
-            }
+<!-- Home -->
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+<div class="home">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ asset('images/about.jpg') }}" data-speed="0.8"></div>
+    <div class="home_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="home_content text-center">
+                        <div class="home_title"><h1>{{ $music->title }} - {{ $music->username }}
+                        @if ($music->featuring)
+                            Ft {{ $music->featuring }}
+                        @else
 
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
                         @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                        </h1></div>
+                        <div class="home_subtitle text-center">{{ $music->day }} {{ $music->month }}, {{ $music->year }}</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+    <div class="home_player_container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 offset-lg-3">
+
+                    <!-- Episode -->
+                    <div class="player d-flex flex-row align-items-start justify-content-start s1">
+                        <div class="player_content">
+
+                            <!-- Player -->
+                            <div class="single_player_container">
+
+                                <div class="single_player d-flex flex-row align-items-center justify-content-start">
+                                    <div id="jplayer_1" class="jp-jplayer"></div>
+                                    <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+                                        <div class="jp-type-single">
+                                            <div class="jp-no-solution">
+                                                <span>Update Required</span>
+                                                To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="show_info d-flex flex-row align-items-start justify-content-start">
+                                <div class="show_comments">
+                                    <a href="/download/music/{{ $music->music }}">
+                                        <div class="d-flex flex-row align-items-center justify-content-start">
+                                            <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ asset('images/download.png') }}" alt=""></div>
+                                            <div class="show_comments_count">Download Track</div>
+                                        </div>
+                                    </a>
+                                </div>
+                               @if ($music->video_id)
+                               <div class="show_comments">
+                                <a href="/video/show/{{ $music->video_id }}">
+                                    <div class="d-flex flex-row align-items-center justify-content-start">
+                                        <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ asset('images/television.svg') }}" alt=""></div>
+                                        <div class="show_comments_count">View Video</div>
+                                    </div>
+                                </a>
+                               </div>
+                               @else
+
+                               @endif
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Episode -->
+
+<div class="episode_container">
+
+    <!-- Episode Image -->
+    <div class="episode_image_container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <!-- Episode Image -->
+                    <div class="episode_image"><img src="{{ asset('uploads/music/image/' . $music->image) }}" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+
+            <!-- Sidebar -->
+            <div class="col-lg-3 order-lg-1 order-2 sidebar_col">
+                <div class="sidebar">
+
+                    <!-- Categories -->
+                    <div class="sidebar_list">
+                        <div class="sidebar_title">Quick Links</div>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/music">Music</a></li>
+                            <li><a href="/videos">Videos</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Episode -->
+            <div class="col-lg-9 episode_col order-lg-2 order-1">
+                <div class="intro">
+                   @if ($music->message)
+                   <div class="section_title">Message</div>
+                   <div class="intro_text">
+                       <p>
+                           @if ($music->message)
+                               {{ $music->message }}
+                           @else
+
+                           @endif
+                       </p>
+                   </div>
+                   @else
+
+                   @endif
+                </div>
+                <div class="guests">
+                    <div class="section_title">Other songs</div>
+                    <div class="guests_container d-flex flex-md-row flex-column align-items-md-start align-items-center justify-content-start">
+
+                        <!-- Guest -->
+                        @foreach ($music->artist->musics as $music)
+                        <div class="guest_container">
+                            <div class="guest">
+                                <div class="guest_image"><img src="{{ asset('uploads/music/image/' . $music->image) }}" alt="https://unsplash.com/@stairhopper"></div>
+                                <div class="guest_content text-center">
+                                    <div class="guest_name"><a href="/music/download/{{ $music->id }}">{{ $music->title }}</a></div>
+                                    <div class="guest_title">{{ $music->username }}
+                                        @if ($music->featuring)
+                                            Ft {{ $music->featuring }}
+                                        @else
+
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+
+@section('scripts')
+    //
+@endsection

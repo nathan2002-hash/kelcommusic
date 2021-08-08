@@ -1,4 +1,4 @@
-@extends('layouts.admin.mdownload')
+@extends('kelcom.admin.mdownload')
 
 
 
@@ -11,12 +11,12 @@
 <div class="menu">
     <div class="menu_content d-flex flex-column align-items-end justify-content-start">
         <ul class="menu_nav_list text-right">
-            <li><a href="/admin/music/create">Music</a></li>
-            <li><a href="/admin/biography/create">Biography</a></li>
-            <li><a href="/admin/advance/create">Advance</a></li>
-            <li><a href="/admin/video/create">Video</a></li>
-            <li><a href="/admin/gallery">Gallery</a></li>
-            <li><a href="/admin/artist/create">Artist</a></li>
+            <li><a href="/adminmusiccreate">Music</a></li>
+            <li><a href="/adminbiographycreate">Biography</a></li>
+            <li><a href="/adminadvancecreate">Advance</a></li>
+            <li><a href="/adminvideocreate">Video</a></li>
+            <li><a href="/admingallery">Gallery</a></li>
+            <li><a href="/adminartistcreate">Artist</a></li>
         </ul>
         <div class="menu_extra d-flex flex-column align-items-end justify-content-start">
             <div class="menu_submit"><a href="#">Submit your podcast</a></div>
@@ -83,7 +83,7 @@
 
                             <div class="show_info d-flex flex-row align-items-start justify-content-start">
                                 <div class="show_comments">
-                                    <a href="/admin/download/music/{{ $music->music }}">
+                                    <a href="/adminmusicdownload{{ $music->music }}">
                                         <div class="d-flex flex-row align-items-center justify-content-start">
                                             <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ asset('images/speech-bubble.svg') }}" alt=""></div>
                                             <div class="show_comments_count">Download Track</div>
@@ -141,11 +141,12 @@
                     <div class="sidebar_list">
                         <div class="sidebar_title">Quick Links</div>
                         <ul>
-                            <li><a href="/admin/music">Music</a></li>
-                            <li><a href="/admin/video">Video</a></li>
-                            <li><a href="/admin/biography">Biography</a></li>
-                            <li><a href="/admin/gallery">Gallery</a></li>
-                            <li><a href="/admin/advance">Advance</a></li>
+                            <li><a href="/adminmusic">Music</a></li>
+                            <li><a href="/adminartist">Artist</a></li>
+                            <li><a href="/adminvideo">Video</a></li>
+                            <li><a href="/adminbiography">Biography</a></li>
+                            <li><a href="/admingallery">Gallery</a></li>
+                            <li><a href="/adminadvance">Advance</a></li>
                         </ul>
                     </div>
                 </div>

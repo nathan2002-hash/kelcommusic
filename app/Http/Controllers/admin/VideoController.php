@@ -9,6 +9,10 @@ use App\Video;
 
 class VideoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -65,23 +69,9 @@ class VideoController extends Controller
         $video->day = $request->day;
         $video->artist_id = $request->artist_id;
         $video->username = $request->username;
-        if ($request->file('video')) {
-            $fileNameWithExt = $request->file('video')->getClientOriginalName();
-            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-            $extension = $request->file('video')->getClientOriginalExtension();
-            $file = $request->file('video');
-            $fileNameToStore = $filename.'_'.time().'.'. $extension;
-            $file->move('uploads/video/mp4/', $fileNameToStore);
-            $video->video = $fileNameToStore;
-        }
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('uploads/video/image/', $filename);
-            $video->image = $filename;
-        }
         $video->featuring = $request->featuring;
+        $video->video = $request->video;
+        $video->image = $request->image;
         $video->save();
         return redirect()->back();
 
@@ -133,23 +123,9 @@ class VideoController extends Controller
         $video->day = $request->day;
         $video->artist_id = $request->artist_id;
         $video->username = $request->username;
-        if ($request->file('video')) {
-            $fileNameWithExt = $request->file('video')->getClientOriginalName();
-            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-            $extension = $request->file('video')->getClientOriginalExtension();
-            $file = $request->file('video');
-            $fileNameToStore = $filename.'_'.time().'.'. $extension;
-            $file->move('uploads/video/mp4/', $fileNameToStore);
-            $video->video = $fileNameToStore;
-        }
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('uploads/video/image/', $filename);
-            $video->image = $filename;
-        }
         $video->featuring = $request->featuring;
+        $video->video = $request->video;
+        $video->image = $request->image;
         $video->save();
         return redirect()->back();
     }

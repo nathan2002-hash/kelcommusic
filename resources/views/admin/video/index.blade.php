@@ -1,4 +1,4 @@
-@extends('layouts.admin.video')
+@extends('kelcom.admin.video')
 
 
 
@@ -11,12 +11,12 @@
 <div class="menu">
     <div class="menu_content d-flex flex-column align-items-end justify-content-start">
         <ul class="menu_nav_list text-right">
-            <li><a href="/admin/music/create">Music</a></li>
-            <li><a href="/admin/biography/create">Biography</a></li>
-            <li><a href="/admin/advance/create">Advance</a></li>
-            <li><a href="/admin/video/create">Video</a></li>
-            <li><a href="/admin/gallery">Gallery</a></li>
-            <li><a href="/admin/artist/create">Artist</a></li>
+            <li><a href="/adminmusiccreate">Music</a></li>
+            <li><a href="/adminbiographycreate">Biography</a></li>
+            <li><a href="/adminadvancecreate">Advance</a></li>
+            <li><a href="/adminvideocreate">Video</a></li>
+            <li><a href="/admingallery">Gallery</a></li>
+            <li><a href="/adminartistcreate">Artist</a></li>
         </ul>
     </div>
 </div>
@@ -51,7 +51,7 @@
             <div class="col-xl-3 col-md-6">
                 <div class="show">
                     <div class="show_image">
-                        <a href="/admin/video/{{ $video->id }}">
+                        <a href="/adminvideoshow{{ $video->id }}">
                             <img src="{{ asset('uploads/video/image/' .$video->image) }}" alt="https://unsplash.com/@h4rd3n">
                             <div class="show_play_icon"><img src="{{ asset('images/play.svg') }}" alt="https://www.flaticon.com/authors/cole-bemis"></div>
                             <div class="show_title_2">{{ $video->username }}
@@ -67,7 +67,7 @@
                                 <ul class="d-flex flex-row align-items-start justify-content-start">
                                     <li><a href="/admin/video/{{ $video->id }}/edit">Edit</a></li>
                                     <li>
-                                        <form action="{{ url('/admin/video/'.$video->id) }}" method="POST">
+                                        <form action="{{ url('/adminvideodelete'.$video->id) }}" method="POST">
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
                                                 <button type="submit" class="btn-btn">Delete</button>
@@ -76,7 +76,7 @@
                                 </ul>
                                 <br>
                                 <ul class="d-flex flex-row align-items-start justify-content-start">
-                                    <li><a href="/admin/video/{{ $video->id }}">{{ $video->title }}</a></li>
+                                    <li><a href="/adminvideoshow{{ $video->id }}">{{ $video->title }}</a></li>
                                 </ul>
                             </div>
                         </div>

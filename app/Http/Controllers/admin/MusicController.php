@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Storage;
 
 class MusicController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -82,31 +87,9 @@ class MusicController extends Controller
         $music->month = $request->month;
         $music->year = $request->year;
         $music->music = $request->music;
-        if ($request->file('music')) {
-            $fileNameWithExt = $request->file('music')->getClientOriginalName();
-            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-            $extension = $request->file('music')->getClientOriginalExtension();
-            $file = $request->file('music');
-            $fileNameToStore = $filename.'_'.time().'.'. $extension;
-            $file->store('/', 'spaces', $fileNameToStore);
-            $music->music = $fileNameToStore;
-        }
-        if ($request->file('music')) {
-            $fileNameWithExt = $request->file('music')->getClientOriginalName();
-            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-            $extension = $request->file('music')->getClientOriginalExtension();
-            $file = $request->file('music');
-            $fileNameToStore = $filename.'_'.time().'.'. $extension;
-            $music->music = $request->music->store('/uploads', 'spaces', $fileNameToStore);
-            Storage::setVisibility($music->music, 'public');
-        }
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('uploads/music/image/', $filename);
-            $music->image = $filename;
-        }
+        $music->image = $request->image;
+        $music->producer = $request->producer;
+        $music->pcontact = $request->pcontact;
         $music->save();
         return redirect()->back();
     }
@@ -174,31 +157,10 @@ class MusicController extends Controller
         $music->day = $request->day;
         $music->month = $request->month;
         $music->year = $request->year;
-        // if ($request->file('music')) {
-        //     $fileNameWithExt = $request->file('music')->getClientOriginalName();
-        //     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-        //     $extension = $request->file('music')->getClientOriginalExtension();
-        //     $file = $request->file('music');
-        //     $fileNameToStore = $filename.'_'.time().'.'. $extension;
-        //     $file = Storage::disk('do_spaces')->put('uploads/music/mp3/', $fileNameToStore);
-        //     $music->music = $fileNameToStore;
-        // }
-
-        if ($request->hasFile('music')) {
-        $extension = $request->file('music')->extension();
-        $music = Storage::disk('do_spaces')->put('upload', $request->file('music'), time().'.'. $extension);
-        }
-
-        return redirect()->back();
-
-
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('uploads/music/image/', $filename);
-            $music->image = $filename;
-        }
+        $music->music = $request->music;
+        $music->image = $request->image;
+        $music->producer = $request->producer;
+        $music->pcontact = $request->pcontact;
         $music->save();
         return redirect()->back();
     }

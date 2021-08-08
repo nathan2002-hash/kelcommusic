@@ -1,4 +1,4 @@
-@extends('layouts.user.video')
+@extends('kelcom.user.video')
 
 
 
@@ -61,7 +61,7 @@
             <div class="col-xl-3 col-md-6">
                 <div class="show">
                     <div class="show_image">
-                        <a href="/video/show/{{ $video->id }}">
+                        <a href="/videoshow{{ $video->id }}">
                             <img src="{{ asset('uploads/video/image/' .$video->image) }}" alt="https://unsplash.com/@h4rd3n">
                             <div class="show_play_icon"><img src="{{ asset('images/play.svg') }}" alt="https://www.flaticon.com/authors/cole-bemis"></div>
                             <div class="show_title_2">{{ $video->username }}
@@ -75,7 +75,7 @@
                         <div class="show_tags">
                             <div class="tags">
                                 <ul class="d-flex flex-row align-items-start justify-content-start">
-                                    <li><a href="/video/show/{{ $video->id }}">{{ $video->title }}</a></li>
+                                    <li><a href="/videoshow{{ $video->id }}">{{ $video->title }}</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -83,25 +83,6 @@
                 </div>
             </div>
             @endforeach
-            <div class="col-xl-3 col-md-6">
-                <div class="show">
-                    <div class="show_image">
-                        <a href="/download/music/{{ $video->file }}">
-                            <img src="{{ asset('images/blog_3.jpg') }}" alt="https://unsplash.com/@h4rd3n">
-                            <div class="show_play_icon"><img src="{{ asset('images/play.svg') }}" alt="https://www.flaticon.com/authors/cole-bemis"></div>
-                            <div class="show_title_2">Sting Blaze x Born Stanner x Young Nicho
-                            </div>
-                        </a>
-                        <div class="show_tags">
-                            <div class="tags">
-                                <ul class="d-flex flex-row align-items-start justify-content-start">
-                                    <li><a href="#">On Fire</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             {{ $videos->links() }}
         </div>
     </div>

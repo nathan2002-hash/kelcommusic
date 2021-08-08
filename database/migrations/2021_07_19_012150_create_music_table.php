@@ -24,6 +24,8 @@ class CreateMusicTable extends Migration
             $table->string('year')->nullable();
             $table->longText('message')->nullable();
             $table->string('title')->nullable();
+            $table->string('producer')->nullable();
+            $table->string('pcontact')->nullable();
             $table->string('image')->nullable();
             $table->string('username')->nullable();
             $table->timestamps();

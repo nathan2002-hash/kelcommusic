@@ -2,9 +2,11 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Illuminate\Support\Facades\Validator;
 use Throwable;
+use Illuminate\Support\Arr;
+
 
 class Handler extends ExceptionHandler
 {
@@ -51,12 +53,26 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        if ($exception instanceof \Symfony\Component\HttpFoundation\File\Exception\FileException) {
-            // create a validator and validate to throw a new ValidationException
-            return Validator::make($request->all(), [
-                'your_file_input' => 'required|file|size:500000',
-            ])->validate();
-        }
         return parent::render($request, $exception);
     }
+
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        if ($request->expectsJson()) {
+            return response()->json(['error' => 'Unauthenticated.'], 401);
+        }
+
+        $guard = Arr::get($exception->guards(), 0);
+
+        switch ($guard) {
+            case 'admin':
+                $login = 'adminlogin';
+                break;
+
+            default:
+                $login = 'login';
+                break;
+        }
+       return redirect()->guest(route($login));
+   }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.user.contact')
+@extends('kelcom.user.contact')
 
 
 

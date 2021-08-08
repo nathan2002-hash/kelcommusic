@@ -1,4 +1,4 @@
-@extends('layouts.admin.music')
+@extends('kelcom.admin.music')
 
 
 
@@ -11,12 +11,12 @@
 <div class="menu">
     <div class="menu_content d-flex flex-column align-items-end justify-content-start">
         <ul class="menu_nav_list text-right">
-            <li><a href="/admin/artist/create">artist</a></li>
-            <li><a href="/admin/biography/create">Biography</a></li>
-            <li><a href="/admin/advance/create">Advance</a></li>
-            <li><a href="/admin/video/create">Video</a></li>
-            <li><a href="/admin/gallery">Gallery</a></li>
-            <li><a href="/admin/artist/create">Artist</a></li>
+            <li><a href="/adminmusiccreate">Music</a></li>
+            <li><a href="/adminbiographycreate">Biography</a></li>
+            <li><a href="/adminadvancecreate">Advance</a></li>
+            <li><a href="/adminvideocreate">Video</a></li>
+            <li><a href="/admingallery">Gallery</a></li>
+            <li><a href="/adminartistcreate">Artist</a></li>
         </ul>
     </div>
 </div>
@@ -47,12 +47,12 @@
                     <div class="sidebar_list">
                         <div class="sidebar_title">Quick Links</div>
                         <ul>
-                            <li><a href="/admin/music">Music</a></li>
-                            <li><a href="/admin/artist">Artist</a></li>
-                            <li><a href="/admin/video">Video</a></li>
-                            <li><a href="/admin/biography">Biography</a></li>
-                            <li><a href="/admin/gallery">Gallery</a></li>
-                            <li><a href="/admin/advance">Advance</a></li>
+                            <li><a href="/adminmusic">Music</a></li>
+                            <li><a href="/adminartist">Artist</a></li>
+                            <li><a href="/adminvideo">Video</a></li>
+                            <li><a href="/adminbiography">Biography</a></li>
+                            <li><a href="/admingallery">Gallery</a></li>
+                            <li><a href="/adminadvance">Advance</a></li>
                         </ul>
                     </div>
                 </div>
@@ -116,8 +116,8 @@
                             </div>
                         </div>
                         <div class="episode_content">
-                            <div class="episode_name"><a href="/admin/artist/{{ $artist->id }}">{{ $artist->username }}</a></div>
-                            <div class="episode_date"><a href="/admin/artist/{{ $artist->id }}">{{ $artist->year }} Added
+                            <div class="episode_name"><a href="/adminartistshow{{ $artist->id }}">{{ $artist->username }}</a></div>
+                            <div class="episode_date"><a href="/adminartistshow{{ $artist->id }}">{{ $artist->year }} Added
                                 <?php
                                  echo getDateTimeDiff($artist->created_at);
                                 ?>
@@ -128,9 +128,9 @@
                         </div>
                         <div class="tags">
                             <ul class="d-flex flex-row align-items-start justify-content-start">
-                                <li><a href="/admin/artist/{{ $artist->id }}/edit">Edit Artist</a></li>
+                                <li><a href="/adminartistedit{{ $artist->id }}">Edit Artist</a></li>
                                 <li>
-                                    <form action="{{ url('/admin/artist/'.$artist->id) }}" method="POST">
+                                    <form action="{{ url('/adminartistdelete'.$artist->id) }}" method="POST">
                                     {{ method_field('DELETE') }}
                                     {{ csrf_field() }}
                                         <button type="submit" class="btn-btn">Delete</button>

@@ -1,4 +1,4 @@
-@extends('layouts.user.blogs')
+@extends('kelcom.user.blogs')
 
 
 

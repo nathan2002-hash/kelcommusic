@@ -1,4 +1,4 @@
-@extends('layouts.admin.blogs')
+@extends('kelcom.admin.blogs')
 
 
 
@@ -11,12 +11,12 @@
 <div class="menu">
     <div class="menu_content d-flex flex-column align-items-end justify-content-start">
         <ul class="menu_nav_list text-right">
-            <li><a href="/admin/music/create">Music</a></li>
-            <li><a href="/admin/biography/create">Biography</a></li>
-            <li><a href="/admin/advance/create">Advance</a></li>
-            <li><a href="/admin/video/create">Video</a></li>
-            <li><a href="/admin/gallery">Gallery</a></li>
-            <li><a href="/admin/artist/create">Artist</a></li>
+            <li><a href="/adminmusiccreate">Music</a></li>
+            <li><a href="/adminbiographycreate">Biography</a></li>
+            <li><a href="/adminadvancecreate">Advance</a></li>
+            <li><a href="/adminvideocreate">Video</a></li>
+            <li><a href="/admingallery">Gallery</a></li>
+            <li><a href="/adminartistcreate">Artist</a></li>
         </ul>
     </div>
 </div>
@@ -46,12 +46,12 @@
                     <div class="sidebar_list">
                         <div class="sidebar_title">Quick Links</div>
                         <ul>
-                            <li><a href="/admin/music">Music</a></li>
-                            <li><a href="/admin/artist">Artist</a></li>
-                            <li><a href="/admin/video">Video</a></li>
-                            <li><a href="/admin/biography">Biography</a></li>
-                            <li><a href="/admin/gallery">Gallery</a></li>
-                            <li><a href="/admin/advance">Advance</a></li>
+                            <li><a href="/adminmusic">Music</a></li>
+                            <li><a href="/adminartist">Artist</a></li>
+                            <li><a href="/adminvideo">Video</a></li>
+                            <li><a href="/adminbiography">Biography</a></li>
+                            <li><a href="/admingallery">Gallery</a></li>
+                            <li><a href="/adminadvance">Advance</a></li>
                         </ul>
                     </div>
                 </div>
@@ -73,15 +73,15 @@
                         <div class="blog_post_image">
                             <img src="{{ asset('uploads/biography/' .$bio->image) }}" alt="https://unsplash.com/@kellysikkema">
                             <div class="blog_post_date"><a href="#">{{ $bio->month }} {{ $bio->day }}, {{ $bio->year }}</a></div>
-                                    <form action="{{ url('/admin/biography/'.$bio->id) }}" method="POST">
+                                    <form action="{{ url('/adminbiographydelete'.$bio->id) }}" method="POST">
                                     {{ method_field('DELETE') }}
                                     {{ csrf_field() }}
                                         <button type="submit" class="btn-btn">Delete</button>
                                     </form>
                         </div>
                         <div class="blog_post_content">
-                            <div class="blog_post_title"><a href="/admin/biography/{{ $bio->id }}/edit">{{ $bio->title }}</a></div>
-                            <div class="blog_post_author">By <a href="/admin/biography/{{ $bio->id }}/edit">{{ $bio->artist }}</a></div>
+                            <div class="blog_post_title"><a href="/adminbiographyedit{{ $bio->id }}">{{ $bio->title }}</a></div>
+                            <div class="blog_post_author">By <a href="/adminbiographyedit{{ $bio->id }}">{{ $bio->artist }}</a></div>
                             <div class="blog_post_text">
                                 <p>{{ $bio->info }}</p>
                             </div>

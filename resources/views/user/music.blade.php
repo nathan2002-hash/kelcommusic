@@ -1,4 +1,4 @@
-@extends('layouts.user.music')
+@extends('kelcom.user.music')
 
 
 
@@ -118,46 +118,29 @@
                                 @endif
                                 <div class="tags">
                                     <ul class="d-flex flex-row align-items-start justify-content-start">
-                                        <li><a href="/music/download/{{ $music->id }}">music</a></li>
+                                        <li><a href="/musicdownload{{ $music->id }}">music</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="episode_content">
-                            <div class="episode_name"><a href="/music/download/{{ $music->id }}">{{ $music->title }} - {{ $music->username }}
+                            <div class="episode_name"><a href="/musicdownload{{ $music->id }}">{{ $music->title }} - {{ $music->username }}
                             @if ($music->featuring)
                                 ft {{ $music->featuring }}
                             @else
 
                             @endif
                             </a></div>
-                            <div class="episode_date"><a href="/music/download/{{ $music->id }}">{{ $music->day }} {{ $music->month }}, {{ $music->year }}
+                            <div class="episode_date"><a href="/musicdownload{{ $music->id }}">{{ $music->day }} {{ $music->month }}, {{ $music->year }}
                                 <?php
                                  echo getDateTimeDiff($music->created_at);
                                 ?>
                             </a></div>
-                            <div class="show_info d-flex flex-row align-items-start justify-content-start">
-                            </div>
-                            <!-- Player -->
                             <div class="single_player_container">
 
                                 <div class="single_player d-flex flex-row align-items-center justify-content-start">
                                     <div id="jplayer_1" class="jp-jplayer"></div>
                                     <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
-                                        <div class="jp-type-single">
-                                            <div class="player_controls">
-                                                <audio preload="auto" controls>
-                                                    {{-- <source src="{{ Storage::get('spaces')->get('/' .$music->music) }}"> --}}
-                                                </audio>
-                                            </div>
-                                            <a href="{{ route('music.download', ['music' => $music])}}">
-                                                <span>Download (Hi-Res)</span>
-                                            </a>
-                                            <div class="jp-no-solution">
-                                                <span>Update Required</span>
-                                                To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
 

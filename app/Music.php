@@ -15,8 +15,8 @@ class Music extends Model
      * @var array
      */
     protected $fillable = [
-        'artist_id', 'featuring', 'music', 'day', 'month',
-        'year', 'message', 'title', 'image', 'username', 'video_id',
+        'artist_id', 'featuring', 'music', 'day', 'month', 'pcontact',
+        'year', 'message', 'title', 'image', 'username', 'video_id', 'producer',
     ];
 
     public function comments(){

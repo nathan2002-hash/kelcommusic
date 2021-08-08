@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class BiographyController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -64,13 +69,7 @@ class BiographyController extends Controller
         $bio->day = $request->day;
         $bio->month = $request->month;
         $bio->year = $request->year;
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('uploads/biography/', $filename);
-            $bio->image = $filename;
-        }
+        $bio->image = $request->image;
         $bio->save();
         return redirect()->back();
     }
@@ -116,13 +115,7 @@ class BiographyController extends Controller
         $bio->day = $request->day;
         $bio->month = $request->month;
         $bio->year = $request->year;
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('uploads/biography/', $filename);
-            $bio->image = $filename;
-        }
+        $bio->image = $request->image;
         $bio->save();
         return redirect()->back();
     }

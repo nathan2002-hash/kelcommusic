@@ -22,6 +22,19 @@ class RedirectIfAuthenticated
             return redirect(RouteServiceProvider::HOME);
         }
 
+        switch ($guard) {
+            case 'admin':
+                if (Auth::guard($guard)->check()) {
+                    return redirect('/adminpanel');
+                }
+                break;
+
+            // default:
+            //     if (Auth::guard($guard)->check()) {
+            //         return redirect('/admin');
+            //     }
+            //     break;
+        }
         return $next($request);
     }
 }

@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class ArtistController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -75,13 +80,7 @@ class ArtistController extends Controller
         $artist->city = $request->city;
         $artist->dob = $request->dob;
         $artist->gender = $request->gender;
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('uploads/artists/', $filename);
-            $artist->image = $filename;
-        }
+        $artist->image = $request->image;
         $artist->save();
         return redirect()->back();
     }
@@ -136,13 +135,7 @@ class ArtistController extends Controller
         $artist->city = $request->city;
         $artist->dob = $request->dob;
         $artist->gender = $request->gender;
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('uploads/artists/', $filename);
-            $artist->image = $filename;
-        }
+        $artist->image = $request->image;
         $artist->save();
         return redirect()->back();
     }

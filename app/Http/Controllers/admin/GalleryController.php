@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class GalleryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -43,13 +48,7 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $gallery = new Gallery();
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('uploads/gallery/', $filename);
-            $gallery->image = $filename;
-        }
+        $gallery->video = $request->gallery;
         $gallery->save();
         return redirect()->back();
     }

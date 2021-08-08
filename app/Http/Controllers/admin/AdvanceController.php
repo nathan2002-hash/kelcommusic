@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class AdvanceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -46,13 +50,7 @@ class AdvanceController extends Controller
         $advance->facebook = $request->facebook;
         $advance->twitter = $request->twitter;
         $advance->title = $request->title;
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('uploads/advance/', $filename);
-            $advance->image = $filename;
-        }
+        $advance->image = $request->image;
         $advance->save();
         return redirect()->back();
     }
@@ -97,13 +95,7 @@ class AdvanceController extends Controller
         $advance->facebook = $request->facebook;
         $advance->twitter = $request->twitter;
         $advance->title = $request->title;
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('uploads/advance/', $filename);
-            $advance->image = $filename;
-        }
+        $advance->image = $request->image;
         $advance->save();
         return redirect()->back();
     }
