@@ -124,7 +124,7 @@
                                     <div class="show_comments">
                                         <a href="/download/music/{{ $music->music }}">
                                             <div class="d-flex flex-row align-items-center justify-content-start">
-                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ Storage::disk('spaces')->url($music->image) }}" alt=""></div>
+                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="images/download.png" alt=""></div>
                                                 <div class="show_comments_count">Download Track</div>
                                             </div>
                                         </a>
@@ -152,7 +152,7 @@
                                     <div class="show_comments">
                                         <a href="/download/music/{{ $music->music }}">
                                             <div class="d-flex flex-row align-items-center justify-content-start">
-                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ asset('images/episode_1.jpg') }}" alt=""></div>
+                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ Storage::disk('spaces')->url($music->image) }}" alt=""></div>
                                                 <a href="tel://{{ $music->pcontact }}" class="show_comments_count">{{ $music->producer }}</a>
                                             </div>
                                         </a>
