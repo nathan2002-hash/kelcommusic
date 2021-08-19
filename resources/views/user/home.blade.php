@@ -94,12 +94,11 @@
                 <div class="show">
                     <div class="show_image">
                      <a href="/musicdownload{{ $music->id }}">
-                     @if ($music->image)
-                     <img src="{{ Storage::disk('spaces')->url($music->image) }}" alt="">
+                        @if ($music->image)
+                        <img src="{{ Storage::disk('spaces')->url($music->image) }}" alt="">
                        @else
-                        <img src="{{ asset('images/episode_1.jpg') }}" alt="">
+                       <img src="{{ asset('images/blog_1.jpg') }}" alt="">
                         @endif
-                            <img src="{{ asset('images/blog_1.jpg') }}" alt="https://unsplash.com/@icons8">
                         </a>
                         <div class="show_tags">
                             <div class="tags">
