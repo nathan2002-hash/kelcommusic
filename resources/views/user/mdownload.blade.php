@@ -149,12 +149,9 @@
 
 								<div class="show_info d-flex flex-row align-items-start justify-content-start">
                                     <div class="show_comments">
-                                        <a href="/download/music/{{ $music->music }}">
-                                            <div class="d-flex flex-row align-items-center justify-content-start">
-                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="" alt=""></div>
-                                                <a href="tel://{{ $music->pcontact }}" class="show_comments_count">{{ $music->producer }}</a>
-                                            </div>
-                                        </a>
+                                         <audio class="justify-right" preload="auto" controls>
+                                            <source src="{{ Storage::disk('spaces')->url($music->music) }}" class="audio-right">
+                                         </audio>
                                     </div>
                                 </div>
 							</div>
@@ -164,9 +161,6 @@
 			</div>
 		</div>
 	</div>
-    <audio preload="auto" controls>
-        <source src="{{ Storage::disk('spaces')->url($music->music) }}">
-    </audio>
 
 	<!-- Episode -->
 
@@ -178,7 +172,13 @@
 				<div class="row">
 					<div class="col-lg-3">
 						<!-- Episode Image -->
-						<div class="episode_image"><img src="{{ Storage::disk('spaces')->url($music->image) }}" alt=""></div>
+						<div class="episode_image">
+                         @if ($music->image)
+                           <img src="{{ Storage::disk('spaces')->url($music->image) }}" alt="">
+                          @else
+                            <img src="{{ asset('images/episode_1.jpg') }}" alt="">
+                          @endif
+                        </div>
 					</div>
 				</div>
 			</div>
