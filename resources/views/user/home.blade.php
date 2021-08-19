@@ -43,7 +43,7 @@
                             <ul class="d-flex flex-row align-items-start justify-content-start">
                                 <li><a href="/blog">Blogs</a></li>
                                 <li><a href="/music">Music</a></li>
-                                <li><a href="/video">Videos</a></li>
+                                <li><a href="/videos">Videos</a></li>
                             </ul>
                         </div>
                         <div class="home_subtitle">Check out the latest music and videos at Kelcom Music</div>
