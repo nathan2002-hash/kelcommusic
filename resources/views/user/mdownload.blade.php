@@ -176,7 +176,7 @@
 				<div class="row">
 					<div class="col-lg-3">
 						<!-- Episode Image -->
-						<div class="episode_image"><img src="images/episode_2.jpg" alt=""></div>
+						<div class="episode_image"><img src="{{ Storage::disk('spaces')->url($music->image) }}" alt=""></div>
 					</div>
 				</div>
 			</div>
