@@ -29,27 +29,11 @@ class MusicController extends Controller
 
     public function search(Request $request)
     {
-        if($request->isMethod('post'))
-        {
-            $name = $request->get('name');
-            $galleries = Gallery::all();
-            $footer = Music::orderBy('created_at', 'desc')->paginate(3);
-            $songs = Music::where('username', 'LIKE', '%'. $name . '%')
-                           ->where('featuring', 'LIKE', '%'. $name . '%')
-                           ->where('music', 'LIKE', '%'. $name . '%')
-                           ->where('title', 'LIKE', '%'. $name . '%')->paginate(20);
-        }
-        return view('user.music', [
-            'songs' => $songs,
-            'audios' => $footer,
-            'galleries' => $galleries
-        ]);
-    }
-
-    public function wow(Request $request)
-    {
         $search = $request->get('search');
-        $songs = Music::where('music', 'ILIKE', '%'. $search .'%')->get();
+        $songs = Music::where('username', 'ILIKE', '%'. $search .'%')->get();
+                       ->orWhere('featuring', 'ILIKE', '%'. $name . '%')
+                       ->orWhere('music', 'ILIKE', '%'. $name . '%')
+                       ->orWhere('title', 'ILIKE', '%'. $name . '%')->paginate(20);
         $galleries = Gallery::all();
         $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         return view('user.music', [
