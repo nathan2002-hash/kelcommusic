@@ -12,7 +12,6 @@
 <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/episode.css">
 <link rel="stylesheet" type="text/css" href="styles/episode_responsive.css">
-<link rel="icon" href="images/favicon.ico">
 </head>
 <body>
 
@@ -124,7 +123,7 @@
                                     <div class="show_comments">
                                         <a href="/download/music/{{ $music->music }}">
                                             <div class="d-flex flex-row align-items-center justify-content-start">
-                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="images/download.png" alt=""></div>
+                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ asset('images/download.png') }}" alt=""></div>
                                                 <div class="show_comments_count">Download Track</div>
                                             </div>
                                         </a>
@@ -152,7 +151,7 @@
                                     <div class="show_comments">
                                         <a href="/download/music/{{ $music->music }}">
                                             <div class="d-flex flex-row align-items-center justify-content-start">
-                                                <div class="show_comments_icon show_info_icon"><img class="svg"</div>
+                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="" alt=""></div>
                                                 <a href="tel://{{ $music->pcontact }}" class="show_comments_count">{{ $music->producer }}</a>
                                             </div>
                                         </a>
@@ -228,13 +227,7 @@
                             @foreach ($musics as $music)
                             <div class="guest_container">
                                 <div class="guest">
-                                    <div class="guest_image">
-                                     @if ($music->image)
-                                     <img src="{{ Storage::disk('spaces')->url($music->image) }}" alt="">
-                                      @else
-                                     <img src="{{ asset('images/episode_1.jpg') }}" alt="">
-                                     @endif
-                                    </div>
+                                    <div class="guest_image"><img src="{{ Storage::disk('spaces')->url($music->image) }}" alt="https://unsplash.com/@stairhopper"></div>
                                     <div class="guest_content text-center">
                                         <div class="guest_name"><a href="/musicdownload{{ $music->id }}">{{ $music->title }}</a></div>
                                         <div class="guest_title">{{ $music->username }}
