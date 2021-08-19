@@ -23,7 +23,7 @@
                     @foreach ($audios as $music)
                     <div class="latest">
                         <div class="latest_title_container d-flex flex-row align-items-start justify-content-start">
-                            <a href="/music/download/{{ $music->id }}">
+                            <a href="/musicdownload{{ $music->id }}">
                                 <div class="d-flex flex-row align-items-start justify-content-start">
                                     <div class="latest_play">
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 714 714" style="enable-background:new 0 0 714 714;" xml:space="preserve">
@@ -46,8 +46,8 @@
                         </div>
                         <div class="latest_episode_info">
                             <ul class="d-flex flex-row align-items-start justify-content-start">
-                                <li><a href="/music/download/{{ $music->id }}">{{ $music->month }} {{ $music->day }}, {{ $music->year }}</a></li>
-                                <li><a href="/music/download/{{ $music->id }}">Music</a></li>
+                                <li><a href="/musicdownload{{ $music->id }}">{{ $music->month }} {{ $music->day }}, {{ $music->year }}</a></li>
+                                <li><a href="/musicdownload{{ $music->id }}">Music</a></li>
                             </ul>
                         </div>
                     </div>
@@ -61,24 +61,12 @@
                 <div class="gallery d-flex flex-row align-items-start justify-content-start flex-wrap">
 
                     <!-- Gallery Item -->
-                    <div class="gallery_item">
-                        <a class="colorbox" href="{{ asset('images/lj.jpg') }}"><img src="{{ asset('images/k.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="gallery_item">
-                        <a class="colorbox" href="{{ asset('images/mac.jpg') }}"><img src="{{ asset('images/mac.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="gallery_item">
-                        <a class="colorbox" href="{{ asset('images/aj.jpg') }}"><img src="{{ asset('images/aj.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="gallery_item">
-                        <a class="colorbox" href="{{ asset('images/costar.jpg') }}"><img src="{{ asset('images/costar.jpg') }}" alt=""></a>
-                    </div>
 
-                {{-- @foreach ($galleries as $gallery)
+                @foreach ($galleries as $gallery)
                   <div class="gallery_item">
-                    <a class="colorbox" href="{{ asset('uploads/gallery/' .$gallery->image) }}"><img src="{{ asset('uploads/gallery/' .$gallery->image) }}" alt=""></a>
+                    <a class="colorbox" href="{{ Storage::disk('spaces')->url($gallery->image) }}"><img src="{{ Storage::disk('spaces')->url($gallery->image) }}" alt=""></a>
                   </div>
-                @endforeach --}}
+                @endforeach
                 </div>
             </div>
         </div>
