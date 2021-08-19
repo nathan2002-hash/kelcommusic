@@ -52,7 +52,7 @@
                 <div class="show">
                     <div class="show_image">
                         <a href="/adminvideoshow{{ $video->id }}">
-                            <img src="{{ asset('uploads/video/image/' .$video->image) }}" alt="https://unsplash.com/@h4rd3n">
+                           <video src="{{ Storage::disk('spaces')->url($video->video) }}" width="340" alt="https://unsplash.com/@h4rd3n"></video>
                             <div class="show_play_icon"><img src="{{ asset('images/play.svg') }}" alt="https://www.flaticon.com/authors/cole-bemis"></div>
                             <div class="show_title_2">{{ $video->username }}
                             @if ($video->featuring)
