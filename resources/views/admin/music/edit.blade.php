@@ -205,10 +205,10 @@
                         </div>
                         <div><textarea class="comment_input comment_textarea" name="message" placeholder="Message">{{ $music->message }}</textarea></div>
                         <div class="col-md-12">
-                            <input type="text" name="image" class="comment_input" placeholder="Image">
+                            <input type="text" name="image"  value="{{ $music->image }}" class="comment_input" placeholder="Image">
                         </div>
                         <div class="col-md-12">
-                            <input type="text" name="music" class="comment_input" placeholder="Music">
+                            <input type="text" name="music"  value="{{ $music->music }}" class="comment_input" placeholder="Music">
                         </div>
                         <button class="comment_button button_fill">Update</button>
                     </form>
