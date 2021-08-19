@@ -47,8 +47,8 @@
                 <div class="shows_2_title">Download The Best Videos</div>
             </div>
         </div>
-        <form action="{{ route('videosearch') }}" method="post" class="form-inline justify-content-center">
-            {{ csrf_field() }}
+        <form action="/searchvideo" method="get" class="form-inline justify-content-center">
+             @csrf
             <div class="input-group m-2">
                 <input type="search" class="form-control" name="name" placeholder="Search Video....">
             </div>
