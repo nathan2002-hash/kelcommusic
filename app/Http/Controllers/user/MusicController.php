@@ -52,7 +52,7 @@ class MusicController extends Controller
         $songs = DB::table('music')->where('username', 'like', '%'. $search.'%')
                                    ->orWhere('featuring', 'LIKE', '%'. $search . '%')
                                    ->orWhere('music', 'LIKE', '%'. $search . '%')
-                                   ->orWhere('username', 'LIKE', '%'. $search . '%')->paginate(20);
+                                   ->orWhere('title', 'LIKE', '%'. $search . '%')->paginate(20);
         $galleries = Gallery::all();
         $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         return view('user.music', [
