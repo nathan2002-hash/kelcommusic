@@ -49,11 +49,7 @@ class MusicController extends Controller
     public function wow(Request $request)
     {
         $search = $request->get('search');
-        $songs = Music::where('username', 'like', '%'. $search.'%')
-                        ->orWhere('featuring', 'LIKE', '%'. $search . '%')
-                        ->orWhere('music', 'LIKE', '%'. $search . '%')
-                        ->orWhere('title', 'LIKE', '%'. $search . '%')
-                        ->paginate(20);
+        $songs = Music::where('username', 'like', '%'. $search.'%')->paginate(2);
         $galleries = Gallery::all();
         $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         return view('user.music', [
