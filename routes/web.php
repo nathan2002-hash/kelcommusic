@@ -25,7 +25,7 @@ Route::post('/music/comment', 'user\CommentController@comment');
 Route::get('/blog', 'user\BlogController@index');
 Route::get('/contact', 'user\ContactController@index');
 Route::get('/videos', 'user\VideoController@index');
-Route::post('/search/video', 'user\VideoController@search')->name('videosearch');
+Route::get('/searchvideo', 'user\VideoController@search');
 Route::get('/videoshow{id}', 'user\VideoController@show');
 
 //admin routes
