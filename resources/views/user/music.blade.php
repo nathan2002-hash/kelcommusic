@@ -149,7 +149,8 @@
                             <div class="show_comments">
                                 <a href="/download/music/{{ $music->music }}">
                                     <div class="d-flex flex-row align-items-center justify-content-start">
-                                        <div class="show_comments_count">Download</div>
+                                    <div class="show_comments_icon show_info_icon"><img class="svg" src="images/download.png" alt=""></div>
+                                    <div class="show_comments_count">Download</div>
                                     </div>
                                 </a>
                             </div>
