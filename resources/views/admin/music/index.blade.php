@@ -104,13 +104,13 @@
                         <div>
                             <div class="episode_image">
                                 @if ($music->image)
-                                <img src="{{ Storage::disk('spaces')->url($video->image) }}">
+                                <img src="{{ Storage::disk('spaces')->url($music->image) }}">
                                 @else
                                 <img src="{{ asset('images/episode_1.jpg') }}" alt="">
                                 @endif
                                 <div class="tags">
                                     <ul class="d-flex flex-row align-items-start justify-content-start">
-                                        <li><a href="/music/download/{{ $music->id }}">music</a></li>
+                                        <li><a href="/adminmusicshow{{ $music->id }}">music</a></li>
                                     </ul>
                                 </div>
                             </div>
