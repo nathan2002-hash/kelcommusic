@@ -104,7 +104,7 @@
                         <div>
                             <div class="episode_image">
                                 @if ($artist->image)
-                                <img src="{{ asset('uploads/artists/'. $artist->image) }}" alt="">
+                                <img src="{{ Storage::disk('spaces')->url($artist->image) }}" alt="">
                                 @else
                                 <img src="{{ asset('images/episode_1.jpg') }}" alt="">
                                 @endif
