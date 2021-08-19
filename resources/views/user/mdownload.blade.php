@@ -167,10 +167,6 @@
     <audio preload="auto" controls>
         <source src="{{ Storage::disk('spaces')->url($music->music) }}">
     </audio>
-    <br>
-    <br>
-    <br>
-    <br>
 
 	<!-- Episode -->
 
@@ -187,6 +183,10 @@
 				</div>
 			</div>
 		</div>
+         <br>
+    <br>
+    <br>
+    <br>
 
 		<div class="container">
 			<div class="row">
