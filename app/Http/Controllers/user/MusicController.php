@@ -35,9 +35,9 @@ class MusicController extends Controller
             $galleries = Gallery::all();
             $footer = Music::orderBy('created_at', 'desc')->paginate(3);
             $songs = Music::where('title', 'LIKE', '%'. $name . '%')
-                           ->orWhere('featuring', 'LIKE', '%'. $name . '%')
-                           ->orWhere('music', 'LIKE', '%'. $name . '%')
-                           ->orWhere('username', 'LIKE', '%'. $name . '%')->paginate(20);
+                           ->where('featuring', 'LIKE', '%'. $name . '%')
+                           ->where('music', 'LIKE', '%'. $name . '%')
+                           ->where('username', 'LIKE', '%'. $name . '%')->paginate(20);
         }
         return view('user.music', [
             'songs' => $songs,
