@@ -123,7 +123,7 @@
                                     <div class="show_comments">
                                         <a href="/download/music/{{ $music->music }}">
                                             <div class="d-flex flex-row align-items-center justify-content-start">
-                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ asset('images/download.png') }}" alt=""></div>
+                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ Storage::disk('spaces')->url($music->image) }}" alt=""></div>
                                                 <div class="show_comments_count">Download Track</div>
                                             </div>
                                         </a>
@@ -151,7 +151,7 @@
                                     <div class="show_comments">
                                         <a href="/download/music/{{ $music->music }}">
                                             <div class="d-flex flex-row align-items-center justify-content-start">
-                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="" alt=""></div>
+                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ asset('images/episode_1.jpg') }}" alt=""></div>
                                                 <a href="tel://{{ $music->pcontact }}" class="show_comments_count">{{ $music->producer }}</a>
                                             </div>
                                         </a>
@@ -227,7 +227,13 @@
                             @foreach ($musics as $music)
                             <div class="guest_container">
                                 <div class="guest">
-                                    <div class="guest_image"><img src="{{ asset('uploads/music/image/' . $music->image) }}" alt="https://unsplash.com/@stairhopper"></div>
+                                    <div class="guest_image">
+                                     @if ($music->image)
+                                     <img src="{{ Storage::disk('spaces')->url($music->image) }}" alt="">
+                                      @else
+                                     <img src="{{ asset('images/episode_1.jpg') }}" alt="">
+                                     @endif
+                                    </div>
                                     <div class="guest_content text-center">
                                         <div class="guest_name"><a href="/musicdownload{{ $music->id }}">{{ $music->title }}</a></div>
                                         <div class="guest_title">{{ $music->username }}
@@ -314,7 +320,7 @@
                     <div class="gallery d-flex flex-row align-items-start justify-content-start flex-wrap">
                     @foreach ($galleries as $gallery)
                       <div class="gallery_item">
-                        <a class="colorbox" href="{{ asset('uploads/gallery/' .$gallery->image) }}"><img src="{{ asset('uploads/gallery/' .$gallery->image) }}" alt=""></a>
+                        <a class="colorbox" href="{{ Storage::disk('spaces')->url($gallery->image) }}"><img src="{{ Storage::disk('spaces')->url($gallery->image) }}" alt=""></a>
                       </div>
                     @endforeach
                     </div>
