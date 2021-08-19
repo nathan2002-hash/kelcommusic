@@ -125,7 +125,7 @@
                 <div class="col-lg-3">
                     <!-- Episode Image -->
                    @if ($artist->image)
-                   <div class="episode_image"><img src="{{ asset('uploads/artists/' .$artist->image) }}" alt=""></div>
+                   <div class="episode_image"><img src="{{ Storage::disk('spaces')->url($artist->image) }}" alt=""></div>
                    @else
                    <div class="episode_image"><img src="{{ asset('images/episode_2.jpg') }}" alt=""></div>
                    @endif
