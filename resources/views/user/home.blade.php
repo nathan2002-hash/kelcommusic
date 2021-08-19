@@ -93,25 +93,30 @@
             <div class="col-lg-4">
                 <div class="show">
                     <div class="show_image">
-                        <a href="/music/download/{{ $music->id }}">
+                     <a href="/musicdownload{{ $music->id }}">
+                     @if ($music->image)
+                     <img src="{{ Storage::disk('spaces')->url($music->image) }}" alt="">
+                       @else
+                        <img src="{{ asset('images/episode_1.jpg') }}" alt="">
+                        @endif
                             <img src="{{ asset('images/blog_1.jpg') }}" alt="https://unsplash.com/@icons8">
                         </a>
                         <div class="show_tags">
                             <div class="tags">
                                 <ul class="d-flex flex-row align-items-start justify-content-start">
-                                    <li><a href="/music/download/{{ $music->id }}">{{ $music->title }}</a></li>
+                                    <li><a href="/musicdownload{{ $music->id }}">{{ $music->title }}</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="show_play_icon"><img src="images/play.svg" alt="https://www.flaticon.com/authors/cole-bemis"></div>
                     </div>
                     <div class="show_content">
-                        <div class="show_date"><a href="/music/download/{{ $music->id }}">{{ $music->day }} {{ $music->month }}, {{ $music->year }} -
+                        <div class="show_date"><a href="/musicdownload{{ $music->id }}">{{ $music->day }} {{ $music->month }}, {{ $music->year }} -
                           <?php
                             echo getDateTimeDiff($music->created_at);
                            ?>
                         </a></div>
-                        <div class="show_title"><a href="/music/download/{{ $music->id }}">{{ $music->username }}
+                        <div class="show_title"><a href="/musicdownload{{ $music->id }}">{{ $music->username }}
                         @if ($music->featuring)
                             Ft {{ $music->featuring }}
                         @else
@@ -196,7 +201,7 @@
             <div class="col-xl-3 col-md-6">
                 <div class="show">
                     <div class="show_image">
-                        <a href="/video/show/{{ $video->id }}">
+                        <a href="/videoshow{{ $video->id }}">
                             <video src="{{ Storage::disk('spaces')->url($video->video) }}" width="340" alt="https://unsplash.com/@h4rd3n"></video>
                             <div class="show_play_icon"><img src="images/play.svg" alt="https://www.flaticon.com/authors/cole-bemis"></div>
                             <p class="show_title_2">{{ $video->username }}
@@ -210,7 +215,7 @@
                         <div class="show_tags">
                             <div class="tags">
                                 <ul class="d-flex flex-row align-items-start justify-content-start">
-                                    <li><a href="/video/show/{{ $video->id }}">{{ $video->title }}</a></li>
+                                    <li><a href="/videoshow{{ $video->id }}">{{ $video->title }}</a></li>
                                 </ul>
                             </div>
                         </div>
