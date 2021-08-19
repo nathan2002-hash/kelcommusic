@@ -9,6 +9,7 @@ use App\Music;
 use App\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class MusicController extends Controller
 {
@@ -44,6 +45,23 @@ class MusicController extends Controller
             'galleries' => $galleries
         ]);
     }
+
+    public function wow(Request $request)
+    {
+        $search = $request->get('search');
+        $songs = DB::table('music')->where('title', 'like', '%'. $search.'%')
+                                   ->orWhere('featuring', 'LIKE', '%'. $search . '%')
+                                   ->orWhere('music', 'LIKE', '%'. $search . '%')
+                                   ->orWhere('username', 'LIKE', '%'. $search . '%')->paginate(20);
+        $galleries = Gallery::all();
+        $footer = Music::orderBy('created_at', 'desc')->paginate(3);
+        return view('user.music', [
+            'songs' => $songs,
+            'audios' => $footer,
+            'galleries' => $galleries
+        ]);
+    }
+
 
     public function show($id)
     {

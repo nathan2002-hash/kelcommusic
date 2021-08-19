@@ -69,12 +69,12 @@
             <!-- Episodes -->
             <div class="col-lg-9 episodes_col">
                 <div class="container-fluid">
-                    <form action="{{ route('musicsearch') }}" method="post" class="form-inline justify-content-center">
-                        {{ csrf_field() }}
+                    <form action="/search" method="get" class="form-inline justify-content-center">
+                        @csrf
                         <div class="input-group m-2">
-                            <input type="search" class="form-control" name="name" placeholder="Search Music....">
+                            <input type="search" name="search" class="form-control" placeholder="Search Music....">
                         </div>
-                        <button type="submit" class="btn musica-btn m-2">Search</button>
+                        <button type="submit" class="btn musica-btn m-2">wowo</button>
                     </form>
                 <br>
                 <div class="episodes_container">
@@ -135,7 +135,8 @@
                                 <?php
                                  echo getDateTimeDiff($music->created_at);
                                 ?>
-                            </a></div>
+                            </a>
+                           </div>
                             <div class="single_player_container">
 
                                 <div class="single_player d-flex flex-row align-items-center justify-content-start">
@@ -144,6 +145,14 @@
                                     </div>
                                 </div>
 
+                            </div>
+                            <div class="show_comments">
+                                <a href="/download/music/{{ $music->music }}">
+                                    <div class="d-flex flex-row align-items-center justify-content-start">
+                                        <div class="show_comments_icon show_info_icon"><img class="svg" src="images/speech-bubble.svg" alt=""></div>
+                                        <div class="show_comments_count">88 Comments</div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -138,7 +138,7 @@
 	</div>
 
                     <!-- Blog Post -->
-                    {{-- @foreach ($bios as $bio)
+                    @foreach ($bios as $bio)
                     <div class="blog_post d-flex flex-md-row flex-column align-items-start justify-content-start">
                         <div class="blog_post_image">
                             <img src="{{ asset('uploads/biography/' .$bio->image) }}" alt="https://unsplash.com/@kellysikkema">
@@ -152,7 +152,7 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach --}}
+                    @endforeach
                 </div>
                 {{ $bios->links() }}
             </div>

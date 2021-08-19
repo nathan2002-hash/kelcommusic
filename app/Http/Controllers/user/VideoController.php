@@ -58,6 +58,6 @@ class VideoController extends Controller
 
     public function download($id)
     {
-        return response()->download('uploads/video/mp4/' . $id);
+        return Storage::disk('spaces')->download('/' . $id);
     }
 }

@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 //user routes
 Route::get('/', 'user\HomeController@index');
 Route::get('/music', 'user\MusicController@index');
-Route::post('/searchmusic', 'user\MusicController@search')->name('musicsearch');
+Route::post('/searchmusic', 'user\MusicController@search');
+Route::get('/search', 'user\MusicController@wow');
 Route::get('/download/music/{id}', 'user\MusicController@download');
 Route::get('/download/video/{id}', 'user\VideoController@download');
 Route::get('/about', 'user\AboutController@index');
