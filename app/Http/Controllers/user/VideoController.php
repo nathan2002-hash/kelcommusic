@@ -25,7 +25,7 @@ class VideoController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $songs = Music::where('username', 'ILIKE', '%'. $search .'%')->get();
+        $songs = Music::where('username', 'ILIKE', '%'. $search .'%')
                        ->orWhere('featuring', 'ILIKE', '%'. $search . '%')
                        ->orWhere('video', 'ILIKE', '%'. $search . '%')
                        ->orWhere('title', 'ILIKE', '%'. $search . '%')->paginate(20);
