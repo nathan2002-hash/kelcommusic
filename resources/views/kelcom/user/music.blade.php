@@ -11,6 +11,7 @@
 <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/episodes.css">
 <link rel="stylesheet" type="text/css" href="styles/episodes_responsive.css">
+<link rel="icon" href="images/favicon.ico">
 </head>
 <body>
 
