@@ -49,7 +49,7 @@ class MusicController extends Controller
     public function wow(Request $request)
     {
         $search = $request->get('search');
-        $songs = Music::where('music', 'LIKE', '%'. $search .'%')->get();
+        $songs = Music::where('music', 'ILIKE', '%'. $search .'%')->get();
         $galleries = Gallery::all();
         $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         return view('user.music', [
