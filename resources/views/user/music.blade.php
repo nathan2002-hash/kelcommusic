@@ -74,7 +74,7 @@
                         <div class="input-group m-2">
                             <input type="search" name="search" class="form-control" placeholder="Search Music....">
                         </div>
-                        <button type="submit" class="btn musica-btn m-2">wowo</button>
+                        <button type="submit" class="btn musica-btn m-2">Search</button>
                     </form>
                 <br>
                 <div class="episodes_container">
