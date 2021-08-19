@@ -164,6 +164,9 @@
 			</div>
 		</div>
 	</div>
+    <audio preload="auto" controls>
+        <source src="{{ Storage::disk('spaces')->url($music->music) }}">
+    </audio>
 
 	<!-- Episode -->
 
