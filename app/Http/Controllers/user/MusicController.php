@@ -49,7 +49,7 @@ class MusicController extends Controller
     public function wow(Request $request)
     {
         $search = $request->get('search');
-        $songs = DB::table('music')->where('title', 'like', '%'. $search.'%')
+        $songs = DB::table('music')->where('username', 'like', '%'. $search.'%')
                                    ->orWhere('featuring', 'LIKE', '%'. $search . '%')
                                    ->orWhere('music', 'LIKE', '%'. $search . '%')
                                    ->orWhere('username', 'LIKE', '%'. $search . '%')->paginate(20);
