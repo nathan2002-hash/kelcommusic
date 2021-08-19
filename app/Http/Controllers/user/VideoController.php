@@ -24,18 +24,15 @@ class VideoController extends Controller
 
     public function search(Request $request)
     {
-        if($request->isMethod('post'))
-        {
-            $name = $request->get('name');
-            $galleries = Gallery::all();
-            $footer = Music::orderBy('created_at', 'desc')->paginate(3);
-            $videos = Video::where('title', 'LIKE', '%'. $name . '%')
-                           ->orWhere('featuring', 'LIKE', '%'. $name . '%')
-                           ->orWhere('video', 'LIKE', '%'. $name . '%')
-                           ->orWhere('username', 'LIKE', '%'. $name . '%')->paginate(20);
-        }
+        $search = $request->get('search');
+        $songs = Music::where('username', 'ILIKE', '%'. $search .'%')->get();
+                       ->orWhere('featuring', 'ILIKE', '%'. $search . '%')
+                       ->orWhere('video', 'ILIKE', '%'. $search . '%')
+                       ->orWhere('title', 'ILIKE', '%'. $search . '%')->paginate(20);
+        $galleries = Gallery::all();
+        $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         return view('user.videos', [
-            'videos' => $videos,
+            'songs' => $songs,
             'audios' => $footer,
             'galleries' => $galleries
         ]);
