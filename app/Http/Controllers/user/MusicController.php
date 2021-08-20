@@ -60,6 +60,6 @@ class MusicController extends Controller
 
     public function download($id)
     {
-        return Storage::disk('spaces')->download('/' . $id);
+        return Storage::disk('spaces')->download('/music/' . $id);
     }
 }
