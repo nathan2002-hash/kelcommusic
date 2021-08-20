@@ -64,7 +64,7 @@
 
                 @foreach ($galleries as $gallery)
                   <div class="gallery_item">
-                    <a class="colorbox" href="{{ Storage::disk('spaces')->url($gallery->image) }}"><img src="{{ Storage::disk('spaces')->url($gallery->image) }}" alt=""></a>
+                    <a class="colorbox" href="{{ Storage::disk('spaces')->url('gallery/' .$gallery->image) }}"><img src="{{ Storage::disk('spaces')->url('gallery/' .$gallery->image) }}" alt=""></a>
                   </div>
                 @endforeach
                 </div>
