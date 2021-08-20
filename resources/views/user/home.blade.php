@@ -95,7 +95,7 @@
                     <div class="show_image">
                      <a href="/musicdownload{{ $music->id }}">
                         @if ($music->image)
-                        <img src="{{ Storage::disk('spaces')->url($music->image) }}" alt="">
+                        <img src="{{ Storage::disk('spaces')->url('mphoto/' .$music->image) }}" alt="">
                        @else
                        <img src="{{ asset('images/blog_1.jpg') }}" alt="">
                         @endif
@@ -201,7 +201,7 @@
                 <div class="show">
                     <div class="show_image">
                         <a href="/videoshow{{ $video->id }}">
-                            <video src="{{ Storage::disk('spaces')->url($video->video) }}" width="340" alt="https://unsplash.com/@h4rd3n"></video>
+                            <video src="{{ Storage::disk('spaces')->url('video/' .$video->video) }}" width="340" alt="https://unsplash.com/@h4rd3n"></video>
                             <div class="show_play_icon"><img src="images/play.svg" alt="https://www.flaticon.com/authors/cole-bemis"></div>
                             <p class="show_title_2">{{ $video->username }}
                             @if ($video->featuring)
