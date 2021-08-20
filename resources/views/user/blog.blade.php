@@ -75,7 +75,7 @@
                     @foreach ($bios as $bio)
                     <div class="blog_post d-flex flex-md-row flex-column align-items-start justify-content-start">
                         <div class="blog_post_image">
-                            <img src="{{ Storage::disk('spaces')->url('biography/' .$bio->image) }}" alt="https://unsplash.com/@kellysikkema">
+                            <img src="{{ Storage::disk('spaces')->url('biography/' .$bio->image) }}" alt="">
                             <div class="blog_post_date"><a href="#">{{ $bio->month }} {{ $bio->day }}, {{ $bio->year }}</a></div>
                         </div>
                         <div class="blog_post_content">
@@ -88,6 +88,7 @@
                     </div>
                     @endforeach
                 </div>
+                <br>
                 {{ $bios->links() }}
             </div>
         </div>
