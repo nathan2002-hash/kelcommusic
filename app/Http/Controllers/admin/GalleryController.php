@@ -48,7 +48,7 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $gallery = new Gallery();
-        $gallery->video = $request->gallery;
+        $gallery->image = $request->image;
         $gallery->save();
         return redirect()->back();
     }
