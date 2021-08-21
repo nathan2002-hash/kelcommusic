@@ -13,7 +13,7 @@ class AboutController extends Controller
     public function index()
     {
         $galleries = Gallery::all();
-        $songs = Music::orderBy('created_at', 'desc')->paginate(5);
+        $songs = Music::orderBy('created_at', 'desc')->paginate(3);
         $advances = Advance::all();
         return view('user.about', [
          'galleries' => $galleries,
