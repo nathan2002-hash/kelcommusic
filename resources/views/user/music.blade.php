@@ -71,7 +71,7 @@
                         <div class="tags">
                             <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
                                 @foreach ($artists as $artist)
-                                <li><a href="/artist{{ $artist->id }}">{{ $artist->username }}</a></li>
+                                <li><a>{{ $artist->username }}</a></li>
                                 @endforeach
                             </ul>
                         </div>
