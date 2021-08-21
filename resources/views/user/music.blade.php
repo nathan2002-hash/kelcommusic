@@ -45,8 +45,20 @@
 <!-- Episodes -->
 
 <div class="episodes">
-    <div class="container">
-        <div class="row episodes_row">
+<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="season_links">
+						<ul class="d-flex flex-row align-items-start justify-content-center flex-wrap">
+							<li><a href="/" class="item_filter_btn" data-filter="*">Home</a></li>
+							<li><a href="/videos" class="item_filter_btn" data-filter=".s1">Videos</a></li>
+							<li><a href="/about" class="item_filter_btn" data-filter=".s2">About</a></li>
+							<li><a href="/contact" class="item_filter_btn" data-filter=".s3">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+          <div class="row episodes_row">
 
             <!-- Sidebar -->
             <div class="col-lg-3">
@@ -54,14 +66,15 @@
 
 
                     <!-- Categories -->
-                    <div class="sidebar_list">
-                        <div class="sidebar_title">Quick Links</div>
-                        <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/videos">Videos</a></li>
-                            <li><a href="/blog">Blog</a></li>
-                            <li><a href="/contact">Contact</a></li>
-                        </ul>
+                     <div class="sidebar_tags">
+                        <div class="sidebar_title">Artists</div>
+                        <div class="tags">
+                            <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+                                @foreach ($artists as $artist)
+                                <li><a href="/artist{{ $artist->id }}">{{ $artist->username }}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
