@@ -17,7 +17,7 @@ class MusicController extends Controller
     public function index()
     {
         $musics = Music::all();
-        $artists = Artist::orderBy('created_at', 'desc')->paginate(5);
+        $artists = Artist::orderBy('created_at', 'desc')->paginate(8);
         $songs = Music::orderBy('created_at', 'desc')->paginate(26);
         $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         $galleries = Gallery::all();
@@ -38,7 +38,7 @@ class MusicController extends Controller
                        ->orWhere('music', 'ILIKE', '%'. $search . '%')
                        ->orWhere('title', 'ILIKE', '%'. $search . '%')->paginate(20);
         $galleries = Gallery::all();
-        $artists = Artist::orderBy('created_at', 'desc')->paginate(5);
+        $artists = Artist::orderBy('created_at', 'desc')->paginate(8);
         $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         return view('user.music', [
             'songs' => $songs,
