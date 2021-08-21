@@ -135,7 +135,7 @@
                         @foreach ($galleries as $gallery)
                         <div class="guest_container">
                             <div class="guest">
-                                <div class="guest_image"><img src="{{ asset('uploads/gallery/' .$gallery->image) }}" alt="https://unsplash.com/@stairhopper"></div>
+                                <div class="guest_image"><img src="{{ Storage::disk('spaces')->url('gallery/' .$gallery->image) }}" alt=""></div>
                                 <div class="guest_content text-center">
                                     <div class="guest_title">
                                         <form action="{{ url('/admingallerydelete'.$gallery->id) }}" method="POST">
