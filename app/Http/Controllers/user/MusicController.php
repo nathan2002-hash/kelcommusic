@@ -6,6 +6,7 @@ use App\Comment;
 use App\Gallery;
 use App\Http\Controllers\Controller;
 use App\Music;
+use App\Artist;
 use App\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
