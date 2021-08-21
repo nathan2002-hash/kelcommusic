@@ -13,7 +13,7 @@ class BlogController extends Controller
     public function index()
     {
         $galleries = Gallery::all();
-        $songs = Music::orderBy('created_at', 'desc')->paginate(5);
+        $songs = Music::orderBy('created_at', 'desc')->paginate(3);
         $bios = Bio::orderBy('created_at', 'desc')->paginate(10);
         return view('user.blog', [
          'galleries' => $galleries,
