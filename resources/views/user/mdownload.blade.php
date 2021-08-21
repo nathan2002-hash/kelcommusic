@@ -12,6 +12,7 @@
 <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/episode.css">
 <link rel="stylesheet" type="text/css" href="styles/episode_responsive.css">
+<link rel="icon" href="images/compact-disc.png">
 </head>
 <body>
 
