@@ -46,7 +46,7 @@
             <article class="article">
                 <div class="text-center text-md-start">
                     <video class="col text-center" width="330" height="300" controls id="player">
-                        <source src="{{ Storage::disk('spaces')->url($video->video) }}"></div>
+                        <source src="{{ Storage::disk('spaces')->url('video/' .$video->video) }}"></div>
                     </video>
                 </div>
             </article>
@@ -63,9 +63,9 @@
             <div class="col-xl-3 col-md-6">
                 <div class="show">
                     <div class="show_image">
-                        <a href="/video/show/{{ $video->id }}">
-                             <video src="{{ Storage::disk('spaces')->url($video->video) }}" width="360" alt="https://unsplash.com/@h4rd3n"></video>
-                            <div class="show_play_icon"><img src="{{ asset('images/play.svg') }}" alt="https://www.flaticon.com/authors/cole-bemis"></div>
+                        <a href="/videoshow{{ $video->id }}">
+                             <video src="{{ Storage::disk('spaces')->url($video->video) }}" width="360" alt=""></video>
+                            <div class="show_play_icon"><img src="{{ asset('images/play.svg') }}" alt=""></div>
                             <div class="show_title_2">{{ $video->username }}
                             @if ($video->featuring)
                                 Ft {{ $video->featuring }}
@@ -77,7 +77,7 @@
                         <div class="show_tags">
                             <div class="tags">
                                 <ul class="d-flex flex-row align-items-start justify-content-start">
-                                    <li><a href="/video/show/{{ $video->id }}">{{ $video->title }}</a></li>
+                                    <li><a href="/videoshow{{ $video->id }}">{{ $video->title }}</a></li>
                                 </ul>
                             </div>
                         </div>
