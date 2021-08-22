@@ -21,7 +21,7 @@ class CreateVideosTable extends Migration
             $table->string('month')->nullable();
             $table->string('year')->nullable();
             $table->bigInteger('artist_id')->nullable();
-            $table->string('image')->nullable();
+            $table->longText('message')->nullable();
             $table->string('featuring')->nullable();
             $table->string('username')->nullable();
             $table->timestamps();
