@@ -71,7 +71,7 @@ class VideoController extends Controller
         $video->username = $request->username;
         $video->featuring = $request->featuring;
         $video->video = $request->video;
-        $video->image = $request->image;
+        $video->message = $request->message;
         $video->save();
         return redirect()->back();
 
@@ -125,7 +125,7 @@ class VideoController extends Controller
         $video->username = $request->username;
         $video->featuring = $request->featuring;
         $video->video = $request->video;
-        $video->image = $request->image;
+        $video->message = $request->message;
         $video->save();
         return redirect()->back();
     }
