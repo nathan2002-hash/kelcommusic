@@ -40,7 +40,7 @@
 
                 @endif
                 </div>
-                {{ $video->message }}
+                {{ $video->image }}
             </div>
         </div>
         <div class="col text-center">
