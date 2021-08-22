@@ -235,7 +235,7 @@
                             @foreach ($musics as $music)
                             <div class="guest_container">
                                 <div class="guest">
-                                    <div class="guest_image"><img src="{{ Storage::disk('spaces')->url('mphoto/' .$music->image) }}" alt="https://unsplash.com/@stairhopper"></div>
+                                    <div class="guest_image"><img src="{{ Storage::disk('spaces')->url('mphoto/' .$music->image) }}" alt=""></div>
                                     <div class="guest_content text-center">
                                         <div class="guest_name"><a href="/musicdownload{{ $music->id }}">{{ $music->title }}</a></div>
                                         <div class="guest_title">{{ $music->username }}
@@ -322,7 +322,7 @@
                     <div class="gallery d-flex flex-row align-items-start justify-content-start flex-wrap">
                     @foreach ($galleries as $gallery)
                       <div class="gallery_item">
-                        <a class="colorbox" href="{{ Storage::disk('spaces')->url('/' .$gallery->image) }}"><img src="{{ Storage::disk('spaces')->url('/' .$gallery->image) }}" alt=""></a>
+                        <a class="colorbox" href="{{ Storage::disk('spaces')->url('gallery/' .$gallery->image) }}"><img src="{{ Storage::disk('spaces')->url('gallery/' .$gallery->image) }}" alt=""></a>
                       </div>
                     @endforeach
                     </div>
