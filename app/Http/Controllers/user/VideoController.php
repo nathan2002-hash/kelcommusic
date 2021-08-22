@@ -6,6 +6,7 @@ use App\Gallery;
 use App\Http\Controllers\Controller;
 use App\Music;
 use App\Video;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class VideoController extends Controller
