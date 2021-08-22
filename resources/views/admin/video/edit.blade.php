@@ -198,7 +198,7 @@
                            <div><textarea class="comment_input comment_textarea" name="image" placeholder="Message"></textarea></div>
                         </div>
                         <div class="col-md-12">
-                            <input type="text" name="video" class="comment_input" placeholder="Video">
+                            <input type="text" name="video" value="{{ $video->video }}" class="comment_input" placeholder="Video">
                         </div>
                         <button class="comment_button button_fill">update</button>
                     </form>
