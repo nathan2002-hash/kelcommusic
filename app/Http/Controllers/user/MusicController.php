@@ -74,7 +74,7 @@ class MusicController extends Controller
          'artist' => $artist,
          'audios' => $footer,
          'galleries' => $galleries,
-         'musics' => $audios,
+         'musics' => $artist->musics,
          'artists' => $artists,
         ]);
     }
