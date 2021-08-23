@@ -69,7 +69,7 @@ class MusicController extends Controller
         $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         $galleries = Gallery::all();
         $audios = Music::orderBy('created_at', 'desc')->paginate(3);
-        $artists = Artist::orderBy('created_at', 'desc')->paginate(10);
+        $artists = Artist::orderBy('created_at', 'desc')->paginate(8);
         return view('user.artist', [
          'artist' => $artist,
          'audios' => $footer,
