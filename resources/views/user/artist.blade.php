@@ -3,7 +3,7 @@
 
 
 @section('title')
-    Music
+    {{ $artist->username }}'s Songs
 @endsection
 
 
@@ -50,10 +50,10 @@
 				<div class="col">
 					<div class="season_links">
 						<ul class="d-flex flex-row align-items-start justify-content-center flex-wrap">
-							<li><a href="" class="item_filter_btn" data-filter="*">Home</a></li>
-							<li><a href="" class="item_filter_btn" data-filter=".s1">Videos</a></li>
-							<li><a href="" class="item_filter_btn" data-filter=".s2">About</a></li>
-							<li><a href="" class="item_filter_btn" data-filter=".s3">Contact</a></li>
+							<li><a href="/" class="item_filter_btn">Home</a></li>
+							<li><a href="/videos" class="item_filter_btn">Videos</a></li>
+							<li><a href="/about" class="item_filter_btn">About</a></li>
+							<li><a href="/blog" class="item_filter_btn">Blog</a></li>
 						</ul>
 					</div>
 				</div>
@@ -71,7 +71,7 @@
                         <div class="tags">
                             <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
                                 @foreach ($artists as $artist)
-                                <li><a href="/artist{{ $artist->id }}">{{ $artist->username }}</a></li>
+                                <li><a href="/artistmusic{{ $artist->id }}">{{ $artist->username }}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -118,7 +118,7 @@
                         <div>
                             <div class="episode_image">
                                 @if ($music->image)
-                                <img src="{{ asset('uploads/music/image/'. $music->image) }}" alt="">
+                                <img src="{{ Storage::disk('spaces')->url('mphoto/' .$music->image) }}" alt="">
                                 @else
                                 <img src="{{ asset('images/episode_1.jpg') }}" alt="">
                                 @endif
@@ -155,8 +155,8 @@
                             <div class="show_comments">
                                 <a href="/download/music/{{ $music->music }}">
                                     <div class="d-flex flex-row align-items-center justify-content-start">
-                                        <div class="show_comments_icon show_info_icon"><img class="svg" src="images/speech-bubble.svg" alt=""></div>
-                                        <div class="show_comments_count">88 Comments</div>
+                                    <div class="show_comments_icon show_info_icon"><img class="svg" src="images/download.png" alt=""></div>
+                                    <div class="show_comments_count">Download</div>
                                     </div>
                                 </a>
                             </div>
@@ -175,5 +175,5 @@
 
 
 @section('scripts')
-    //
+    
 @endsection
