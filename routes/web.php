@@ -21,7 +21,7 @@ Route::get('/download/music/{id}', 'user\MusicController@download');
 Route::get('/download/video/{id}', 'user\VideoController@download');
 Route::get('/about', 'user\AboutController@index');
 Route::get('/musicdownload{id}', 'user\MusicController@show');
-Route::get('/artist{id}', 'user\MusicController@artist');
+Route::get('/artistmusic{id}', 'user\MusicController@artist');
 Route::post('/music/comment', 'user\CommentController@comment');
 Route::get('/blog', 'user\BlogController@index');
 Route::get('/contact', 'user\ContactController@index');
