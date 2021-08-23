@@ -111,7 +111,7 @@
                                                 return round($diff_timestamp/(86400*365)).' Years ago';
                                             }
                                         }
-                    foreach ($artist->musics as $music){
+                    foreach ($musics as $music){
                         ?>
                         <!-- Episode -->
                     <div class="episode d-flex flex-row align-items-start justify-content-start s1">
