@@ -173,7 +173,7 @@
         <!-- Weekly Image -->
         <div class="col-lg-6">
             <div class="weekly_image">
-                <img src="{{ asset('uploads/advance/' .$advance->image) }}" alt="">
+                <img src="{{ Storage::disk('spaces')->url('advance/' .$advance->image) }}" alt="">
                 <div class="logo">
                     <a href="#" class="d-flex flex-row"><span></span>{{ $advance->artist }}</div></a>
                 </div>
