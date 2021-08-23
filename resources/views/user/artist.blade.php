@@ -122,11 +122,6 @@
                                 @else
                                 <img src="{{ asset('images/episode_1.jpg') }}" alt="">
                                 @endif
-                                <div class="tags">
-                                    <ul class="d-flex flex-row align-items-start justify-content-start">
-                                        <li><a href="/musicdownload{{ $music->id }}">music</a></li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                         <div class="episode_content">
