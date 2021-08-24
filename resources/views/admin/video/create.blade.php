@@ -189,7 +189,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                             <input type="number" name="image" class="comment_input" placeholder="Message">
+                             <input type="text" name="image" class="comment_input" placeholder="Message">
                         </div>
                         <div class="col-md-12">
                             <input type="text" name="video" class="comment_input" placeholder="Video">
