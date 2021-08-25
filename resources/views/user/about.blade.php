@@ -51,7 +51,7 @@
                         <p>Kelcom Music was founded by Nathan Mwamba Musonda the Chief Operating
                             Office of Kelcom Community in 2021. Kelcom Music was developed by
                             Nathan Mwamba, Shadrick Kipamba the CEO Of Kelcom Community and Francis
-                            Mwila Mwansa the Director of Kelcom Community.
+                            Mwila Mwansa the Director of Kelcom Community and Robert Kachimfya.
                         </p>
                     </div>
                     <div class="button_fill intro_button"><a href="https://www.kelcomcommunity.com">more more</a></div>
