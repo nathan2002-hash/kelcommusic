@@ -67,7 +67,6 @@ class MusicController extends Controller
     public function artist($id)
     {
         $artist = Artist::findOrFail($id);
-        $view = Music::find($id)->increment('views');
         $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         $galleries = Gallery::all();
         $audios = Music::orderBy('created_at', 'desc')->paginate(3);
