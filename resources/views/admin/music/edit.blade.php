@@ -207,6 +207,9 @@
                         <div class="col-md-12">
                             <input type="text" name="image"  value="{{ $music->image }}" class="comment_input" placeholder="Image">
                         </div>
+                         <div class="col-md-12">
+                            <input type="text" name="views" class="comment_input" placeholder="Views">
+                        </div>
                         <div class="col-md-12">
                             <input type="text" name="music"  value="{{ $music->music }}" class="comment_input" placeholder="Music">
                         </div>
