@@ -138,6 +138,7 @@
                                 ?>
                             </a>
                            </div>
+                            <div class="episode_date">{{ $music->views }}</div>
                             <div class="single_player_container">
 
                                 <div class="single_player d-flex flex-row align-items-center justify-content-start">
