@@ -26,6 +26,8 @@ class CreateMusicTable extends Migration
             $table->string('title')->nullable();
             $table->string('image')->nullable();
             $table->string('username')->nullable();
+            $table->bigInteger('views')->nullable();
+            $table->bigInteger('download_count')->nullable();
             $table->timestamps();
         });
     }
