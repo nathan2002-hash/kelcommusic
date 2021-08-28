@@ -14,8 +14,8 @@ class AddVotesToMusic extends Migration
     public function up()
     {
         Schema::table('music', function (Blueprint $table) {
-            $table->bigInteger('download_count');
-            $table->bigInteger('views');
+            $table->bigInteger('download_count')->nullable;
+            $table->bigInteger('views')->nullable;
         });
     }
 
@@ -27,8 +27,8 @@ class AddVotesToMusic extends Migration
     public function down()
     {
         Schema::table('music', function (Blueprint $table) {
-            $table->bigInteger('download_count');
-            $table->bigInteger('views');
+            $table->bigInteger('download_count')->nullable;
+            $table->bigInteger('views')->nullable;
         });
     }
 }
