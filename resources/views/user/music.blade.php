@@ -169,6 +169,7 @@
                 }
                 ?>
                 </div>
+                {{ $musics->links() }}
                 <br>
             </div>
         </div>
