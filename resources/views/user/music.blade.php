@@ -169,8 +169,8 @@
                 }
                 ?>
                 </div>
-                {{ $songs->links() }}
                 <br>
+                 {{ $songs->links() }}
             </div>
         </div>
     </div>
