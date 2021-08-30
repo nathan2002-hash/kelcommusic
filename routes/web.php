@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 //user routes
 Route::get('/', 'user\HomeController@index');
 Route::get('/music', 'user\MusicController@index');
+Route::get('/beats', 'user\BeatController@index');
 Route::get('/searchmusic', 'user\MusicController@search');
 Route::get('/download/music/{id}', 'user\MusicController@download');
 Route::get('/download/video/{id}', 'user\VideoController@download');
