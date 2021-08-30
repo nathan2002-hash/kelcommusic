@@ -43,6 +43,7 @@
                             <ul class="d-flex flex-row align-items-start justify-content-start">
                                 <li><a href="/blog">Blogs</a></li>
                                 <li><a href="/music">Music</a></li>
+                                <li><a href="/music">Beats</a></li>
                                 <li><a href="/videos">Videos</a></li>
                             </ul>
                         </div>
