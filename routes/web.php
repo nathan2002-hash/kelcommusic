@@ -41,6 +41,16 @@ Route::post('/adminmusic{id}', 'admin\MusicController@update');
 Route::get('/adminmusicdownload{id}', 'admin\MusicController@download');
 Route::delete('/adminmusicdelete{id}', 'admin\MusicController@destroy');
 Route::post('/admin/search/music', 'admin\MusicController@search')->name('adminmusicsearch');
+//Beats
+Route::get('/adminbeat', 'admin\BeatController@index');
+Route::get('/adminbeatcreate', 'admin\BeatController@create');
+Route::post('/adminbeatstore', 'admin\BeatController@store');
+Route::get('/adminbeatshow{id}', 'admin\BeatController@show');
+Route::get('/adminbeatedit{id}', 'admin\BeatController@edit');
+Route::post('/adminbeat{id}', 'admin\BeatController@update');
+Route::get('/adminbeatdownload{id}', 'admin\BeatController@download');
+Route::delete('/adminbeatdelete{id}', 'admin\BeatController@destroy');
+Route::post('/admin/search/beat', 'admin\BeatController@search')->name('adminbeatsearch');
 //Artist
 Route::get('/adminartist', 'admin\ArtistController@index');
 Route::get('/adminartistcreate', 'admin\ArtistController@create');
