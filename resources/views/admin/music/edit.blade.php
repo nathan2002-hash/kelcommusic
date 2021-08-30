@@ -213,6 +213,9 @@
                         <div class="col-md-12">
                             <input type="text" name="music"  value="{{ $music->music }}" class="comment_input" placeholder="Music">
                         </div>
+                         <div class="col-md-12">
+                            <input type="text" name="views"  value="{{ $music->views }}" class="comment_input" placeholder="{{ $music->views }}">
+                        </div>
                         <button class="comment_button button_fill">Update</button>
                     </form>
                 </div>
