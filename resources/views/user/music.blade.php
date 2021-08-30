@@ -53,7 +53,7 @@
 							<li><a href="/" class="item_filter_btn" data-filter="*">Home</a></li>
 							<li><a href="/videos" class="item_filter_btn" data-filter=".s1">Videos</a></li>
 							<li><a href="/about" class="item_filter_btn" data-filter=".s2">About</a></li>
-							<li><a href="/contact" class="item_filter_btn" data-filter=".s3">Contact</a></li>
+							<li><a href="/music" class="item_filter_btn" data-filter=".s3">Beats</a></li>
 						</ul>
 					</div>
 				</div>
