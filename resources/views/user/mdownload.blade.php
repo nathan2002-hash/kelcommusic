@@ -155,6 +155,7 @@
                                          </audio>
                                     </div>
                                 </div>
+                                <div class="home_subtitle text-center">{{ $music->views }}</div>
 							</div>
 						</div>
 					</div>
