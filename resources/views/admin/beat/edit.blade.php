@@ -161,7 +161,7 @@
                     <div class="section_title">Information</div>
                     <form action="/adminbeat{{ $beat->id }}" method="POST" enctype="multipart/form-data" class="comment_form">
                         @csrf
-                        <div><input type="text" name="username" value="{{ $beat->studio }}" class="comment_input" placeholder="Username"></div>
+                        <div><input type="text" name="studio" value="{{ $beat->studio }}" class="comment_input" placeholder="Studio"></div>
                         <div class="row">
                             <div class="col-md-6">
                                 <input type="text" name="title" value="{{ $beat->title }}" class="comment_input" placeholder="Title" required="required">
