@@ -50,16 +50,16 @@ class BeatController extends Controller
 
     public function show($id)
     {
-        $song = Beat::find($id);
+        $beat = Beat::find($id);
         $view = Beat::find($id)->increment('views');
         $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         $galleries = Gallery::all();
-        $audios = Music::orderBy('created_at', 'desc')->paginate(3);
+        $beats = Beat::orderBy('created_at', 'desc')->paginate(3);
         return view('user.beat', [
-         'music' => $song,
+         'beat' => $beat,
          'audios' => $footer,
          'galleries' => $galleries,
-         'musics' => $audios,
+         'beats' => $beats,
         ]);
     }
 }
