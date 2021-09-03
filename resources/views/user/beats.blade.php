@@ -85,7 +85,7 @@
                     <form action="/searchbeat" method="get" class="form-inline justify-content-center">
                         @csrf
                         <div class="input-group m-2">
-                            <input type="search" name="search" class="form-control" placeholder="Search Music....">
+                            <input type="search" name="search" class="form-control" placeholder="Search Instrumental....">
                         </div>
                         <button type="submit" class="btn musica-btn m-2">Search</button>
                     </form>
