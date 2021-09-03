@@ -3,7 +3,7 @@
 
 
 @section('title')
-    Upload Music
+    Upload Beat
 @endsection
 
 
@@ -12,6 +12,7 @@
     <div class="menu_content d-flex flex-column align-items-end justify-content-start">
         <ul class="menu_nav_list text-right">
             <li><a href="/adminmusiccreate">Music</a></li>
+             <li><a href="/adminbeatcreate">Beat</a></li>
             <li><a href="/adminbiographycreate">Biography</a></li>
             <li><a href="/adminadvancecreate">Advance</a></li>
             <li><a href="/adminvideocreate">Video</a></li>
@@ -30,7 +31,7 @@
             <div class="row">
                 <div class="col">
                     <div class="home_content text-center">
-                        <div class="home_title"><h1>Upload Music Page</h1></div>
+                        <div class="home_title"><h1>Upload Beat Page</h1></div>
                         <div class="home_subtitle text-center">Today</div>
                     </div>
                 </div>
@@ -142,6 +143,7 @@
                         <div class="sidebar_title">Quick Links</div>
                         <ul>
                             <li><a href="/adminmusic">Music</a></li>
+                            <li><a href="/adminbeat">Beat</a></li>
                             <li><a href="/adminartist">Artist</a></li>
                             <li><a href="/adminvideo">Video</a></li>
                             <li><a href="/adminbiography">Biography</a></li>
@@ -181,6 +183,9 @@
                         </div>
                         <div class="col-md-12">
                             <input type="text" name="music" class="comment_input" placeholder="Music">
+                        </div>
+                         <div class="col-md-12">
+                            <input type="text" name="views" class="comment_input" placeholder="Views">
                         </div>
                         <button class="comment_button button_fill">Upload</button>
                     </form>
