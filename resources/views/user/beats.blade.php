@@ -131,7 +131,7 @@
                                 @endif
                                 <div class="tags">
                                     <ul class="d-flex flex-row align-items-start justify-content-start">
-                                        <li><a href="/beatdownload{{ $beat->id }}">music</a></li>
+                                        <li><a href="/beatdownload{{ $beat->id }}">Beat</a></li>
                                     </ul>
                                 </div>
                             </div>
