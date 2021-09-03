@@ -15,13 +15,13 @@ class BeatController extends Controller
     public function index()
     {
         $musics = Music::all();
-        $artists = Artist::orderBy('created_at', 'desc')->paginate(5);
+        $instrumentals = Beat::orderBy('created_at', 'desc')->paginate(8);
         $beats = Beat::orderBy('created_at', 'desc')->paginate(26);
         $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         $galleries = Gallery::all();
         return view('user.beats', [
          'beats' => $beats,
-         'artists' => $artists,
+         'instrumentals' => $instrumentals,
          'musics' => $musics,
          'audios' => $footer,
          'galleries' => $galleries
@@ -35,11 +35,11 @@ class BeatController extends Controller
                        ->orWhere('music', 'ILIKE', '%'. $search . '%')
                        ->orWhere('title', 'ILIKE', '%'. $search . '%')->paginate(20);
         $galleries = Gallery::all();
-        $artists = Artist::orderBy('created_at', 'desc')->paginate(8);
+        $instrumentals = Beat::orderBy('created_at', 'desc')->paginate(8);
         $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         return view('user.beats', [
             'beats' => $beats,
-            'artists' => $artists,
+            'instrumentals' => $instrumentals,
             'audios' => $footer,
             'galleries' => $galleries
         ]);
