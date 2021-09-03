@@ -11,6 +11,7 @@
 <div class="menu">
     <div class="menu_content d-flex flex-column align-items-end justify-content-start">
         <ul class="menu_nav_list text-right">
+            <li><a href="/adminbeatcreate">Beat</a></li>
             <li><a href="/adminmusiccreate">Music</a></li>
             <li><a href="/adminbiographycreate">Biography</a></li>
             <li><a href="/adminadvancecreate">Advance</a></li>
@@ -206,9 +207,6 @@
                         <div><textarea class="comment_input comment_textarea" name="message" placeholder="Message">{{ $music->message }}</textarea></div>
                         <div class="col-md-12">
                             <input type="text" name="image"  value="{{ $music->image }}" class="comment_input" placeholder="Image">
-                        </div>
-                         <div class="col-md-12">
-                            <input type="text" name="views" class="comment_input" placeholder="Views">
                         </div>
                         <div class="col-md-12">
                             <input type="text" name="music"  value="{{ $music->music }}" class="comment_input" placeholder="Music">
