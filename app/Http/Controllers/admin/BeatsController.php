@@ -34,7 +34,7 @@ class BeatsController extends Controller
         $videos = Video::all();
         $galleries = Gallery::all();
         return view('admin.beat.index', [
-            'songs' => $beats,
+            'beats' => $beats,
             'audios' => $audios,
             'videos' => $videos,
             'galleries' => $galleries
@@ -43,16 +43,18 @@ class BeatsController extends Controller
 
     public function search(Request $request)
     {
-        if($request->isMethod('post'))
-        {
-            $name = $request->get('name');
-            $songs = Music::where('title', 'LIKE', '%'. $name . '%')
-                           ->orWhere('featuring', 'LIKE', '%'. $name . '%')
-                           ->orWhere('music', 'LIKE', '%'. $name . '%')
-                           ->orWhere('username', 'LIKE', '%'. $name . '%')->paginate(50);
-        }
+        $search = $request->get('search');
+        $beats = Beat::where('studio', 'ILIKE', '%'. $search .'%')
+                       ->orWhere('music', 'ILIKE', '%'. $search . '%')
+                       ->orWhere('title', 'ILIKE', '%'. $search . '%')->paginate(20);
+        $galleries = Gallery::all();
+        $artists = Artist::orderBy('created_at', 'desc')->paginate(8);
+        $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         return view('admin.beat.index', [
-            'songs' => $songs,
+            'beats' => $beats,
+            'artists' => $artists,
+            'audios' => $footer,
+            'galleries' => $galleries
         ]);
     }
 
@@ -153,7 +155,7 @@ class BeatsController extends Controller
 
     public function download($id)
     {
-        return response()->download('uploads/music/mp3/' . $id);
+       return Storage::disk('spaces')->download('/beats/' . $id);
     }
 
     /**
