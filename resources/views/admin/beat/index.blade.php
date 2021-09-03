@@ -61,8 +61,8 @@
             <!-- Episodes -->
             <div class="col-lg-9 episodes_col">
                 <div class="container-fluid">
-                    <form action="{{ route('adminmusicsearch') }}" method="POST" class="form-inline justify-content-center">
-                        {{ csrf_field() }}
+                     <form action="/adminbeatsearch" method="get" class="form-inline justify-content-center">
+                        @csrf
                         <div class="input-group m-2">
                             <input type="search" class="form-control" name="name" placeholder="Search Music....">
                         </div>
