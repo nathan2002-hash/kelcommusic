@@ -116,7 +116,7 @@
                             </div>
                         </div>
                         <div class="episode_content">
-                            <div class="episode_name"><a href="/adminmusicshow{{ $beat->id }}">{{ $beat->title }} - {{ $beat->Studio }}
+                            <div class="episode_name"><a href="/adminmusicshow{{ $beat->id }}">{{ $beat->title }} - {{ $beat->studio }}
                             </a></div>
                             <div class="episode_date"><a href="/adminmusicshow{{ $beat->id }}">{{ $beat->day }} {{ $beat->month }}, {{ $beat->year }}
                                 <?php
