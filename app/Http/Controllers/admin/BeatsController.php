@@ -87,6 +87,7 @@ class BeatsController extends Controller
         $beat->month = $request->month;
         $beat->year = $request->year;
         $beat->music = $request->music;
+        $beat->video = $request->video;
         $beat->image = $request->image;
         $beat->save();
         return redirect()->back();
@@ -100,7 +101,7 @@ class BeatsController extends Controller
      */
     public function show($id)
     {
-        $beat = Music::findOrFail($id);
+        $beat = Beat::findOrFail($id);
         $audios = Music::orderBy('created_at', 'desc')->paginate(3);
         $galleries = Gallery::all();
         return view('admin.beat.show', [
@@ -144,6 +145,7 @@ class BeatsController extends Controller
         $beat->month = $request->month;
         $beat->year = $request->year;
         $beat->music = $request->music;
+        $beat->video = $request->video;
         $beat->image = $request->image;
         $beat->save();
         return redirect()->back();
