@@ -159,7 +159,7 @@
                                 <a href="/download/beat/{{ $beat->music }}">
                                     <div class="d-flex flex-row align-items-center justify-content-start">
                                         {{-- <div class="show_comments_icon show_info_icon"><img class="svg" src="images/speech-bubble.svg" alt=""></div> --}}
-                                        <button type="button" class="download" data-id="{{ $music->id}}">Download</button>
+                                        <button type="button" class="download" data-id="{{ $beat->id}}">Download</button>
                                     </div>
                                 </a>
                             </div>
