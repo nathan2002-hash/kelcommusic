@@ -15,11 +15,11 @@ class BeatController extends Controller
     {
         $musics = Music::all();
         $artists = Artist::orderBy('created_at', 'desc')->paginate(5);
-        $songs = Beat::orderBy('created_at', 'desc')->paginate(26);
+        $beats = Beat::orderBy('created_at', 'desc')->paginate(26);
         $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         $galleries = Gallery::all();
         return view('user.beats', [
-         'songs' => $songs,
+         'beats' => $beats,
          'artists' => $artists,
          'musics' => $musics,
          'audios' => $footer,
