@@ -30,14 +30,9 @@
             <div class="row">
                 <div class="col">
                     <div class="home_content text-center">
-                        <div class="home_title"><h1>{{ $music->title }} - {{ $music->username }}
-                        @if ($music->featuring)
-                            Ft {{ $music->featuring }}
-                        @else
-
-                        @endif
+                        <div class="home_title"><h1>{{ $beat->title }} - {{ $beat->studio }}
                         </h1></div>
-                        <div class="home_subtitle text-center">{{ $music->day }} {{ $music->month }}, {{ $music->year }}</div>
+                        <div class="home_subtitle text-center">{{ $beat->day }} {{ $beat->month }}, {{ $beat->year }}</div>
                     </div>
                 </div>
             </div>
@@ -130,7 +125,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <!-- Episode Image -->
-                    <div class="episode_image"><img src="images/episode_2.jpg" alt=""></div>
+                   <div class="episode_image"><img src="{{ Storage::disk('spaces')->url('bphoto/' .$beat->image) }}" alt=""></div>
                 </div>
             </div>
         </div>
@@ -148,6 +143,7 @@
                         <div class="sidebar_title">Quick Links</div>
                         <ul>
                             <li><a href="/adminmusic">Music</a></li>
+                            <li><a href="/adminbeat">Beat</a></li>
                             <li><a href="/adminartist">Artist</a></li>
                             <li><a href="/adminvideo">Video</a></li>
                             <li><a href="/adminbiography">Biography</a></li>
@@ -187,6 +183,9 @@
                         </div>
                         <div class="col-md-12">
                             <input type="text" name="music" value="{{ $beat->music }}" class="comment_input" placeholder="Music">
+                        </div>
+                         <div class="col-md-12">
+                            <input type="text" name="views" value="{{ $beat->views }}" class="comment_input" placeholder="Views">
                         </div>
                         <button class="comment_button button_fill">Update</button>
                     </form>
