@@ -30,18 +30,15 @@ class BeatController extends Controller
 
     public function search(Request $request)
     {
-        if($request->isMethod('post'))
-        {
-            $name = $request->get('name');
-            $galleries = Gallery::all();
-            $artists = Artist::orderBy('created_at', 'desc')->paginate(5);
-            $footer = Music::orderBy('created_at', 'desc')->paginate(3);
-            $songs = Beat::where('title', 'LIKE', '%'. $name . '%')
-                           ->orWhere('studio', 'LIKE', '%'. $name . '%')
-                           ->orWhere('music', 'LIKE', '%'. $name . '%')->paginate(20);
-        }
+       $search = $request->get('search');
+        $beats = Beat::where('studio', 'ILIKE', '%'. $search .'%')
+                       ->orWhere('music', 'ILIKE', '%'. $search . '%')
+                       ->orWhere('title', 'ILIKE', '%'. $search . '%')->paginate(20);
+        $galleries = Gallery::all();
+        $artists = Artist::orderBy('created_at', 'desc')->paginate(8);
+        $footer = Music::orderBy('created_at', 'desc')->paginate(3);
         return view('user.beats', [
-            'songs' => $songs,
+            'beats' => $beats,
             'artists' => $artists,
             'audios' => $footer,
             'galleries' => $galleries
