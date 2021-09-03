@@ -12,6 +12,7 @@
     <div class="menu_content d-flex flex-column align-items-end justify-content-start">
         <ul class="menu_nav_list text-right">
             <li><a href="/adminmusiccreate">Music</a></li>
+            <li><a href="/adminbeatcreate">Beat</a></li>
             <li><a href="/adminbiographycreate">Biography</a></li>
             <li><a href="/adminadvancecreate">Advance</a></li>
             <li><a href="/adminvideocreate">Video</a></li>
