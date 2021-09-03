@@ -104,7 +104,7 @@
                         <div>
                             <div class="episode_image">
                                 @if ($beat->image)
-                                <img src="{{ Storage::disk('spaces')->url('beats/' .$beat->image) }}">
+                                <img src="{{ Storage::disk('spaces')->url('bphoto/' .$beat->image) }}">
                                 @else
                                 <img src="{{ asset('images/episode_1.jpg') }}" alt="">
                                 @endif
@@ -116,9 +116,9 @@
                             </div>
                         </div>
                         <div class="episode_content">
-                            <div class="episode_name"><a href="/adminmusicshow{{ $beat->id }}">{{ $beat->title }} - {{ $beat->studio }}
+                            <div class="episode_name"><a href="/adminbeatshow{{ $beat->id }}">{{ $beat->title }} - {{ $beat->studio }}
                             </a></div>
-                            <div class="episode_date"><a href="/adminmusicshow{{ $beat->id }}">{{ $beat->day }} {{ $beat->month }}, {{ $beat->year }}
+                            <div class="episode_date"><a href="/adminbeatshow{{ $beat->id }}">{{ $beat->day }} {{ $beat->month }}, {{ $beat->year }}
                                 <?php
                                  echo getDateTimeDiff($beat->created_at);
                                 ?>
