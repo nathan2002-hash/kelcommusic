@@ -14,6 +14,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/music">Music</a></li>
+            <li><a href="/beats">Beat</a></li>
             <li><a href="/videos">Videos</a></li>
             <li><a href="/blog">Blog</a></li>
             <li><a href="/contact">Contact</a></li>
@@ -43,7 +44,7 @@
                             <ul class="d-flex flex-row align-items-start justify-content-start">
                                 <li><a href="/blog">Blogs</a></li>
                                 <li><a href="/music">Music</a></li>
-                                <li><a href="/music">Beats</a></li>
+                                <li><a href="/beats">Beats</a></li>
                                 <li><a href="/videos">Videos</a></li>
                             </ul>
                         </div>
