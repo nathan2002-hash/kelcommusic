@@ -15,6 +15,6 @@ class Beat extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'studio', 'music', 'image', 'day', 'month', 'year', 'download_count', 'views',
+        'title', 'studio', 'music', 'image', 'day', 'month', 'year', 'download_count', 'views', 'video',
     ];
 }
