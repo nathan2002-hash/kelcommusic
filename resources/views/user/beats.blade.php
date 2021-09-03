@@ -67,11 +67,11 @@
 
                     <!-- Categories -->
                     <div class="sidebar_tags">
-                        <div class="sidebar_title">Artists</div>
+                        <div class="sidebar_title">Instrumentals</div>
                         <div class="tags">
                             <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                @foreach ($artists as $artist)
-                                <li><a href="/artist{{ $artist->id }}">{{ $artist->username }}</a></li>
+                                @foreach ($instrumentals as $beat)
+                                <li><a href="/beatdownload{{ $beat->id }}">{{ $beat->title }}</a></li>
                                 @endforeach
                             </ul>
                         </div>
