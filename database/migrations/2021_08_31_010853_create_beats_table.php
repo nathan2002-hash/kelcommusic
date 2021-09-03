@@ -17,6 +17,7 @@ class CreateBeatsTable extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('studio')->nullable();
+            $table->string('video')->nullable();
             $table->string('music')->nullable();
             $table->string('image')->nullable();
             $table->string('day')->nullable();
