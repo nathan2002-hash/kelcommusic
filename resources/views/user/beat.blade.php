@@ -221,7 +221,7 @@
                         @endif
                      </div>
                      <div class="guests">
-                        <div class="section_title">Other songs</div>
+                        <div class="section_title">Other Instrumentals</div>
                         <div class="guests_container d-flex flex-md-row flex-column align-items-md-start align-items-center">
 
                             <!-- Guest -->
