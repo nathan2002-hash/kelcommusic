@@ -205,12 +205,12 @@
 				<!-- Episode -->
 				<div class="col-lg-9 episode_col order-lg-2 order-1">
 					<div class="intro">
-                        @if ($music->message)
+                        @if ($beat->message)
                         <div class="section_title">Message</div>
                         <div class="intro_text">
                             <p>
-                                @if ($music->message)
-                                    {{ $music->message }}
+                                @if ($beat->message)
+                                    {{ $beat->message }}
                                 @else
 
                                 @endif
