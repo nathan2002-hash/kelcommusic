@@ -7,6 +7,7 @@ use App\Beat;
 use App\Gallery;
 use App\Http\Controllers\Controller;
 use App\Music;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class BeatController extends Controller
@@ -61,5 +62,10 @@ class BeatController extends Controller
          'galleries' => $galleries,
          'beats' => $beats,
         ]);
+    }
+    
+    public function download($id)
+    {
+        return Storage::disk('spaces')->download('/beats/' . $id);
     }
 }
