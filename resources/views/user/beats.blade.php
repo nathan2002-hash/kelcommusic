@@ -87,7 +87,7 @@
                         <div class="input-group m-2">
                             <input type="search" name="search" class="form-control" placeholder="Search Music....">
                         </div>
-                        <button type="submit" class="btn musica-btn m-2">wowo</button>
+                        <button type="submit" class="btn musica-btn m-2">Search</button>
                     </form>
                 <br>
                 <div class="episodes_container">
@@ -118,40 +118,34 @@
                                                 return round($diff_timestamp/(86400*365)).' Years ago';
                                             }
                                         }
-                    foreach ($songs as $music){
+                    foreach ($beats as $beat){
                         ?>
                         <!-- Episode -->
                     <div class="episode d-flex flex-row align-items-start justify-content-start s1">
                         <div>
                             <div class="episode_image">
-                                @if ($music->image)
-                                <img src="{{ asset('uploads/music/image/'. $music->image) }}" alt="">
+                                @if ($beat->image)
+                                 <img src="{{ Storage::disk('spaces')->url('bphoto/' .$beat->image) }}" alt="">
                                 @else
                                 <img src="{{ asset('images/episode_1.jpg') }}" alt="">
                                 @endif
                                 <div class="tags">
                                     <ul class="d-flex flex-row align-items-start justify-content-start">
-                                        <li><a href="/musicdownload{{ $music->id }}">music</a></li>
+                                        <li><a href="/beatdownload{{ $beat->id }}">music</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="episode_content">
-                            <div class="episode_name"><a href="/musicdownload{{ $music->id }}">{{ $music->title }} - {{ $music->username }}
-                            @if ($music->featuring)
-                                ft {{ $music->featuring }}
-                            @else
-
-                            @endif
+                            <div class="episode_name"><a href="/beatdownload{{ $beat->id }}">{{ $beat->title }} - {{ $beat->studio }}
                             </a></div>
-                            <div class="episode_date"><a href="/musicdownload{{ $music->id }}">{{ $music->day }} {{ $music->month }}, {{ $music->year }}
+                            <div class="episode_date"><a href="/beatdownload{{ $beat->id }}">{{ $beat->day }} {{ $beat->month }}, {{ $beat->year }}
                                 <?php
                                  echo getDateTimeDiff($music->created_at);
                                 ?>
                             </a>
                            </div>
-                           <div class="episode_date">{{ $music->views }} Views</div>
-                           <div class="episode_date">{{ $music->download_count }} Views</div>
+                           <div class="episode_date">{{ $beat->views }} Views</div>
                             <div class="single_player_container">
 
                                 <div class="single_player d-flex flex-row align-items-center justify-content-start">
@@ -162,7 +156,7 @@
 
                             </div>
                             <div class="show_comments">
-                                <a href="/download/music/{{ $music->music }}">
+                                <a href="/download/beat/{{ $beat->music }}">
                                     <div class="d-flex flex-row align-items-center justify-content-start">
                                         {{-- <div class="show_comments_icon show_info_icon"><img class="svg" src="images/speech-bubble.svg" alt=""></div> --}}
                                         <button type="button" class="download" data-id="{{ $music->id}}">Download</button>
