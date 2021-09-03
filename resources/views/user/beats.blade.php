@@ -3,7 +3,7 @@
 
 
 @section('title')
-    Music
+    Instrumentals
 @endsection
 
 
@@ -82,7 +82,7 @@
             <!-- Episodes -->
             <div class="col-lg-9 episodes_col">
                 <div class="container-fluid">
-                    <form action="/search" method="get" class="form-inline justify-content-center">
+                    <form action="/searchbeat" method="get" class="form-inline justify-content-center">
                         @csrf
                         <div class="input-group m-2">
                             <input type="search" name="search" class="form-control" placeholder="Search Music....">
@@ -141,7 +141,7 @@
                             </a></div>
                             <div class="episode_date"><a href="/beatdownload{{ $beat->id }}">{{ $beat->day }} {{ $beat->month }}, {{ $beat->year }}
                                 <?php
-                                 echo getDateTimeDiff($music->created_at);
+                                 echo getDateTimeDiff($beat->created_at);
                                 ?>
                             </a>
                            </div>
