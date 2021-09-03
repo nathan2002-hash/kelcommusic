@@ -89,7 +89,6 @@ class BeatsController extends Controller
         $beat->month = $request->month;
         $beat->year = $request->year;
         $beat->music = $request->music;
-        $beat->video = $request->video;
         $beat->image = $request->image;
         $beat->save();
         return redirect()->back();
@@ -147,7 +146,6 @@ class BeatsController extends Controller
         $beat->month = $request->month;
         $beat->year = $request->year;
         $beat->music = $request->music;
-        $beat->video = $request->video;
         $beat->image = $request->image;
         $beat->save();
         return redirect()->back();
