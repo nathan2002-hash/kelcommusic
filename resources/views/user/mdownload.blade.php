@@ -121,14 +121,6 @@
 							<div class="player_content">
 
 								<div class="show_info d-flex flex-row align-items-start justify-content-start">
-                                    <div class="show_comments">
-                                        <a href="/download/music/{{ $music->music }}">
-                                            <div class="d-flex flex-row align-items-center justify-content-start">
-                                                <div class="show_comments_icon show_info_icon"><img class="svg" src="{{ asset('images/download.png') }}" alt=""></div>
-                                                <div class="show_comments_count">Download Track</div>
-                                            </div>
-                                        </a>
-                                    </div>
                                    @if ($music->video_id)
                                    <div class="show_comments">
                                     <a href="/videoshow{{ $music->video_id }}">
@@ -157,6 +149,9 @@
                                 </div>
                                 <div class="home_subtitle text-center">{{ $music->views }} Views</div>
 							</div>
+                             <div class="col text-center">
+                            <div class="button_fill shows_2_button"><a href="/download/music/{{ $music->music }}">Download Audio</a></div>
+                        </div>
 						</div>
 					</div>
 				</div>
