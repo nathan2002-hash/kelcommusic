@@ -149,10 +149,10 @@
                                 </div>
                                 <div class="home_subtitle text-center">{{ $music->views }} Views</div>
 							</div>
-                             <div class="col text-center">
+						</div>
+                        <div class="col text-center">
                             <div class="button_fill shows_2_button"><a href="/download/music/{{ $music->music }}">Download Audio</a></div>
                         </div>
-						</div>
 					</div>
 				</div>
 			</div>
