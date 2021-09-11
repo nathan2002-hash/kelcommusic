@@ -28,6 +28,7 @@ class VideoController extends Controller
         $search = $request->get('search');
         $songs = Music::where('username', 'ILIKE', '%'. $search .'%')
                        ->orWhere('featuring', 'ILIKE', '%'. $search . '%')
+                       ->orWhere('videos', 'ILIKE', '%'. $search . '%')
                        ->orWhere('title', 'ILIKE', '%'. $search . '%')->paginate(20);
         $galleries = Gallery::all();
         $footer = Music::orderBy('created_at', 'desc')->paginate(3);
