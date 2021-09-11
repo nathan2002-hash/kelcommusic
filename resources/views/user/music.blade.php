@@ -82,7 +82,7 @@
             <!-- Episodes -->
             <div class="col-lg-9 episodes_col">
                 <div class="container-fluid">
-                    <form action="/searchmusic" method="get" class="form-inline justify-content-center">
+                    <form action="/searchvideo" method="get" class="form-inline justify-content-center">
                         @csrf
                         <div class="input-group m-2">
                             <input type="search" name="search" class="form-control" placeholder="Search Music....">
