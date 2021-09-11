@@ -50,7 +50,7 @@
         <form action="/searchvideo" method="get" class="form-inline justify-content-center">
              @csrf
             <div class="input-group m-2">
-                <input type="search" class="form-control" name="name" placeholder="Search Video....">
+                <input type="search" class="form-control" name="search" placeholder="Search Video....">
             </div>
             <button type="submit" class="btn musica-btn m-2">Search</button>
         </form>
