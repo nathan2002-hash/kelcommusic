@@ -26,6 +26,22 @@ class VoteController extends Controller
          'galleries' => $galleries
         ]);
     }
+    
+    public function dkp()
+    {
+
+        $candidates = Cvote::all();
+        $artists = Artist::orderBy('created_at', 'desc')->paginate(5);
+        $footer = Music::orderBy('created_at', 'desc')->paginate(3);
+        $galleries = Gallery::all();
+        return view('user.dkp', [
+         'candidates' => $candidates,
+         'artists' => $artists,
+         'songs' => $footer,
+         'audios' => $footer,
+         'galleries' => $galleries
+        ]);
+    }
 
     public function show($id)
     {
