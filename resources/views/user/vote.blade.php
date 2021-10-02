@@ -75,11 +75,11 @@
             </div>
 
             <!-- Episodes -->
-				@foreach ($candidates as $candidate)
                 <div class="col-lg-9 episodes_col">
 					<div class="episodes_container">
 
 						<!-- Episode -->
+                        @foreach ($candidates as $candidate)
 						<div class="episode d-flex flex-row align-items-start justify-content-start s1">
 							<div>
 								<div class="episode_image">
