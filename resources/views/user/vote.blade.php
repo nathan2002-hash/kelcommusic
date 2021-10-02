@@ -83,7 +83,7 @@
 						<div class="episode d-flex flex-row align-items-start justify-content-start s1">
 							<div>
 								<div class="episode_image">
-									<img src="{{ asset('/uploads/vote/' .$candidate->image) }}" alt="">
+									<img src="{{ Storage::disk('spaces')->url('vote/' .$candidate->image) }}" alt="">
 								</div>
 							</div>
 							<div class="episode_content">
