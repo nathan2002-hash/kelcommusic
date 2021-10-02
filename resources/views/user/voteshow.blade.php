@@ -125,7 +125,7 @@
 				<div class="row">
 					<div class="col-lg-3">
 						<!-- Episode Image -->
-						<div class="episode_image"><img src="{{ asset('uploads/vote/' .$candidate->image) }}" alt=""></div>
+						<div class="episode_image"><img src="{{ Storage::disk('spaces')->url('vote/' .$candidate->image) }}" alt=""></div>
 					</div>
 				</div>
 			</div>
