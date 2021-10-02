@@ -35,7 +35,7 @@ Route::get('/videoshow{id}', 'user\VideoController@show');
 
 Route::get('/vote', 'user\VoteController@vote');
 Route::get('/clickvote{id}', 'user\VoteController@show');
-Route::get('/dkpstudiomembersonly', 'user\VoteController@vote');
+Route::get('/dkpstudiomembersonly', 'user\VoteController@dkp');
 
 //admin routes
 Route::get('/adminpanel', 'admin\HomeController@index');
