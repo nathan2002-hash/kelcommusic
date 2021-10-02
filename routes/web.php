@@ -33,8 +33,22 @@ Route::get('/videos', 'user\VideoController@index');
 Route::get('/searchvideo', 'user\VideoController@search');
 Route::get('/videoshow{id}', 'user\VideoController@show');
 
+Route::get('/vote', 'user\VoteController@vote');
+Route::get('/clickvote{id}', 'user\VoteController@show');
+Route::get('/dkpstudiomembersonly', 'user\VoteController@vote');
+
 //admin routes
 Route::get('/adminpanel', 'admin\HomeController@index');
+//votes
+Route::get('/adminvote', 'admin\VoteController@index');
+Route::get('/adminvotecreate', 'admin\VoteController@create');
+Route::post('/adminvotestore', 'admin\VoteController@store');
+Route::get('/adminmusicshow{id}', 'admin\MusicController@show');
+Route::get('/adminmusicedit{id}', 'admin\MusicController@edit');
+Route::post('/adminmusic{id}', 'admin\MusicController@update');
+Route::get('/adminmusicdownload{id}', 'admin\MusicController@download');
+Route::delete('/adminmusicdelete{id}', 'admin\MusicController@destroy');
+
 //Music
 Route::get('/adminmusic', 'admin\MusicController@index');
 Route::get('/adminmusiccreate', 'admin\MusicController@create');
