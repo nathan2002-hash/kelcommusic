@@ -37,6 +37,7 @@ class MusicController extends Controller
                        ->orWhere('featuring', 'ILIKE', '%'. $search . '%')
                        ->orWhere('music', 'ILIKE', '%'. $search . '%')
                        ->orWhere('message', 'ILIKE', '%'. $search . '%')
+                       ->orWhere('producer', 'ILIKE', '%'. $search . '%')
                        ->orWhere('title', 'ILIKE', '%'. $search . '%')->paginate(20);
         $galleries = Gallery::all();
         $artists = Artist::orderBy('created_at', 'desc')->paginate(8);
