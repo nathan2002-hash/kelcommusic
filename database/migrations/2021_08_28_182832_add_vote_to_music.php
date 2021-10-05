@@ -14,8 +14,8 @@ class AddVoteToMusic extends Migration
     public function up()
     {
         Schema::table('music', function (Blueprint $table) {
-            $table->string('producer')->nullable;
-            $table->string('producer_link')->nullable;
+            $table->string('producer')->nullable();
+            $table->string('producer_link')->nullable();
         });
     }
 
@@ -27,8 +27,8 @@ class AddVoteToMusic extends Migration
     public function down()
     {
         Schema::table('music', function (Blueprint $table) {
-            $table->string('producer')->nullable;
-            $table->string('producer_link')->nullable;
+            $table->string('producer')->nullable();
+            $table->string('producer_link')->nullable();
         });
     }
 }
