@@ -100,22 +100,22 @@
                                                 return 'few seconds ago';
                                             }
                                             else if ($diff_timestamp>=60 && $diff_timestamp<3600){
-                                                return round($diff_timestamp/60).' Min(s) ago';
+                                                return round($diff_timestamp/60).' m ago';
                                             }
                                             else if ($diff_timestamp>=3600 && $diff_timestamp<86400){
-                                                return round($diff_timestamp/3600).' Hour(s) ago';
+                                                return round($diff_timestamp/3600).' hr(s) ago';
                                             }
                                             else if ($diff_timestamp>=86400 && $diff_timestamp<(86400*7)){
-                                                return round($diff_timestamp/(86400)).' Day(s) ago';
+                                                return round($diff_timestamp/(86400)).' d ago';
                                             }
                                             else if ($diff_timestamp>=86400*7 && $diff_timestamp<(86400*30)){
-                                                return round($diff_timestamp/(86400*7)).' Week(s) ago';
+                                                return round($diff_timestamp/(86400*7)).' wk(s) ago';
                                             }
                                             else if ($diff_timestamp>=(86400*30) && $diff_timestamp<(86400*365)){
-                                                return round($diff_timestamp/(86400*30)).' Month(s) ago';
+                                                return round($diff_timestamp/(86400*30)).' Month ago';
                                             }
                                             else{
-                                                return round($diff_timestamp/(86400*365)).' Years ago';
+                                                return round($diff_timestamp/(86400*365)).' Year ago';
                                             }
                                         }
                     foreach ($songs as $music){
@@ -137,7 +137,7 @@
                                 ft {{ $music->featuring }}
                             @else
 
-                            @endif
+                            @endif ({{ music->producer }})
                             </a></div>
                             <div class="episode_date"><a href="/musicdownload{{ $music->id }}">{{ $music->day }} {{ $music->month }}, {{ $music->year }}
                                 <?php
