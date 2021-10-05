@@ -88,6 +88,8 @@ class MusicController extends Controller
         $music->year = $request->year;
         $music->music = $request->music;
         $music->image = $request->image;
+         $music->producer = $request->producer;
+         $music->producer_link = $request->producer_link;
          $music->views = $request->views;
         $music->save();
         return redirect()->back();
@@ -159,6 +161,8 @@ class MusicController extends Controller
         $music->music = $request->music;
         $music->image = $request->image;
          $music->views = $request->views;
+        $music->producer = $request->producer;
+         $music->producer_link = $request->producer_link;
         $music->save();
         return redirect()->back();
     }
