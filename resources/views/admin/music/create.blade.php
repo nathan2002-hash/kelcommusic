@@ -207,6 +207,12 @@
                         <div class="col-md-12">
                             <input type="text" name="music" class="comment_input" placeholder="Music">
                         </div>
+                         <div class="col-md-12">
+                            <input type="text" name="producer" class="comment_input" placeholder="Producer">
+                        </div>
+                         <div class="col-md-12">
+                            <input type="text" name="producer_link" class="comment_input" placeholder="Producer_link">
+                        </div>
                         <button class="comment_button button_fill">Upload</button>
                     </form>
                 </div>
