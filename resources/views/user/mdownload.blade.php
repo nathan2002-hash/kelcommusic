@@ -106,6 +106,7 @@
                             @endif
                             </h1></div>
                             <div class="home_subtitle text-center">{{ $music->day }} {{ $music->month }}, {{ $music->year }}</div>
+                             <div class="home_subtitle text-center">Produced By: {{ $music->producer }}</div>
                         </div>
 					</div>
 				</div>
