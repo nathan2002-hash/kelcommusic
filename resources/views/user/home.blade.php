@@ -124,6 +124,8 @@
 
                         @endif
                         </a></div>
+                         <div class="show_date"><a href="/musicdownload{{ $music->id }}">Produced By: {{ $music->producer }}
+                        </a></div>
                         <div class="show_info d-flex flex-row align-items-start justify-content-start">
                         </div>
                     </div>
