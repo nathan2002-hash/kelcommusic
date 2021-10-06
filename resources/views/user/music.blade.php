@@ -103,13 +103,13 @@
                                                 return round($diff_timestamp/60).' m ago';
                                             }
                                             else if ($diff_timestamp>=3600 && $diff_timestamp<86400){
-                                                return round($diff_timestamp/3600).' hr(s) ago';
+                                                return round($diff_timestamp/3600).' hr ago';
                                             }
                                             else if ($diff_timestamp>=86400 && $diff_timestamp<(86400*7)){
                                                 return round($diff_timestamp/(86400)).' d ago';
                                             }
                                             else if ($diff_timestamp>=86400*7 && $diff_timestamp<(86400*30)){
-                                                return round($diff_timestamp/(86400*7)).' wk(s) ago';
+                                                return round($diff_timestamp/(86400*7)).' wk ago';
                                             }
                                             else if ($diff_timestamp>=(86400*30) && $diff_timestamp<(86400*365)){
                                                 return round($diff_timestamp/(86400*30)).' Month ago';
