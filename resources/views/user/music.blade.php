@@ -137,8 +137,8 @@
                                 ft {{ $music->featuring }}
                             @else
 
-                            @endif ({{ music->producer }})
-                            </a></div>
+                            @endif
+                            </a></div>({{ music->producer }})
                             <div class="episode_date"><a href="/musicdownload{{ $music->id }}">{{ $music->day }} {{ $music->month }}, {{ $music->year }}
                                 <?php
                                  echo getDateTimeDiff($music->created_at);
