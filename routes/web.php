@@ -33,7 +33,7 @@ Route::get('/videos', 'user\VideoController@index');
 Route::get('/searchvideo', 'user\VideoController@search');
 Route::get('/videoshow{id}', 'user\VideoController@show');
 
-Route::get('/vote', 'user\VoteController@vote');
+Route::get('/vote/hello', 'user\VoteController@vote');
 Route::get('/clickvote{id}', 'user\VoteController@show');
 Route::get('/dkpstudiomembersonly', 'user\VoteController@dkp');
 
