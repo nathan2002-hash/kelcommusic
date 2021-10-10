@@ -88,8 +88,6 @@ class MusicController extends Controller
         $music->year = $request->year;
         $music->music = $request->music;
         $music->image = $request->image;
-         $music->producer = $request->producer;
-         $music->producer_link = $request->producer_link;
          $music->views = $request->views;
         $music->save();
         return redirect()->back();
