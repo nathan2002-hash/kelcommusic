@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Artist;
+use App\Song;
 use App\Comment;
 use App\Gallery;
 use App\Http\Controllers\Controller;
@@ -25,8 +26,8 @@ class MusicController extends Controller
      */
     public function index()
     {
-        $songs = Music::orderBy('created_at', 'desc')->paginate(50);
-        $audios = Music::orderBy('created_at', 'desc')->paginate(3);
+        $songs = Song::orderBy('created_at', 'desc')->paginate(50);
+        $audios = Song::orderBy('created_at', 'desc')->paginate(3);
         $videos = Video::all();
         $galleries = Gallery::all();
         return view('admin.music.index', [
@@ -42,7 +43,7 @@ class MusicController extends Controller
         if($request->isMethod('post'))
         {
             $name = $request->get('name');
-            $songs = Music::where('title', 'LIKE', '%'. $name . '%')
+            $songs = Song::where('title', 'LIKE', '%'. $name . '%')
                            ->orWhere('featuring', 'LIKE', '%'. $name . '%')
                            ->orWhere('music', 'LIKE', '%'. $name . '%')
                            ->orWhere('username', 'LIKE', '%'. $name . '%')->paginate(50);
@@ -76,7 +77,7 @@ class MusicController extends Controller
 
     public function store(Request $request)
     {
-        $music = new Music();
+        $music = new Song();
         $music->username = $request->username;
         $music->video_id = $request->video_id;
         $music->title = $request->title;
@@ -101,7 +102,7 @@ class MusicController extends Controller
      */
     public function show($id)
     {
-        $song = Music::findOrFail($id);
+        $song = Song::findOrFail($id);
         $audios = Music::orderBy('created_at', 'desc')->paginate(3);
         $comments = Comment::orderBy('created_at', 'desc')->paginate(3);
         $videos = Video::all();
@@ -123,8 +124,8 @@ class MusicController extends Controller
      */
     public function edit($id)
     {
-        $song = Music::findOrFail($id);
-        $audios = Music::orderBy('created_at', 'desc')->paginate(3);
+        $song = Song::findOrFail($id);
+        $audios = Song::orderBy('created_at', 'desc')->paginate(3);
         $videos = Video::all();
         $galleries = Gallery::all();
         $artists = Artist::all();
@@ -146,7 +147,7 @@ class MusicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $music = Music::find($id);
+        $music = Song::find($id);
         $music->username = $request->username;
         $music->video_id = $request->video_id;
         $music->title = $request->title;
@@ -176,7 +177,7 @@ class MusicController extends Controller
      */
     public function destroy($id)
     {
-        Music::find($id)->delete();
+        Song::find($id)->delete();
         return redirect()->back();
     }
 }
