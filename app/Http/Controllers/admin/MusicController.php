@@ -160,6 +160,7 @@ class MusicController extends Controller
        $music->music = $request->music;
        $music->image = $request->image;
        $music->views = $request->views;
+       $music->producer = $request->producer;
        $music->save();
        return redirect()->back();
     }
