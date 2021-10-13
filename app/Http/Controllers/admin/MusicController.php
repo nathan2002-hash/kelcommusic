@@ -102,7 +102,7 @@ class MusicController extends Controller
      */
     public function show($id)
     {
-        $song = Song::findOrFail($id);
+        $song = Music::findOrFail($id);
         $audios = Music::orderBy('created_at', 'desc')->paginate(3);
         $comments = Comment::orderBy('created_at', 'desc')->paginate(3);
         $videos = Video::all();
@@ -124,8 +124,8 @@ class MusicController extends Controller
      */
     public function edit($id)
     {
-        $song = Song::findOrFail($id);
-        $audios = Song::orderBy('created_at', 'desc')->paginate(3);
+        $song = Music::findOrFail($id);
+        $audios = Music::orderBy('created_at', 'desc')->paginate(3);
         $videos = Video::all();
         $galleries = Gallery::all();
         $artists = Artist::all();
@@ -147,7 +147,7 @@ class MusicController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $music = new Music();
+       $music = Music::find($id);
        $music->username = $request->username;
        $music->video_id = $request->video_id;
        $music->title = $request->title;
@@ -177,7 +177,7 @@ class MusicController extends Controller
      */
     public function destroy($id)
     {
-        Song::find($id)->delete();
+        Music::find($id)->delete();
         return redirect()->back();
     }
 }
