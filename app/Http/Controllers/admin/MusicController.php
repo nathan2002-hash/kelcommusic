@@ -26,8 +26,8 @@ class MusicController extends Controller
      */
     public function index()
     {
-        $songs = Song::orderBy('created_at', 'desc')->paginate(50);
-        $audios = Song::orderBy('created_at', 'desc')->paginate(3);
+        $songs = Music::orderBy('created_at', 'desc')->paginate(50);
+        $audios = Music::orderBy('created_at', 'desc')->paginate(3);
         $videos = Video::all();
         $galleries = Gallery::all();
         return view('admin.music.index', [
@@ -43,7 +43,7 @@ class MusicController extends Controller
         if($request->isMethod('post'))
         {
             $name = $request->get('name');
-            $songs = Song::where('title', 'LIKE', '%'. $name . '%')
+            $songs = Music::where('title', 'LIKE', '%'. $name . '%')
                            ->orWhere('featuring', 'LIKE', '%'. $name . '%')
                            ->orWhere('music', 'LIKE', '%'. $name . '%')
                            ->orWhere('username', 'LIKE', '%'. $name . '%')->paginate(50);
