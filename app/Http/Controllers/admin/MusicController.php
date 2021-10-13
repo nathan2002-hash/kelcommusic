@@ -145,24 +145,24 @@ class MusicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $music = Song::find($id);
-        $music->username = $request->username;
-        $music->video_id = $request->video_id;
-        $music->title = $request->title;
-        $music->featuring = $request->featuring;
-        $music->message = $request->message;
-        $music->artist_id = $request->artist_id;
-        $music->day = $request->day;
-        $music->month = $request->month;
-        $music->year = $request->year;
-        $music->music = $request->music;
-        $music->image = $request->image;
-         $music->views = $request->views;
-        $music->save();
-        return redirect()->back();
-    }
+    //public function update(Request $request, $id)
+    //{
+        //$music = Song::find($id);
+        //$music->username = $request->username;
+        //$music->video_id = $request->video_id;
+        //$music->title = $request->title;
+        //$music->featuring = $request->featuring;
+        //$music->message = $request->message;
+        //$music->artist_id = $request->artist_id;
+        //$music->day = $request->day;
+        //$music->month = $request->month;
+        //$music->year = $request->year;
+        //$music->music = $request->music;
+        //$music->image = $request->image;
+         //$music->views = $request->views;
+        //$music->save();
+        //return redirect()->back();
+    //}
 
     public function download($id)
     {
