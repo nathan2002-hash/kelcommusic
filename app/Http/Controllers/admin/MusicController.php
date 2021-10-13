@@ -77,7 +77,7 @@ class MusicController extends Controller
 
     public function store(Request $request)
     {
-        $music = new Song();
+        $music = new Music();
         $music->username = $request->username;
         $music->video_id = $request->video_id;
         $music->title = $request->title;
