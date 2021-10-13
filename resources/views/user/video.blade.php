@@ -3,7 +3,7 @@
 
 
 @section('title')
-    {{ $video->title }}
+    {{ $video->title }} - {{$video->username}}
 @endsection
 
 
