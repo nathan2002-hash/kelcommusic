@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Storage;
 
 class MusicController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:admin');
-    }
+    //public function __construct()
+    //{
+        //$this->middleware('auth:admin');
+    //}
 
     /**
      * Display a listing of the resource.
@@ -147,7 +147,7 @@ class MusicController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $music = Music::find($id);
+       $music = new Music();
        $music->username = $request->username;
        $music->video_id = $request->video_id;
        $music->title = $request->title;
