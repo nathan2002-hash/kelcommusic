@@ -49,6 +49,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
+                    {{ method_field('PUT') }}
 						<button type="submit" class="login100-form-btn">
 							Sign in
 						</button>
