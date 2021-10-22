@@ -2,7 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>{{ $music->title }} - {{ $music->artist->username }} | Kelcommusic</title>
+<title>{{ $music->title }} - {{ $music->username }}  @if ($music->featuring)
+                                Ft {{ $music->featuring }}
+                                @else
+
+                                @endif | Kelcommusic</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Kelcom Music">
