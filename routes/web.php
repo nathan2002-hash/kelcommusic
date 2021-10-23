@@ -112,7 +112,7 @@ Route::delete('/adminadvancedelete{id}', 'admin\AdvanceController@destroy');
 Auth::routes();
 
 Route::get('/adminloginform', 'Auth\AdminLoginController@showloginform')->name('adminlogin');
-Route::post('/adminlogin', 'Auth\AdminLoginController@login')->name('adminloginsubmit');
+Route::get('/adminlogin', 'Auth\AdminLoginController@login')->name('adminloginsubmit');
 Route::get('/adminlogout', 'Auth\AdminLoginController@Logout')->name('adminlogout');
 Route::get('/adminaddanadministrateatkelcommusic', 'HomeController@index')->name('adminadd');
 Route::post('/adminadd', 'HomeController@store')->name('adminstore');
