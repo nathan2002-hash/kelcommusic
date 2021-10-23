@@ -34,7 +34,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form action="{{ route('adminloginsubmit') }}" method="POST" class="login100-form validate-form">
-                  @csrf_field
+                  @csrf
 					<span class="login100-form-title p-b-34">
 						Account Login
 					</span>
@@ -49,7 +49,6 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-                    {{ method_field('PUT') }}
 						<button type="submit" class="login100-form-btn">
 							Sign in
 						</button>
