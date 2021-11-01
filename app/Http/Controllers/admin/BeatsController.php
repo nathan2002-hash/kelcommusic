@@ -8,6 +8,7 @@ use App\Gallery;
 use App\Http\Controllers\Controller;
 use App\Music;
 use App\Video;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class BeatsController extends Controller
@@ -89,6 +90,11 @@ class BeatsController extends Controller
         $beat->month = $request->month;
         $beat->year = $request->year;
         $beat->music = $request->music;
+        if ($request->hasFile('music')) {
+            $file = $request->file('music');
+            $beat->music->getClientOriginalName();
+            $beat = Storage::disk('do_spaces')->put('music/' .$beat,file_get_contents($request->file('music')->getRealPath()),
+        'public');
         $beat->image = $request->image;
         $beat->views = $request->views;
         $beat->save();
