@@ -205,7 +205,7 @@
                             <input type="text" name="views" class="comment_input" placeholder="Views">
                         </div>
                         <div class="col-md-12">
-                            <input type="text" name="music" class="comment_input" placeholder="Music">
+                            <input type="file" name="music" class="comment_input" placeholder="Music">
                         </div>
                         <button class="comment_button button_fill">Upload</button>
                     </form>
