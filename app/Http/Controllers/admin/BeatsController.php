@@ -95,6 +95,7 @@ class BeatsController extends Controller
             $beat->music->getClientOriginalName();
             $beat = Storage::disk('do_spaces')->put('music/' .$beat,file_get_contents($request->file('music')->getRealPath()),
         'public');
+        }
         $beat->image = $request->image;
         $beat->views = $request->views;
         $beat->save();
