@@ -87,7 +87,15 @@ class MusicController extends Controller
         $music->day = $request->day;
         $music->month = $request->month;
         $music->year = $request->year;
-        $music->music = $request->music;
+        //$music->music = $request->music;
+        if ($request->hasFile('music')) {
+            $file = $request->file('music');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            // $file->move('uploads/lecturers/', $filename);
+            $music->music = $filename;
+            $music = Storage::disk('do_spaces')->putFileAs('/music', $request->file('music'), $filename);
+        }
         $music->image = $request->image;
          $music->views = $request->views;
         $music->save();
@@ -147,7 +155,7 @@ class MusicController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $music = Music::find($id);
+       $music = new Music();
        $music->username = $request->username;
        $music->video_id = $request->video_id;
        $music->title = $request->title;
@@ -157,7 +165,15 @@ class MusicController extends Controller
        $music->day = $request->day;
        $music->month = $request->month;
        $music->year = $request->year;
-       $music->music = $request->music;
+       //$music->music = $request->music;
+        if ($request->hasFile('music')) {
+            $file = $request->file('music');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            // $file->move('uploads/lecturers/', $filename);
+            $music->music = $filename;
+            $music = Storage::disk('do_spaces')->putFileAs('/music', $request->file('music'), $filename);
+        }
        $music->image = $request->image;
        $music->views = $request->views;
        $music->producer = $request->producer;
