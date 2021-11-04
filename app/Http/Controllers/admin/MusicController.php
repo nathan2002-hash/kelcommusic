@@ -155,7 +155,7 @@ class MusicController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $music = Music::find($id);
+       $music = new Music();
        $music->username = $request->username;
        $music->video_id = $request->video_id;
        $music->title = $request->title;
