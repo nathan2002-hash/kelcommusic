@@ -89,11 +89,14 @@ class BeatsController extends Controller
         $beat->day = $request->day;
         $beat->month = $request->month;
         $beat->year = $request->year;
-        $beat->music = $request->music;
-         if ($request->hasFile('music')) {
-            $beat = sha1(time()).$request->file('music')->getClientOriginalName();
-            $request->file('music')->storeAs('xxx/uploads/temp/',$beat, 'spaces');
-            Storage::disk('spaces')->setVisibility('xxx/uploads/temp/'.$beat, 'public');
+        //$beat->music = $request->music;
+        if ($request->hasFile('music')) {
+            $file = $request->file('music');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            Storage::disk('do_spaces')->put('uploads/', request()->music, $filename, 'public');
+            // $file->move('uploads/lecturers/', $filename);
+            $music->music = $filename;
         }
         $beat->image = $request->image;
         $beat->views = $request->views;
