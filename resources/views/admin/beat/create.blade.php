@@ -161,26 +161,6 @@
                     <div class="section_title">Information</div>
                     <form action="/adminbeatstore" method="POST" enctype="multipart/form-data" class="comment_form">
                         @csrf
-                        <div><input type="text" name="studio" class="comment_input" placeholder="Studio"></div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" name="title" class="comment_input" placeholder="Title">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <input type="number" name="day" class="comment_input" placeholder="Day" required="required">
-                            </div>
-                            <div class="col-md-4">
-                                <input type="text" name="month" class="comment_input" placeholder="Month" required="required">
-                            </div>
-                            <div class="col-md-4">
-                                <input type="number" name="year" class="comment_input" placeholder="Year" required="required">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <input type="text" name="image" class="comment_input" placeholder="Image">
-                        </div>
                         <div class="col-md-12">
                             <input type="file" name="music" class="comment_input" placeholder="Music">
                         </div>
