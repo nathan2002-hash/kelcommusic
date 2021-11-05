@@ -94,7 +94,7 @@ class BeatsController extends Controller
             $file = $request->file('music');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
-            Storage::disk('do_spaces')->put('uploads/', request()->music, $filename, 'public');
+            Storage::disk('do_spaces')->move('uploads/', request()->music, $filename, 'public');
             // $file->move('uploads/lecturers/', $filename);
             $beat->music = $filename;
         }
