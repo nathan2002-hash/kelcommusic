@@ -94,7 +94,7 @@ class BeatsController extends Controller
         $file = $request->file('music');
         $extension = $file->getClientOriginalExtension();
         $filename = time() . '.' . $extension;
-        $beat->music = $request->music->store('beats/', 'do_spaces', $filename);
+        $beat->music = $request->music->store('beats/', 'spaces', $filename);
         //$music->music = $filename;
         }
         $beat->image = $request->image;
