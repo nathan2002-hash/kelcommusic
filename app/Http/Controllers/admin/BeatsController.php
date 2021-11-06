@@ -96,8 +96,7 @@ class BeatsController extends Controller
             $extension = $request->file('music')->getClientOriginalExtension();
             $filenametostore = '1_'.$filename.'_'.time().'.'.$extension;
             $beat->music = $filename;
-            $beat->music = $request->music->store('/beats', 'spaces', $filenametostore);
-            Storage::setVisibility($beat->music, 'public');
+            $beat->music = $request->music->store('/beats', 'spaces', $filenametostore, 'public');
         }
         $beat->image = $request->image;
         $beat->views = $request->views;
