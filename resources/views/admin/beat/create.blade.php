@@ -178,12 +178,14 @@
                                 <input type="number" name="year" class="comment_input" placeholder="Year" required="required">
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <input type="file" name="image" class="comment_input" placeholder="Art work">
-                        </div>
-                        <div class="col-md-12">
-                            <input type="file" name="music" class="comment_input" placeholder="Beat">
-                        </div>
+                        <div class="custom-file">
+                              <input type="file" name="image" class="custom-file-input">
+                              <label class="custom-file-label">Choose Art work...</label>
+                         </div>
+                         <div class="custom-file">
+                              <input type="file" name="music" class="custom-file-input">
+                              <label class="custom-file-label">Choose Beat...</label>
+                          </div>
                         <button class="comment_button button_fill">Upload</button>
                     </form>
                 </div>
