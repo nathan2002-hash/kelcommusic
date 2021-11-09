@@ -96,6 +96,13 @@ class BeatsController extends Controller
             $filenametostore = $filename.'_'.time().'.'.$extension;
             $beat->music = $request->music->storeAs('/beats', $filenametostore, 'spaces');
         }
+        if ($request-> hasfile('image')){
+            $filenamewithext = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+            $beat->image = $request->image->storeAs('/bphoto', $filenametostore, 'spaces');
+        }
         $beat->image = $request->image;
         $beat->views = $request->views;
         $beat->save();
@@ -153,14 +160,20 @@ class BeatsController extends Controller
         $beat->day = $request->day;
         $beat->month = $request->month;
         $beat->year = $request->year;
-        if ($request-> hasfile('music')){
+       if ($request-> hasfile('music')){
             $filenamewithext = $request->file('music')->getClientOriginalName();
             $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
             $extension = $request->file('music')->getClientOriginalExtension();
             $filenametostore = $filename.'_'.time().'.'.$extension;
             $beat->music = $request->music->storeAs('/beats', $filenametostore, 'spaces');
         }
-        $beat->image = $request->image;
+        if ($request-> hasfile('image')){
+            $filenamewithext = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+            $beat->image = $request->image->storeAs('/bphoto', $filenametostore, 'spaces');
+        }
         $beat->views = $request->views;
         $beat->save();
         return redirect()->back();
