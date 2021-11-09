@@ -88,15 +88,20 @@ class MusicController extends Controller
         $music->month = $request->month;
         $music->year = $request->year;
         $music->music = $request->music;
-        //if ($request->hasFile('music')) {
-            //$file = $request->file('music');
-            //$extension = $file->getClientOriginalExtension();
-            //$filename = time() . '.' . $extension;
-            // $file->move('uploads/lecturers/', $filename);
-            //$music->music = $filename;
-            //$music = Storage::disk('do_spaces')->putFileAs('/music', $request->file('music'), $filename);
-        //}
-        $music->image = $request->image;
+        if ($request-> hasfile('music')){
+            $filenamewithext = $request->file('music')->getClientOriginalName();
+            $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
+            $extension = $request->file('music')->getClientOriginalExtension();
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+            $music->music = $request->music->storeAs('/music', $filenametostore, 'spaces');
+        }
+        if ($request-> hasfile('image')){
+            $filenamewithext = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+            $music->image = $request->image->storeAs('/mphoto', $filenametostore, 'spaces');
+        }
          $music->views = $request->views;
          $music->producer = $request->producer;
         $music->save();
@@ -166,16 +171,20 @@ class MusicController extends Controller
        $music->day = $request->day;
        $music->month = $request->month;
        $music->year = $request->year;
-       $music->music = $request->music;
-        //if ($request->hasFile('music')) {
-            //$file = $request->file('music');
-            //$extension = $file->getClientOriginalExtension();
-            //$filename = time() . '.' . $extension;
-            // $file->move('uploads/lecturers/', $filename);
-            //$music->music = $filename;
-            //$music = Storage::disk('do_spaces')->putFileAs('/music', $request->file('music'), $filename);
-        //}
-       $music->image = $request->image;
+       if ($request-> hasfile('music')){
+            $filenamewithext = $request->file('music')->getClientOriginalName();
+            $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
+            $extension = $request->file('music')->getClientOriginalExtension();
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+            $music->music = $request->music->storeAs('/music', $filenametostore, 'spaces');
+        }
+        if ($request-> hasfile('image')){
+            $filenamewithext = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+            $music->image = $request->image->storeAs('/mphoto', $filenametostore, 'spaces');
+        }
        $music->views = $request->views;
        $music->producer = $request->producer;
        $music->save();
