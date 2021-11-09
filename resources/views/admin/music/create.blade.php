@@ -204,7 +204,7 @@
                          </div>
                          <div class="custom-file">
                               <input type="file" name="music" class="custom-file-input">
-                              <label class="custom-file-label">Choose Beat...</label>
+                              <label class="custom-file-label">Choose Music...</label>
                           </div>
                          <div class="col-md-12">
                             <input type="text" name="views" class="comment_input" placeholder="Views">
