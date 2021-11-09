@@ -159,9 +159,10 @@
                     <div class="section_title">Gallery</div>
                     <form action="/admingallerystore" method="POST" class="comment_form" enctype="multipart/form-data">
                         @csrf
-                        <div class="col-md-12">
-                            <input type="file" name="image" class="comment_input" placeholder="Photo">
-                        </div>
+                         <div class="custom-file">
+                              <input type="file" name="image" class="custom-file-input">
+                              <label class="custom-file-label">Choose Art work...</label>
+                         </div>
                         <button class="comment_button button_fill">Add Image</button>
                     </form>
                 </div>
