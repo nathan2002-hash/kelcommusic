@@ -97,7 +97,7 @@
                     <div class="show_image">
                      <a href="/musicdownload{{ $music->id }}">
                         @if ($music->image)
-                        <img src="{{ Storage::disk('spaces')->url('mphoto/' .$music->image) }}" alt="">
+                        <img src="{{ Storage::disk('spaces')->url($music->image) }}" alt="">
                        @else
                        <img src="{{ asset('images/blog_1.jpg') }}" alt="">
                         @endif
