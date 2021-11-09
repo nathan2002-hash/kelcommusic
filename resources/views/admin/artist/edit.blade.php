@@ -205,9 +205,10 @@
                                 <input type="number" name="postcode" value="{{ $artist->postcode }}" class="comment_input" placeholder="PostCode">
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <input type="file" name="image" class="comment_input" value="{{ $artist->image }}" placeholder="Image">
-                        </div>
+                         <div class="custom-file">
+                              <input type="file" name="image" class="custom-file-input">
+                              <label class="custom-file-label">Choose Art work...</label>
+                         </div>
                         <button class="comment_button button_fill">Update</button>
                     </form>
                 </div>
