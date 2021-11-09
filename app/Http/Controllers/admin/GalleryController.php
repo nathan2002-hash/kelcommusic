@@ -48,7 +48,13 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $gallery = new Gallery();
-        $gallery->image = $request->image;
+        if ($request-> hasfile('image')){
+            $filenamewithext = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+            $gallery->image = $request->image->storeAs('/gallery', $filenametostore, 'spaces');
+        }
         $gallery->save();
         return redirect()->back();
     }
