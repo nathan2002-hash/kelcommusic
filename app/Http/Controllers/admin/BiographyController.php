@@ -69,7 +69,13 @@ class BiographyController extends Controller
         $bio->day = $request->day;
         $bio->month = $request->month;
         $bio->year = $request->year;
-        $bio->image = $request->image;
+        if ($request-> hasfile('image')){
+            $filenamewithext = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+            $bio->image = $request->image->storeAs('/biography', $filenametostore, 'spaces');
+        }
         $bio->save();
         return redirect()->back();
     }
@@ -115,7 +121,13 @@ class BiographyController extends Controller
         $bio->day = $request->day;
         $bio->month = $request->month;
         $bio->year = $request->year;
-        $bio->image = $request->image;
+        if ($request-> hasfile('image')){
+            $filenamewithext = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+            $bio->image = $request->image->storeAs('/biography', $filenametostore, 'spaces');
+        }
         $bio->save();
         return redirect()->back();
     }
