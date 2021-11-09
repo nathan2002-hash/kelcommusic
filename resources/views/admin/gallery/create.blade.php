@@ -160,7 +160,7 @@
                     <form action="/admingallerystore" method="POST" class="comment_form" enctype="multipart/form-data">
                         @csrf
                         <div class="col-md-12">
-                            <input type="text" name="image" class="comment_input" placeholder="Image">
+                            <input type="file" name="image" class="comment_input" placeholder="Photo">
                         </div>
                         <button class="comment_button button_fill">Add Image</button>
                     </form>
