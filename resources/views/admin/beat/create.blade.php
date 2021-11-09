@@ -159,13 +159,30 @@
                 <!-- Leave a Comment -->
                 <div class="comment_form_container">
                     <div class="section_title">Information</div>
-                    <form action="/adminbeatstore" method="POST" enctype="multipart/form-data" class="comment_form">
+                   <form action="/adminbeatstore" method="POST" enctype="multipart/form-data" class="comment_form">
                         @csrf
-                        <div class="col-md-12">
-                            <input type="file" name="music" class="comment_input" placeholder="Music">
+                        <div><input type="text" name="studio" class="comment_input" placeholder="Studio"></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" name="title" class="comment_input" placeholder="Title">
+                            </div>
                         </div>
-                         <div class="col-md-12">
-                            <input type="text" name="views" class="comment_input" placeholder="Views">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="number" name="day" class="comment_input" placeholder="Day" required="required">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" name="month" class="comment_input" placeholder="Month" required="required">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="number" name="year" class="comment_input" placeholder="Year" required="required">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="file" name="image" class="comment_input" placeholder="Art work">
+                        </div>
+                        <div class="col-md-12">
+                            <input type="file" name="music" class="comment_input" placeholder="Beat">
                         </div>
                         <button class="comment_button button_fill">Upload</button>
                     </form>
