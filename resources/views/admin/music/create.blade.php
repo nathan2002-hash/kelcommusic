@@ -198,14 +198,16 @@
                             </select>
                         </div>
                         <div><textarea class="comment_input comment_textarea" name="message" placeholder="Message"></textarea></div>
-                        <div class="col-md-12">
-                            <input type="file" name="image" class="comment_input" placeholder="Art Work">
-                        </div>
+                         <div class="custom-file">
+                              <input type="file" name="image" class="custom-file-input">
+                              <label class="custom-file-label">Choose Art work...</label>
+                         </div>
+                         <div class="custom-file">
+                              <input type="file" name="music" class="custom-file-input">
+                              <label class="custom-file-label">Choose Beat...</label>
+                          </div>
                          <div class="col-md-12">
                             <input type="text" name="views" class="comment_input" placeholder="Views">
-                        </div>
-                        <div class="col-md-12">
-                            <input type="file" name="music" class="comment_input" placeholder="Music file">
                         </div>
                          <div class="col-md-12">
                             <input type="text" name="producer" class="comment_input" placeholder="Producer">
