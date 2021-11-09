@@ -199,13 +199,13 @@
                         </div>
                         <div><textarea class="comment_input comment_textarea" name="message" placeholder="Message"></textarea></div>
                         <div class="col-md-12">
-                            <input type="text" name="image" class="comment_input" placeholder="Image">
+                            <input type="file" name="image" class="comment_input" placeholder="Art Work">
                         </div>
                          <div class="col-md-12">
                             <input type="text" name="views" class="comment_input" placeholder="Views">
                         </div>
                         <div class="col-md-12">
-                            <input type="text" name="music" class="comment_input" placeholder="Music">
+                            <input type="file" name="music" class="comment_input" placeholder="Music file">
                         </div>
                          <div class="col-md-12">
                             <input type="text" name="producer" class="comment_input" placeholder="Producer">
