@@ -206,7 +206,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <input type="text" name="image" class="comment_input" placeholder="Image">
+                            <input type="file" name="image" class="comment_input" placeholder="Image">
                         </div>
                         <button class="comment_button button_fill">Add Artist</button>
                     </form>
