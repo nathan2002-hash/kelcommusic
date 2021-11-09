@@ -91,11 +91,10 @@ class BeatsController extends Controller
         $beat->year = $request->year;
         //$beat->music = $request->music;
         if ($request-> hasfile('music')){
-            $filenamewithext = $request->file('music')->getClientOriginalName();
-            $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
-            $extension = $request->file('music')->getClientOriginalExtension();
-            $filenametostore = '1_'.$filename.'_'.time().'.'.$extension;
-            $beat->music = $request->music->store('/beats', 'spaces', $filenametostore, 'public');
+            $file = $request->music->getClientOriginalName();
+            $extension = $request->music->getClientOriginalExtension();
+            $fileName = $file.'.'.$extension;
+            $beat->music = $request->music->store('/beats', 'spaces', $fileName, 'public');
         }
         $beat->image = $request->image;
         $beat->views = $request->views;
