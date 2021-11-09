@@ -70,8 +70,13 @@ class VideoController extends Controller
         $video->artist_id = $request->artist_id;
         $video->username = $request->username;
         $video->featuring = $request->featuring;
-        $video->video = $request->video;
-        $video->image = $request->image;
+         if ($request-> hasfile('video')){
+            $filenamewithext = $request->file('video')->getClientOriginalName();
+            $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
+            $extension = $request->file('video')->getClientOriginalExtension();
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+            $video->video = $request->video->storeAs('/video', $filenametostore, 'spaces');
+        }
         $video->save();
         return redirect()->back();
 
@@ -124,8 +129,13 @@ class VideoController extends Controller
         $video->artist_id = $request->artist_id;
         $video->username = $request->username;
         $video->featuring = $request->featuring;
-        $video->video = $request->video;
-        $video->image = $request->image;
+        if ($request-> hasfile('video')){
+            $filenamewithext = $request->file('video')->getClientOriginalName();
+            $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
+            $extension = $request->file('video')->getClientOriginalExtension();
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+            $video->video = $request->video->storeAs('/video', $filenametostore, 'spaces');
+        }
         $video->save();
         return redirect()->back();
     }
