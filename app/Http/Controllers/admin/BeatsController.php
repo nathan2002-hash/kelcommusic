@@ -94,7 +94,7 @@ class BeatsController extends Controller
             $filenamewithext = $request->file('music')->getClientOriginalName();
             $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
             $extension = $request->file('music')->getClientOriginalExtension();
-            $filenametostore = '1_'.$filename.'_'.time().'.'.$extension;
+            $filenametostore = $filename.'_'.time().'.'.$extension;
             $beat->music = $request->music->storeAs('/beats', $filenametostore, 'spaces');
         }
         $beat->image = $request->image;
