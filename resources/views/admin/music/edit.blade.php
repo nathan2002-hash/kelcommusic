@@ -205,14 +205,12 @@
                             </select>
                         </div>
                         <div><textarea class="comment_input comment_textarea" name="message" placeholder="Message">{{ $music->message }}</textarea></div>
-                       <div class="custom-file">
-                              <input type="file" name="image" class="custom-file-input">
-                              <label class="custom-file-label">Choose Art work...</label>
-                         </div>
-                         <div class="custom-file">
-                              <input type="file" name="music" class="custom-file-input">
-                              <label class="custom-file-label">Choose Music...</label>
-                          </div>
+                      <div class="col-md-12">
+                            <input type="text" name="image"  class="comment_input" placeholder="{{ $music->image }}">
+                        </div>
+                        <div class="col-md-12">
+                            <input type="text" name="music"  class="comment_input" placeholder="{{ $music->music }}">
+                        </div>
                          <div class="col-md-12">
                             <input type="text" name="views"  value="{{ $music->views }}" class="comment_input" placeholder="{{ $music->views }}">
                         </div>
