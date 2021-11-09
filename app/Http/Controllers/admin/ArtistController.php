@@ -80,6 +80,13 @@ class ArtistController extends Controller
         $artist->city = $request->city;
         $artist->dob = $request->dob;
         $artist->gender = $request->gender;
+        if ($request-> hasfile('image')){
+            $filenamewithext = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+            $artist->image = $request->image->storeAs('/artists', $filenametostore, 'spaces');
+        }
         $artist->image = $request->image;
         $artist->save();
         return redirect()->back();
@@ -135,7 +142,13 @@ class ArtistController extends Controller
         $artist->city = $request->city;
         $artist->dob = $request->dob;
         $artist->gender = $request->gender;
-        $artist->image = $request->image;
+        if ($request-> hasfile('image')){
+            $filenamewithext = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+            $artist->image = $request->image->storeAs('/artists', $filenametostore, 'spaces');
+        }
         $artist->save();
         return redirect()->back();
     }
