@@ -191,9 +191,10 @@
                         <div class="col-md-12">
                              <input type="text" name="image" class="comment_input" placeholder="Message, if you are including the message please the words should be 100 orbelow">
                         </div>
-                        <div class="col-md-12">
-                            <input type="file" name="video" class="comment_input" placeholder="Video">
-                        </div>
+                         <div class="custom-file">
+                              <input type="file" name="video" class="custom-file-input">
+                              <label class="custom-file-label">Choose Video...</label>
+                         </div>
                         <button class="comment_button button_fill">Upload</button>
                     </form>
                 </div>
