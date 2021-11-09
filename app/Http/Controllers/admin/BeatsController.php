@@ -90,8 +90,8 @@ class BeatsController extends Controller
         $beat->month = $request->month;
         $beat->year = $request->year;
         //$beat->music = $request->music;
-        if ($request-> hasfile('music')){
-            $file = $request->music->getClientOriginalName();
+         if ($request-> hasfile('music')){
+            $file->getRequest()->files['music']->getClientOriginalName();
             $extension = $request->music->getClientOriginalExtension();
             $fileName = $file.'.'.$extension;
             $beat->music = $request->music->store('/beats', 'spaces', $fileName, 'public');
