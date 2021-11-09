@@ -31,8 +31,9 @@
             <div class="row">
                 <div class="col">
                     <div class="home_content">
-                        <div class="home_title"><h1>Admin Panel At Kelcom Music.</h1></div>
-                        <div class="button_border home_button trans_200"><a href="/">Kelcom Music</a></div>
+                        <div class="home_title"><h1>{{ Auth::user()->fname }} Welcome to the Admin Panel At Kelcom Music.</h1></div>
+                         <div class="home_title"><h3>Nathan the owner Kelcom Music is edging you to be carefull with what you will start doing on this site.</h3></div>
+                        <div class="button_border home_button trans_200"><a href="">Feel Free to manage Kelcom Music website</a></div>
                     </div>
                 </div>
             </div>
@@ -45,7 +46,7 @@
         </div>
         <div class="row">
             <div class="col text-center">
-                <div class="button_fill shows_button"><a href="/">Kelcom Music</a></div>
+                <div class="button_fill shows_button"><a href="">Kelcom Music</a></div>
             </div>
         </div>
     </div>
