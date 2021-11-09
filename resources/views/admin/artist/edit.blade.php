@@ -206,7 +206,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <input type="text" name="image" class="comment_input" value="{{ $artist->image }}" placeholder="Image">
+                            <input type="file" name="image" class="comment_input" value="{{ $artist->image }}" placeholder="Image">
                         </div>
                         <button class="comment_button button_fill">Update</button>
                     </form>
