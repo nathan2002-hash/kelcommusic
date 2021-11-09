@@ -179,10 +179,10 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <input type="text" name="image" value="{{ $beat->image }}" class="comment_input" placeholder="Image">
+                            <input type="file" name="image" value="{{ $beat->image }}" class="comment_input" placeholder="Art work">
                         </div>
                         <div class="col-md-12">
-                            <input type="text" name="music" value="{{ $beat->music }}" class="comment_input" placeholder="Music">
+                            <input type="file" name="music" value="{{ $beat->music }}" class="comment_input" placeholder="Beat">
                         </div>
                          <div class="col-md-12">
                             <input type="text" name="views" value="{{ $beat->views }}" class="comment_input" placeholder="Views">
