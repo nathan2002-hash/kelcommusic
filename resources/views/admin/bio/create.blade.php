@@ -179,9 +179,10 @@
                             </div>
                         </div>
                         <div><textarea class="comment_input comment_textarea" name="info" placeholder="Information"></textarea></div>
-                        <div class="col-md-12">
-                            <input type="file" name="image" class="comment_input" placeholder="Photo">
-                        </div>
+                         <div class="custom-file">
+                              <input type="file" name="image" class="custom-file-input">
+                              <label class="custom-file-label">Choose Art work...</label>
+                         </div>
                         <button class="comment_button button_fill">Post</button>
                     </form>
                 </div>
