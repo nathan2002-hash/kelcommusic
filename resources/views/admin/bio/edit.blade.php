@@ -180,7 +180,7 @@
                         </div>
                         <div><textarea class="comment_input comment_textarea" name="info" placeholder="Information">{{ $bio->info }}</textarea></div>
                         <div class="col-md-12">
-                            <input type="text" name="image" class="comment_input" placeholder="Image">
+                            <input type="file" name="image" class="comment_input" placeholder="Photo">
                         </div>
                         <button class="comment_button button_fill">Update</button>
                     </form>
