@@ -52,7 +52,7 @@ Route::delete('/adminmusicdelete{id}', 'admin\MusicController@destroy');
 //Music
 Route::get('/adminmusic', 'admin\MusicController@index');
 Route::get('/adminmusiccreate', 'admin\MusicController@create');
-Route::post('/adminmusicstore', 'admin\MusicController@store');
+Route::post('/adminmusicstorepro', 'admin\MusicController@musictore');
 Route::get('/adminmusicshow{id}', 'admin\MusicController@show');
 Route::get('/adminmusicedit{id}', 'admin\MusicController@edit');
 Route::post('/adminmusic{id}', 'admin\MusicController@update');
