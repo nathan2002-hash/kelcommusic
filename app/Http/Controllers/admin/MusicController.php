@@ -75,7 +75,7 @@ class MusicController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function store(Request $request)
+    public function musicstore(Request $request)
     {
         $music = new Music();
         $music->username = $request->username;
