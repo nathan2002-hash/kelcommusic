@@ -136,7 +136,7 @@
                         <div class="player d-flex flex-row align-items-start justify-content-start s1">
 							<div class="player_content">
                                 <audio class="justify-right" preload="auto" controls>
-                                     <source src="{{ Storage::disk('spaces')->url('beats/' .$beat->music) }}" class="audio-right">
+                                     <source src="{{ Storage::disk('spaces')->url($beat->music) }}" class="audio-right">
                                 </audio>
 
 								<div class="show_info d-flex flex-row align-items-start justify-content-start">
@@ -170,7 +170,7 @@
 				<div class="row">
 					<div class="col-lg-3">
 						<!-- Episode Image -->
-						<div class="episode_image"><img src="{{ Storage::disk('spaces')->url('bphoto/' .$beat->image) }}" alt=""></div>
+						<div class="episode_image"><img src="{{ Storage::disk('spaces')->url($beat->image) }}" alt=""></div>
 					</div>
 				</div>
 			</div>
