@@ -242,7 +242,6 @@
                                       @else
                                                 <img src="{{ asset('images/episode_1.jpg') }}" alt="">
                                      @endif
-                                    <img src="{{ Storage::disk('spaces')->url($music->image) }}" alt="">
                                     </div>
                                     <div class="guest_content text-center">
                                         <div class="guest_name"><a href="/musicdownload{{ $music->id }}">{{ $music->title }}</a></div>
