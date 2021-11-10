@@ -155,45 +155,12 @@
             <!-- Episode -->
             <div class="col-lg-9 episode_col order-lg-2 order-1">
                 <div class="intro">
-                   @if ($music->message)
-                   <div class="section_title">Message</div>
+                   <div class="section_title">Here is the link for this track</div>
                    <div class="intro_text">
                        <p>
-                           @if ($music->message)
-                               {{ $music->message }}
-                           @else
-
-                           @endif
+                               https://www.kelcommusic.com/musicdownload{{ $music->id }}
                        </p>
                    </div>
-                   @else
-
-                   @endif
-                </div>
-                <div class="guests">
-                    <div class="section_title">Videos</div>
-                    <div class="guests_container d-flex flex-md-row flex-column align-items-md-start align-items-center justify-content-start">
-
-                        <!-- Guest -->
-                        @foreach ($videos as $video)
-                        <div class="guest_container">
-                            <div class="guest">
-                                <div class="guest_image"><img src="{{ asset('images/guest_1.jpg') }}" alt="https://unsplash.com/@stairhopper"></div>
-                                <div class="guest_content text-center">
-                                    <div class="guest_name"><a href="#">{{ $video->title }}</a></div>
-                                    <div class="guest_title">{{ $video->username }}
-                                        @if ($video->featuring)
-                                            {{ $video->featuring }}
-                                        @else
-
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-
-                    </div>
                 </div>
 
                 <!-- Comments -->
