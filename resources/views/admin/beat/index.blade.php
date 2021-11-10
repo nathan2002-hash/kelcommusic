@@ -151,11 +151,7 @@
                             <ul class="d-flex flex-row align-items-start justify-content-start">
                                 <li><a href="/adminbeatedit{{ $beat->id }}">Edit Beat</a></li>
                                 <li>
-                                    <form action="{{ url('/adminbeatdelete'.$beat->id) }}" method="POST">
-                                    {{ method_field('DELETE') }}
-                                    {{ csrf_field() }}
-                                        <button type="submit" class="btn-btn">Delete</button>
-                                    </form>
+                                   <a href="{{ route('beat.destroy', ['id' => $beat->id]) }}">Delete</a>
                                </li>
                             </ul>
                         </div>
