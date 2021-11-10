@@ -156,9 +156,9 @@
                             <ul class="d-flex flex-row align-items-start justify-content-start">
                                 <li><a href="/adminmusicedit{{ $music->id }}">Edit Track</a></li>
                                 <li>
-                                    <form action="{{ url('/adminmusicdelete'.$music->id) }}" method="POST">
-                                    {{ method_field('DELETE') }}
-                                    {{ csrf_field() }}
+                                    <form action="/adminmusicupload{{ $music->id }}" method="POST">
+                                    @csrf
+                                   @method('delete')
                                         <button type="submit" class="btn-btn">Delete</button>
                                     </form>
                                </li>
