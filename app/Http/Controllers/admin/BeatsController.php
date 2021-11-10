@@ -193,7 +193,8 @@ class BeatsController extends Controller
      */
     public function destroy($id)
     {
-        Beat::find($id)->delete();
+         $music=Beat::find($id);
+         $music->delete();
         return redirect()->back();
     }
 }
