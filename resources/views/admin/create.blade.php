@@ -38,17 +38,17 @@
 					<span class="login100-form-title p-b-34">
 						Add Credentials
 					</span>
-                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
-						<input id="name" class="input100" type="text" name="name" placeholder="Full Names">
-						<span class="focus-input100"></span>
+                    <div class="">
+						<input id="name" class="" type="text" name="name" placeholder="Full Names">
+						<span class=""></span>
 					</div>
-                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
-						<input id="email" class="input100" type="text" name="email" placeholder="Email">
-						<span class="focus-input100"></span>
+                    <div class="">
+						<input id="email" class="" type="text" name="email" placeholder="Email">
+						<span class=""></span>
 					</div>
-					<div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20">
-						<input class="input100" type="password" name="password" placeholder="Password">
-						<span class="focus-input100"></span>
+					<div class="">
+						<input class="" type="password" name="password" placeholder="Password">
+						<span class=""></span>
 					</div>
 
 					<div class="container-login100-form-btn">
