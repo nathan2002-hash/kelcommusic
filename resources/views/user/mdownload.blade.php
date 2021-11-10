@@ -148,7 +148,7 @@
 								<div class="show_info d-flex flex-row align-items-start justify-content-start">
                                     <div class="show_comments">
                                          <audio class="justify-right" preload="auto" controls>
-                                            <source src="{{ Storage::disk('spaces')->url('music/' .$music->music) }}" class="audio-right">
+                                            <source src="{{ Storage::disk('spaces')->url($music->music) }}" class="audio-right">
                                          </audio>
                                     </div>
                                 </div>
@@ -176,7 +176,7 @@
 						<!-- Episode Image -->
 						<div class="episode_image">
                          @if ($music->image)
-                           <img src="{{ Storage::disk('spaces')->url('mphoto/' .$music->image) }}" alt="">
+                           <img src="{{ Storage::disk('spaces')->url($music->image) }}" alt="">
                           @else
                             <img src="{{ asset('images/episode_1.jpg') }}" alt="">
                           @endif
@@ -236,7 +236,7 @@
                             @foreach ($musics as $music)
                             <div class="guest_container">
                                 <div class="guest">
-                                    <div class="guest_image"><img src="{{ Storage::disk('spaces')->url('mphoto/' .$music->image) }}" alt=""></div>
+                                    <div class="guest_image"><img src="{{ Storage::disk('spaces')->url($music->image) }}" alt=""></div>
                                     <div class="guest_content text-center">
                                         <div class="guest_name"><a href="/musicdownload{{ $music->id }}">{{ $music->title }}</a></div>
                                         <div class="guest_title">{{ $music->username }}
