@@ -41,6 +41,7 @@ Route::get('/dkpstudiomembersonly', 'user\VoteController@dkp');
 Route::get('/adminpanel', 'admin\HomeController@index');
 
 //Music
+Route::resource('/adminmusicupload', 'admin\MusicController');
 Route::get('/adminmusic', 'admin\MusicController@index');
 Route::get('/adminmusiccreate', 'admin\MusicController@create');
 Route::post('/adminmusicupload', 'admin\AudioController@audio');
