@@ -205,10 +205,6 @@
                                 <input type="number" name="postcode" class="comment_input" placeholder="PostCode">
                             </div>
                         </div>
-                         <div class="custom-file">
-                              <input type="file" name="image" class="custom-file-input">
-                              <label class="custom-file-label">Choose Art work...</label>
-                         </div>
                         <button class="comment_button button_fill">Add Artist</button>
                     </form>
                 </div>
