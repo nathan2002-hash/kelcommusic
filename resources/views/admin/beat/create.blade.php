@@ -178,6 +178,11 @@
                                 <input type="number" name="year" class="comment_input" placeholder="Year" required="required">
                             </div>
                         </div>
+                         <div class="row">
+                            <div class="col-md-4">
+                                <input type="number" name="views" class="comment_input" placeholder="Views">
+                            </div>
+                        </div>
                         <div class="custom-file">
                               <input type="file" name="image" class="custom-file-input">
                               <label class="custom-file-label">Choose Art work...</label>
