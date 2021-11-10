@@ -206,7 +206,9 @@ class MusicController extends Controller
      */
     public function destroy($id)
     {
-        Music::find($id)->delete();
+         // delete task
+         $music=Music::find($id);
+         $music->delete();
         return redirect()->back();
     }
 }
