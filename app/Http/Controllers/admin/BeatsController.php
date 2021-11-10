@@ -160,6 +160,8 @@ class BeatsController extends Controller
         $beat->day = $request->day;
         $beat->month = $request->month;
         $beat->year = $request->year;
+        $beat->music = $request->music;
+        $beat->image = $request->image;
        if ($request-> hasfile('music')){
             $filenamewithext = $request->file('music')->getClientOriginalName();
             $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
