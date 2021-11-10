@@ -236,7 +236,14 @@
                             @foreach ($musics as $music)
                             <div class="guest_container">
                                 <div class="guest">
-                                    <div class="guest_image"><img src="{{ Storage::disk('spaces')->url($music->image) }}" alt=""></div>
+                                    <div class="guest_image">
+                                     @if ($music->image)
+                                                <img src="{{ Storage::disk('spaces')->url($music->image) }}" alt="">
+                                      @else
+                                                <img src="{{ asset('images/episode_1.jpg') }}" alt="">
+                                     @endif
+                                    <img src="{{ Storage::disk('spaces')->url($music->image) }}" alt="">
+                                    </div>
                                     <div class="guest_content text-center">
                                         <div class="guest_name"><a href="/musicdownload{{ $music->id }}">{{ $music->title }}</a></div>
                                         <div class="guest_title">{{ $music->username }}
