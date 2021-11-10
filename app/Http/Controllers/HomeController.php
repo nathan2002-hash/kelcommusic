@@ -32,4 +32,12 @@ class HomeController extends Controller
         $admin->save();
         return redirect('/adminloginform');
     }
+    
+    public function admins()
+    {
+        $admins = Admin::all();
+        return view('admin', [
+           'admins' => $admins
+       ]);
+    }
 }
