@@ -157,7 +157,7 @@
                 <!-- Leave a Comment -->
                 <div class="comment_form_container">
                     <div class="section_title">Information</div>
-                    <form action="/adminmusicstorepro" method="POST" enctype="multipart/form-data" class="comment_form">
+                    <form action="/adminmusicupload" method="POST" enctype="multipart/form-data" class="comment_form">
                         @csrf
                         <div class="form-group col-md-6 px-md-1">
                             <label>Artist</label>
