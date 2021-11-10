@@ -39,15 +39,6 @@ Route::get('/dkpstudiomembersonly', 'user\VoteController@dkp');
 
 //admin routes
 Route::get('/adminpanel', 'admin\HomeController@index');
-//votes
-Route::get('/adminvote', 'admin\VoteController@index');
-Route::get('/adminvotecreate', 'admin\VoteController@create');
-Route::post('/adminvotestore', 'admin\VoteController@store');
-Route::get('/adminmusicshow{id}', 'admin\MusicController@show');
-Route::get('/adminmusicedit{id}', 'admin\MusicController@edit');
-Route::post('/adminmusic{id}', 'admin\MusicController@update');
-Route::get('/adminmusicdownload{id}', 'admin\MusicController@download');
-Route::delete('/adminmusicdelete{id}', 'admin\MusicController@destroy');
 
 //Music
 Route::get('/adminmusic', 'admin\MusicController@index');
@@ -114,6 +105,6 @@ Auth::routes();
 Route::get('/adminloginform', 'Auth\AdminLoginController@showloginform')->name('adminlogin');
 Route::get('/adminlogin', 'Auth\AdminLoginController@login')->name('adminloginsubmit');
 Route::get('/adminlogout', 'Auth\AdminLoginController@Logout')->name('adminlogout');
-Route::get('/adminaddanadministrateatkelcommusic', 'HomeController@index')->name('adminadd');
-Route::post('/adminadd', 'HomeController@store')->name('adminstore');
-Route::get('/admins', 'HomeController@admins');
+//Route::get('/adminaddanadministrateatkelcommusic', 'HomeController@index')->name('adminadd');
+//Route::post('/adminadd', 'HomeController@store')->name('adminstore');
+//Route::get('/admins', 'HomeController@admins');
