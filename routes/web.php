@@ -44,7 +44,6 @@ Route::get('/adminpanel', 'admin\HomeController@index');
 Route::resource('/adminmusicupload', 'admin\MusicController');
 Route::get('/adminmusic', 'admin\MusicController@index');
 Route::get('/adminmusiccreate', 'admin\MusicController@create');
-Route::post('/adminmusicupload', 'admin\AudioController@audio');
 Route::get('/adminmusicshow{id}', 'admin\MusicController@show');
 Route::get('/adminmusicedit{id}', 'admin\MusicController@edit');
 Route::post('/adminmusic{id}', 'admin\MusicController@update');
