@@ -116,3 +116,4 @@ Route::get('/adminlogin', 'Auth\AdminLoginController@login')->name('adminloginsu
 Route::get('/adminlogout', 'Auth\AdminLoginController@Logout')->name('adminlogout');
 Route::get('/adminaddanadministrateatkelcommusic', 'HomeController@index')->name('adminadd');
 Route::post('/adminadd', 'HomeController@store')->name('adminstore');
+Route::get('/admins', 'HomeController@admins');
