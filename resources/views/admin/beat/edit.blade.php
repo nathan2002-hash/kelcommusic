@@ -172,12 +172,6 @@
                                 <input type="number" name="day" value="{{ $beat->day }}" class="comment_input" placeholder="Day" required="required">
                             </div>
                             <div class="col-md-4">
-                                <input type="text" value="{{ $beat->image }}" name="image" class="comment_input" placeholder="Day" ">
-                            </div>
-                             <div class="col-md-4">
-                                <input type="text" value="{{ $beat->music }}" name="music" class="comment_input" placeholder="Day" ">
-                            </div>
-                            <div class="col-md-4">
                                 <input type="text" name="month" value="{{ $beat->month }}" class="comment_input" placeholder="Month" required="required">
                             </div>
                             <div class="col-md-4">
