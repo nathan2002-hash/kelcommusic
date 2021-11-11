@@ -104,9 +104,9 @@ Route::delete('/adminadvancedelete{id}', 'admin\AdvanceController@destroy');
 
 Auth::routes();
 
-Route::get('/sms', 'HomeController@show');
-Route::post('/smspost', 'HomeController@storePhoneNumber');
-Route::post('/custom', 'HomeController@sendCustomMessage');
+Route::get('/sms', 'HomController@show');
+Route::post('/smspost', 'HomController@storePhoneNumber');
+Route::post('/custom', 'HomController@sendCustomMessage');
 
 Route::get('/adminloginform', 'Auth\AdminLoginController@showloginform')->name('adminlogin');
 Route::get('/adminlogin', 'Auth\AdminLoginController@login')->name('adminloginsubmit');
