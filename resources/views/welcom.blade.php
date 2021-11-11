@@ -32,7 +32,7 @@
                             Add Phone Number
                         </div>
                         <div class="card-body">
-                            <form method="POST">
+                            <form method="POST" action="/smspost">
                                 @csrf
                                 <div class="form-group">
                                     <label>Enter Phone Number</label>
