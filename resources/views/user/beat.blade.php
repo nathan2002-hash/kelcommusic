@@ -223,7 +223,7 @@
                             @foreach ($beats as $beat)
                             <div class="guest_container">
                                 <div class="guest">
-                                    <div class="guest_image"><img src="{{ Storage::disk('spaces')->url('bphoto/' .$beat->image) }}" alt="https://unsplash.com/@stairhopper"></div>
+                                    <div class="guest_image"><img src="{{ Storage::disk('spaces')->url($beat->image) }}" alt="r"></div>
                                     <div class="guest_content text-center">
                                         <div class="guest_name"><a href="/beatdownload{{ $beat->id }}">{{ $beat->title }}</a></div>
                                         <div class="guest_title">{{ $beat->studio }}
