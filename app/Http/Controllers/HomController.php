@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Twilio\Rest\Client;
 
 
-class HomeController extends Controller
+class HomController extends Controller
 {
     public function show()
     {
