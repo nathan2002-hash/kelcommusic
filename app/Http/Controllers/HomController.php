@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function show()
     {
         $users = UsersPhoneNumber::all();
-        return view('welcome', compact("users"));
+        return view('welcom', compact("users"));
     }
     /**
      * Store a new user phone number.
