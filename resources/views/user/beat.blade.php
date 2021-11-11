@@ -146,7 +146,7 @@
 							</div>
 						</div>
                         <div class="col text-center">
-                            <div class="button_fill shows_2_button"><a href="/download/beat/{{ $beat->music }}">Download Beat</a></div>
+                            <div class="button_fill shows_2_button"><a href="/download/{{ $beat->music }}">Download Beat</a></div>
                         </div>
 					</div>
 				</div>
