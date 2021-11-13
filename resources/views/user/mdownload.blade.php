@@ -148,7 +148,11 @@
 								<div class="show_info d-flex flex-row align-items-start justify-content-start">
                                     <div class="show_comments">
                                          <audio class="justify-right" preload="auto" controls>
+                                         @if ($music->music)
                                             <source src="{{ Storage::disk('spaces')->url($music->music) }}" class="audio-right">
+                                         @else
+    
+                                         @endif
                                          </audio>
                                     </div>
                                 </div>
