@@ -206,9 +206,11 @@
                         </div>
                         <div><textarea class="comment_input comment_textarea" name="message" placeholder="Message">{{ $music->message }}</textarea></div>
                          <div class="col-md-12">
+                         <label>Art work</label>
                             <input type="file" name="image" class="comment_input" placeholder="Image">
                         </div>
                         <div class="col-md-12">
+                        <label>Music</label>
                             <input type="file" name="music" class="comment_input" placeholder="Music">
                         </div>
                          <div class="col-md-12">
