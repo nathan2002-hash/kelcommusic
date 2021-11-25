@@ -110,5 +110,20 @@
 
 
 @section('scripts')
-    //
+        <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+"@type":    "Website",
+"brand":    {
+    "@type":    "Brand",
+    "logo": https://kelcomm.fra1.digitaloceanspaces.com/gallery/5475491.jpg",
+    "url":  "http://www.kelcommusic.com/",
+    "name": "Kelcom Music",
+    "sameAs":   [
+        "https://web.facebook.com/kelcomcommunity",
+        "https://www.linkedin.com/company/kelcom-music/?viewAsMember=true",
+        ]
+    }
+}
+</script>
 @endsection
