@@ -139,7 +139,7 @@
                         <div class="player d-flex flex-row align-items-start justify-content-start s1">
 							<div class="player_content">
                                 <audio class="justify-right" preload="auto" controls>
-                                    <source src="{{ asset('uploads/video/mp4/' .$music->music) }}" class="audio-right">
+                                    <source src="{{ Storage::disk('spaces')->url($music->music) }}" class="audio-right">
                                 </audio>
 
 								<div class="show_info d-flex flex-row align-items-start justify-content-start">
@@ -218,32 +218,6 @@
 
                         @endif
                      </div>
-                     <div class="guests">
-                        <div class="section_title">Other songs</div>
-                        <div class="guests_container d-flex flex-md-row flex-column align-items-md-start align-items-center">
-
-                            <!-- Guest -->
-                            @foreach ($musics as $music)
-                            <div class="guest_container">
-                                <div class="guest">
-                                    <div class="guest_image"><img src="{{ asset('uploads/music/image/' . $music->image) }}" alt="https://unsplash.com/@stairhopper"></div>
-                                    <div class="guest_content text-center">
-                                        <div class="guest_name"><a href="/musicdownload{{ $music->id }}">{{ $music->title }}</a></div>
-                                        <div class="guest_title">{{ $music->username }}
-                                            @if ($music->featuring)
-                                                Ft {{ $music->featuring }}
-                                            @else
-
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-
-                        </div>
-                    </div>
-				</div>
 			</div>
 		</div>
 	</div>
