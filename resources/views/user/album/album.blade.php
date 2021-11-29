@@ -97,7 +97,7 @@
 				<div class="row">
 					<div class="col">
                         <div class="home_content text-center">
-                            <div class="home_title"><h1>{{ $album->album }} album by {{ $album->username }}
+                            <div class="home_title"><h1>{{ $album->album }} album by {{ $album->artist->username }}
                             </h1></div>
                             <div class="home_subtitle text-center">{{ $album->year }} with {{ $album->number }} tracks</div>
                         </div>
