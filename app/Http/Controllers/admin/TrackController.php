@@ -30,12 +30,14 @@ class TrackController extends Controller
     {
         $songs = Music::orderBy('created_at', 'desc')->paginate(50);
         $audios = Music::orderBy('created_at', 'desc')->paginate(3);
-        $videos = Album::all();
+        $albums = Album::all();
         $galleries = Gallery::all();
+         $artists = Artist::all();
         return view('admin.track.create', [
             'songs' => $songs,
             'audios' => $audios,
-            'videos' => $videos,
+            'albums' => $albums,
+            'artists' => $artists,
             'galleries' => $galleries
         ]);
     }
