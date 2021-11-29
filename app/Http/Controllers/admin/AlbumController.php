@@ -49,12 +49,12 @@ class AlbumController extends Controller
         $album->number = $request->number;
         $album->year = $request->year;
         $album->artist_id = $request->artist_id;
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('uploads/albums/', $filename);
-            $album->image = $filename;
+       if ($request-> hasfile('image')){
+            $filenamewithext = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+            $album->image = $request->image->storeAs('/albums', $filenametostore, 'spaces');
         }
         $album->save();
         return redirect()->back();
