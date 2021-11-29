@@ -163,7 +163,7 @@
                                     <div class="guest_image"><img src="{{ Storage::disk('spaces')->url($track->image) }}" alt="https://unsplash.com/@stairhopper"></div>
                                     <div class="guest_content text-center">
                                         <div class="guest_name"><a href="/track{{ $track->id }}">{{ $track->title }}</a></div>
-                                        <div class="guest_title">{{ $music->username }}
+                                        <div class="guest_title">{{ $track->username }}
                                             @if ($track->featuring)
                                                 Ft {{ $track->featuring }}
                                             @else
