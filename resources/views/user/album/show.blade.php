@@ -182,22 +182,6 @@
 
 		<div class="container">
 			<div class="row">
-
-				<!-- Sidebar -->
-				<div class="col-lg-3 order-lg-1 order-2 sidebar_col">
-					<div class="sidebar">
-
-						<!-- Categories -->
-						<div class="sidebar_list">
-                            <div class="sidebar_title">Quick Links</div>
-                            <ul>
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/music">Music</a></li>
-                                <li><a href="/videos">Videos</a></li>
-                                <li><a href="/blog">Blog</a></li>
-                            </ul>
-                        </div>
-					</div>
 				</div>
 
 				<!-- Episode -->
