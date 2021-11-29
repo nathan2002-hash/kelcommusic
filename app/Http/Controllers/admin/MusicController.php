@@ -87,7 +87,6 @@ class MusicController extends Controller
         $music->day = $request->day;
         $music->month = $request->month;
         $music->year = $request->year;
-        $music->music = $request->music;
         if ($request-> hasfile('music')){
             $filenamewithext = $request->file('music')->getClientOriginalName();
             $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
@@ -171,8 +170,6 @@ class MusicController extends Controller
        $music->day = $request->day;
        $music->month = $request->month;
        $music->year = $request->year;
-         $music->music = $request->music;
-       $music->image = $request->image;
        if ($request-> hasfile('music')){
             $filenamewithext = $request->file('music')->getClientOriginalName();
             $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
