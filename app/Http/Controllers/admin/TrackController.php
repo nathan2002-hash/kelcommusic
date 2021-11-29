@@ -7,6 +7,7 @@ use App\Gallery;
 use App\Http\Controllers\Controller;
 use App\Music;
 use App\Track;
+use App\Artist;
 use Illuminate\Http\Request;
 
 class TrackController extends Controller
