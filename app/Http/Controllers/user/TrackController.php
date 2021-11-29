@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Music;
 use App\Track;
 use App\Video;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class TrackController extends Controller
@@ -23,5 +24,10 @@ class TrackController extends Controller
             'videos' => $videos,
             'galleries' => $galleries,
         ]);
+    }
+    
+     public function download($id)
+    {
+        return Storage::disk('spaces')->download('/track/' . $id);
     }
 }
