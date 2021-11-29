@@ -155,7 +155,7 @@
                      <div class="guests">
                         <div class="section_title">Album Tracks</div>
                         @foreach ($album->tracks as $track)
-                        <div class="guests_container d-flex flex-md-row flex-column align-items-md-start align-items-center col-lg-3">
+                        <div class="guests_container d-flex flex-md-row flex-column align-items-md-start align-items-center">
 
                             <!-- Guest -->
                             <div class="guest_container">
