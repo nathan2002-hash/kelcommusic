@@ -53,7 +53,7 @@ class TrackController extends Controller
     {
         $music = new Track();
         $music->username = $request->username;
-        $music->video_id = $request->video_id;
+        $music->album_id = $request->album_id;
         $music->title = $request->title;
         $music->featuring = $request->featuring;
         $music->message = $request->message;
