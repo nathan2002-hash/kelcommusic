@@ -154,10 +154,10 @@
 				<div class="col-lg-9 episode_col order-lg-2 order-1">
                      <div class="guests">
                         <div class="section_title">Album Tracks</div>
+                        @foreach ($album->tracks as $track)
                         <div class="guests_container d-flex flex-md-row flex-column align-items-md-start align-items-center">
 
                             <!-- Guest -->
-                            @foreach ($album->tracks as $track)
                             <div class="guest_container">
                                 <div class="guest">
                                     <div class="guest_image"><img src="{{ Storage::disk('spaces')->url($track->image) }}" alt="https://unsplash.com/@stairhopper"></div>
@@ -172,9 +172,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
-                            @endforeach
-
+                    
                         </div>
                     </div>
 				</div>
