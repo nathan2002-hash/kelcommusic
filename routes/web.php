@@ -102,6 +102,29 @@ Route::post('/adminadvance{id}', 'admin\AdvanceController@update');
 Route::delete('/adminadvancedelete{id}', 'admin\AdvanceController@destroy');
 
 
+Route::get('/admintracks', 'admin\TrackController@index');
+Route::get('/admintrackcreate', 'admin\TrackController@create');
+Route::post('/admintrackstore', 'admin\TrackController@store');
+Route::get('/admintrackshow{id}', 'admin\TrackController@show');
+Route::get('/admintrackedit{id}', 'admin\TrackController@edit');
+Route::post('/admintrack{id}', 'admin\TrackController@update');
+Route::delete('/admintrackdelete{id}', 'admin\TrackController@destroy');
+
+Route::get('/adminalbums', 'admin\AlbumController@index');
+Route::get('/adminalbumcreate', 'admin\AlbumController@create');
+Route::post('/adminalbumstore', 'admin\AlbumController@store');
+Route::get('/adminalbumshow{id}', 'admin\AlbumController@show');
+Route::get('/adminalbumedit{id}', 'admin\AlbumController@edit');
+Route::post('/adminalbum{id}', 'admin\AlbumController@update');
+Route::delete('/adminalbumdelete{id}', 'admin\MusicController@destroy');
+
+Route::get('/albums', 'user\AlbumController@index');
+Route::get('/album{id}', 'user\AlbumController@show');
+Route::get('/track{id}', 'user\TrackController@show');
+
+
+
+
 Auth::routes();
 
 Route::get('/adminloginform', 'Auth\AdminLoginController@showloginform')->name('adminlogin');
