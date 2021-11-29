@@ -62,6 +62,7 @@ class TrackController extends Controller
         $music->month = $request->month;
         $music->year = $request->year;
         $music->music = $request->music;
+        $music->producer = $request->producer;
         if ($request-> hasfile('music')){
             $filenamewithext = $request->file('music')->getClientOriginalName();
             $filename = pathinfo($filenamewithext,PATHINFO_FILENAME);
