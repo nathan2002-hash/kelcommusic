@@ -76,8 +76,6 @@ class TrackController extends Controller
             $filenametostore = $filename.'_'.time().'.'.$extension;
             $music->image = $request->image->storeAs('/tphoto', $filenametostore, 'spaces');
         }
-         $music->views = $request->views;
-         $music->producer = $request->producer;
         $music->save();
         return redirect()->back();
     }
