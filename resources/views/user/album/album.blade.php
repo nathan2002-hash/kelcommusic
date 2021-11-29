@@ -123,7 +123,7 @@
 				<div class="row">
 					<div class="col-lg-3">
 						<!-- Episode Image -->
-						<div class="episode_image"><img src="{{ asset('uploads/gallery/' .$album->image) }}" alt=""></div>
+						<div class="episode_image"><img src="{{ Storage::disk('spaces')->url($album->image) }}" alt=""></div>
 					</div>
 				</div>
 			</div>
@@ -160,7 +160,7 @@
                             @foreach ($album->tracks as $track)
                             <div class="guest_container">
                                 <div class="guest">
-                                    <div class="guest_image"><img src="{{ asset('uploads/tracks/image/' . $track->image) }}" alt="https://unsplash.com/@stairhopper"></div>
+                                    <div class="guest_image"><img src="{{ Storage::disk('spaces')->url($track->image) }}" alt="https://unsplash.com/@stairhopper"></div>
                                     <div class="guest_content text-center">
                                         <div class="guest_name"><a href="/track{{ $track->id }}">{{ $track->title }}</a></div>
                                         <div class="guest_title">{{ $music->username }}
@@ -247,7 +247,7 @@
                     <div class="gallery d-flex flex-row align-items-start justify-content-start flex-wrap">
                     @foreach ($galleries as $gallery)
                       <div class="gallery_item">
-                        <a class="colorbox" href="{{ asset('uploads/gallery/' .$gallery->image) }}"><img src="{{ asset('uploads/gallery/' .$gallery->image) }}" alt=""></a>
+                        <a class="colorbox" href="{{ Storage::disk('spaces')->url('gallery/' .$gallery->image) }}"><img src="{{ Storage::disk('spaces')->url('gallery/' .$gallery->image) }}" alt=""></a>
                       </div>
                     @endforeach
                     </div>
