@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\admin;
 
 use App\Album;
-use App\Artist;
 use App\Gallery;
 use App\Http\Controllers\Controller;
 use App\Music;
@@ -31,14 +30,12 @@ class TrackController extends Controller
     {
         $songs = Music::orderBy('created_at', 'desc')->paginate(50);
         $audios = Music::orderBy('created_at', 'desc')->paginate(3);
-        $albums = Album::all();
+        $videos = Album::all();
         $galleries = Gallery::all();
-        $artists = Artist::all();
         return view('admin.track.create', [
             'songs' => $songs,
             'audios' => $audios,
-            'albums' => $albums,
-            'artists' => $artists,
+            'videos' => $videos,
             'galleries' => $galleries
         ]);
     }
