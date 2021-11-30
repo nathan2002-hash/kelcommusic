@@ -149,7 +149,7 @@
 							</div>
 						</div>
                         <div class="col text-center">
-                            <div class="button_fill shows_2_button"><a href="/download/track/{{ $music->music }}">Download Audio</a></div>
+                            <div class="button_fill shows_2_button"><a href="/download/{{ $music->music }}">Download Audio</a></div>
                         </div>
 					</div>
 				</div>
