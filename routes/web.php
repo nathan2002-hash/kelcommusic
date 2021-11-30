@@ -22,7 +22,7 @@ Route::get('/download/beat/{id}', 'user\BeatController@download');
 Route::get('/searchbeat', 'user\BeatController@search');
 Route::get('/searchmusic', 'user\MusicController@search');
 Route::get('/download/music/{id}', 'user\MusicController@download');
-Route::get('/download/track/{id}', 'user\TracController@download');
+Route::get('/download/track/{id}', 'user\TrackController@download');
 Route::get('/download/video/{id}', 'user\VideoController@download');
 Route::get('/about', 'user\AboutController@index');
 Route::get('/musicdownload{id}', 'user\MusicController@show');
