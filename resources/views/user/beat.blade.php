@@ -35,6 +35,7 @@
 							<li><a href="/">Home</a></li>
                             <li><a href="/about">About</a></li>
                             <li><a href="/music">Music</a></li>
+                            <li><a href="/albums">Albums</a></li>
                              <li><a href="/beats">Beats</a></li>
                             <li><a href="/videos">Videos</a></li>
                             <li><a href="/blog">Blog</a></li>
@@ -73,6 +74,7 @@
 				<li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/music">Music</a></li>
+                <li><a href="/albums">Albums</a></li>
                 <li><a href="/beats">Beats</a></li>
                 <li><a href="/videos">Videos</a></li>
                 <li><a href="/blog">Blog</a></li>
