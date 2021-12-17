@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title> @yield('title') | Kelcom Music</title>
+<title> @yield('title') | Kelcom music</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Kelcom Music">
@@ -12,6 +12,8 @@
 <link rel="stylesheet" type="text/css" href="styles/blog.css">
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 <link rel="icon" href="images/favicon.ico">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4140439837745503"
+     crossorigin="anonymous"></script>
 </head>
 
 <body>
