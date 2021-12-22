@@ -171,7 +171,7 @@
         </div>
     </div>
 </div>
-@foreach ($songs as $music)
+@foreach ($laravels as $music)
 <p>musicdownload/{{ $music->id }} = {{ $music->title }}/{{ $music->username }}/{{ $music->featuring }}/{{ $music->day }}/{{ $music->month }}/{{ $music->year }}</p>
 @endforeach
 @endsection
