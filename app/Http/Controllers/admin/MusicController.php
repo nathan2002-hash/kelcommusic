@@ -27,11 +27,13 @@ class MusicController extends Controller
     public function index()
     {
         $songs = Music::orderBy('created_at', 'desc')->paginate(50);
+        $laravels = Music::all();
         $audios = Music::orderBy('created_at', 'desc')->paginate(3);
         $videos = Video::all();
         $galleries = Gallery::all();
         return view('admin.music.index', [
             'songs' => $songs,
+            'laravels' => $laravels,
             'audios' => $audios,
             'videos' => $videos,
             'galleries' => $galleries
