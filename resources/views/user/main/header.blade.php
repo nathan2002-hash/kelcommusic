@@ -11,7 +11,7 @@
                 <div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
                     <nav class="main_nav">
                         <ul class="d-flex flex-row align-items-start justify-content-start">
-                            <li><a href="/">Home</a></li>
+                            <li><a href="/">Hom</a></li>
                             <li><a href="/about">About</a></li>
                             <li><a href="/music">Music</a></li>
                             <li><a href="/albums">Albums</a></li>
